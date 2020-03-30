@@ -1,0 +1,12 @@
+.publish__emb {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.publish__item {
+  &:hover {
+    .publish__emb {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
