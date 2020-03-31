@@ -1,5 +1,11 @@
 .header--white {
+  pointer-events: none;
+
   & .header__item {
     color: white;
   }
+}
+
+.header__logo, .header__menu {
+  pointer-events: all;
 }

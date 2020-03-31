@@ -9,7 +9,7 @@
   grid-row-end: span 1;
 }
 
-.project__item[grid="2"], .project__item[grid="2"] + .project__item {
+.project__item[grid="2"], .project__item[grid="2"] + .project__item, .project__wrap[grid="2"] {
   -ms-grid-column: span 2;
   grid-column-start: span 2;
   -ms-grid-column-span: 2;
