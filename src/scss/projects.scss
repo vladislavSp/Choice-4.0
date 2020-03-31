@@ -19,3 +19,14 @@
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
 }
+
+.filters__text {
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.filters__item[state="enable"] {
+  .filters__text {
+    color: #0E4CD1;
+    border-color: #0E4CD1;
+  }
+}
