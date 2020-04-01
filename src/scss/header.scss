@@ -6,6 +6,10 @@
   }
 }
 
+.header {
+  pointer-events: none;
+}
+
 .header__logo, .header__menu {
   pointer-events: all;
 }
