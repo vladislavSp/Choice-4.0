@@ -11,6 +11,10 @@ input:-webkit-autofill {
   -webkit-text-fill-color:black;
 }
 
+.main {
+  overflow-x: hidden;
+}
+
 .wrapper--contact {
   pointer-events: none;
 }

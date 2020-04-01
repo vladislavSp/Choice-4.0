@@ -16,3 +16,4 @@ import './scss/hover.scss';
 
 //JS
 import './js/filters.js';
+import './js/stickers.js';
