@@ -14,8 +14,10 @@ function getCoords(elem) {
 
 
 // ПОЗИЦИЯ МЫШИ
-function moveStickerHandler() {
+function moveStickerHandler(evt) {
   let sticker = this;
+  console.log(evt.offsetX, evt.offsetY);
+  console.log(this.getBoundingClientRect());
 
   document.addEventListener('mousemove', positionMouseHandler);
 
