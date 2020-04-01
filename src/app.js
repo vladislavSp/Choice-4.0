@@ -5,7 +5,7 @@ import './scss/general.scss';
 import './scss/main.scss';
 import './scss/header.scss';
 import './scss/projects.scss';
-
+import './scss/careers.scss';
 
 //hover
 import './scss/hover.scss';

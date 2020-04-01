@@ -1,10 +1,19 @@
-.publish__emb {
+.publish__emb, .careers__emb {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .publish__item {
   &:hover {
     .publish__emb {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+
+.careers__item {
+  &:hover {
+    .careers__emb {
       transform: translateX(0%);
       opacity: 1;
     }
