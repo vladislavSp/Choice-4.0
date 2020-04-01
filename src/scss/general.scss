@@ -23,6 +23,21 @@ input:-webkit-autofill {
   pointer-events: all;
 }
 
+.univercity__sticker {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.univercity__image {
+  pointer-events: none;
+}
+
+.univercity__sticker[state="active"] {
+  cursor: grabbing;
+}
+
+
 .view__image {
   cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5e8457d23fb6cf6c6af2cdfb_cursor-image.svg'), default;
 }

@@ -16,21 +16,22 @@ function getCoords(elem) {
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
   let sticker = this;
-  console.log(evt.offsetX, evt.offsetY);
-  console.log(this.getBoundingClientRect());
+  sticker.setAttribute('state', 'active');
 
   document.addEventListener('mousemove', positionMouseHandler);
 
   function positionMouseHandler() {
     let top = event.pageY - getCoords(universityBlock).top;
-    sticker.style.top = `${top}px`;
-    sticker.style.left = `${event.pageX}px`;
+    sticker.style.top = `${top - evt.offsetY}px`;
+    sticker.style.left = `${event.pageX - evt.offsetX}px`;
   }
 
   this.addEventListener('mouseup', removeHandler);
 
   function removeHandler() {
     document.removeEventListener('mousemove', positionMouseHandler);
+    this.removeEventListener('mouseup', removeHandler);
+    sticker.setAttribute('state', '');
   }
 }
 
