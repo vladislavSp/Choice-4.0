@@ -15,10 +15,15 @@ function getCoords(elem) {
 
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
+  stickers.map(el => {
+    if (el.getAttribute('state') === 'none') el.removeEventListener('mousedown', moveStickerHandler);
+  });
+
   let sticker = this;
-  sticker.setAttribute('state', 'active');
+  this.setAttribute('state', 'active');
 
   document.addEventListener('mousemove', positionMouseHandler);
+  this.addEventListener('mouseup', removeHandler);
 
   function positionMouseHandler() {
     let top = event.pageY - getCoords(universityBlock).top;
@@ -26,12 +31,14 @@ function moveStickerHandler(evt) {
     sticker.style.left = `${event.pageX - evt.offsetX}px`;
   }
 
-  this.addEventListener('mouseup', removeHandler);
-
   function removeHandler() {
     document.removeEventListener('mousemove', positionMouseHandler);
-    this.removeEventListener('mouseup', removeHandler);
-    sticker.setAttribute('state', '');
+    sticker.removeEventListener('mouseup', removeHandler);
+    sticker.setAttribute('state', 'none');
+
+    stickers.map(el => {
+      if (el.getAttribute('state') === 'none') el.addEventListener('mousedown', moveStickerHandler);
+    });
   }
 }
 

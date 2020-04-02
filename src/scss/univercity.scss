@@ -1,0 +1,23 @@
+.univercity__sticker {
+  flex-basis: 100%;
+}
+
+.univercity__sticker {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.univercity__image {
+  pointer-events: none;
+}
+
+.univercity__sticker[state="none"] {
+  cursor: grab;
+}
+
+.univercity__sticker[state="active"] {
+  z-index: 12;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
