@@ -1,0 +1,19 @@
+.tech__btn[state="none"] {
+  & .tech__emb--minus {
+    display: none;
+  }
+}
+
+.tech__btn[state="active"] {
+  & .tech__emb--plus {
+    display: none;
+  }
+
+  & .tech__emb--minus {
+    display: flex;
+  }
+}
+
+.tech__accordion {
+  transition: height 0.3s ease;
+}
