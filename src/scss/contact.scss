@@ -1,0 +1,8 @@
+.brif__item--contact {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.brif__item--contact[state="enable"] {
+  color: white;
+  background-color: black;
+}
