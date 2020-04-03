@@ -7,6 +7,7 @@ import './scss/header.scss';
 import './scss/projects.scss';
 import './scss/careers.scss';
 import './scss/univercity.scss';
+import './scss/vacancy.scss';
 
 //hover
 import './scss/hover.scss';
