@@ -1,3 +1,7 @@
+.brif__group-field:nth-of-type(2) {
+  width: 38rem;
+}
+
 @media (max-width: 1760px) and (min-width: 1600px) {
   .wrapper--big {
     width: 100rem;
@@ -36,6 +40,9 @@
   .footer__group-two {
     margin-left: auto;
   }
+  .creators__list {
+    max-width: 70%;
+  }
 }
 
 @media (max-width: 1439px) and (min-width: 1280px) {
@@ -71,7 +78,6 @@
     font-size: 2.5rem;
   }
 }
-
 
 @media (max-width: 1279px) and (min-width: 1120px) {
   .wrapper--big {
@@ -112,8 +118,51 @@
   .footer__link-social {
     margin-right: 2.5rem;
   }
-}
 
+  .creators__list {
+    max-width: none;
+  }
+
+  .brif__form {
+    width: 100%;
+  }
+
+  .brif__group-field {
+    width: 20rem;
+
+    &:first-child {
+      flex-shrink: 0;
+      margin-right: 2rem;
+    }
+  }
+
+  .brif__group-field:nth-of-type(2) {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .brif__forw-wrap {
+    width: 100%;
+  }
+
+  .about__title {
+    font-size: 4rem;
+  }
+  .we {
+    padding-bottom: 6.25rem;
+  }
+  .club__list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clients {
+    padding-top: 6.5rem;
+    padding-bottom: 8.25rem;
+  }
+  .clients__company {
+    font-size: 3rem;
+  }
+}
 
 @media (max-width: 1120px) and (min-width: 991px) {
   .wrapper--big {
