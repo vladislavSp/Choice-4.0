@@ -9,6 +9,10 @@
   .wrapper {
     width: 90rem;
   }
+
+  .brif__sec-group {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 1599px) and (min-width: 1440px) {
@@ -42,6 +46,19 @@
   }
   .creators__list {
     max-width: 70%;
+  }
+
+  .brif__sec-group {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+
+  .brif__add-group {
+    display: block;
+  }
+
+  .brif__title--vacancy {
+    margin-bottom: 4rem;
   }
 }
 
@@ -94,6 +111,10 @@
     padding-bottom: 5.5rem;
   }
 
+  .careers {
+    padding-bottom: 4.5rem;
+  }
+
   .projects__title {
     font-size: 1.75rem;
   }
@@ -102,8 +123,12 @@
     padding-top: 8rem;
   }
 
-  .univercity__title {
+  .univercity__title, .filters__title, .filters__item, .contacts__title, .careers__title {
     font-size: 4rem;
+  }
+
+  .careers__subtitle {
+    font-size: 2.5rem;
   }
 
   .service {
@@ -162,6 +187,18 @@
   .clients__company {
     font-size: 3rem;
   }
+
+  .brif__list {
+    width: auto;
+  }
+
+  .links__item {
+    margin-top: 0.5rem;
+  }
+
+  // .brif__btn-wrap {
+  //   margin-top: 3rem;
+  // }
 }
 
 @media (max-width: 1120px) and (min-width: 991px) {

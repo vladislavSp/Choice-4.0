@@ -22,3 +22,4 @@ import './js/filters.js';
 import './js/stickers.js';
 import './js/accordion.js';
 import './js/forms.js';
+import './js/hoverImage.js';

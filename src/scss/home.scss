@@ -28,3 +28,13 @@
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
+
+.service__item {
+  // cursor: none;
+
+  &:hover {
+    & .service__image {
+      display: block;
+    }
+  }
+}
