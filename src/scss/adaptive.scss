@@ -2,6 +2,20 @@
   width: 38rem;
 }
 
+.univercity__sticker {
+  &--first {
+    width: 31.25rem;
+  }
+
+  &--sec {
+    width: 15.5625rem;
+  }
+
+  &--third {
+    width: 14.5rem;
+  }
+}
+
 @media (max-width: 1760px) and (min-width: 1600px) {
   .wrapper--big {
     width: 100rem;
