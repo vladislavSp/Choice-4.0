@@ -88,25 +88,197 @@
 
 @media (max-width: 1439px) and (min-width: 991px) {
   .main__title {
-    font-size: 4.625rem;
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
   }
 
-  .links__quest {
+  .links__quest, .links__item {
+    font-size: 1.125rem;
+    line-height: 1.375;
     margin-right: 2rem;
   }
 
-  .links__item {
-    margin-right: 2rem;
+  .projects__title {
+    font-size: 1.375rem;
   }
 
-  .service__list {
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 3rem;
+  .projects__text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .projects__btn-text {
+    font-size: 1.25rem;
+    line-height: 1.2;
   }
 
   .publish__text {
     max-width: 52rem;
     font-size: 2.5rem;
+  }
+
+  .navigation {
+    padding-top: 8.75rem;
+  }
+
+  .projects, .navigation {
+    padding-bottom: 5.5rem;
+  }
+
+  .univercity {
+    padding-top: 7rem;
+    padding-bottom: 4.25rem;
+  }
+
+  .univercity__title, .filters__title, .filters__item, .contacts__title, .careers__title, .about__title {
+    font-size: 3.625rem;
+  }
+
+  .univercity__group {
+    margin-top: 3.875rem;
+  }
+
+  .univercity__sticker {
+    &.univercity__sticker--first {
+      left: 7rem;
+      top: 12rem;
+    }
+
+    &.univercity__sticker--sec {
+      left: 30rem;
+      top: 19rem;
+    }
+
+    &.univercity__sticker--third {
+      left: 45rem;
+      top: 4rem;
+    }
+  }
+  .univercity__btn-text {
+    font-size: 1.125rem;
+  }
+  .univercity__text {
+    font-size: 0.875rem;
+  }
+
+  .service {
+    padding-top: 7rem;
+    padding-bottom: 6.75rem;
+  }
+
+  .service__title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 4.25rem;
+  }
+
+  .service__text {
+    font-size: 2.5rem;
+  }
+
+  .service__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .service__desc {
+    max-width: 18rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+
+
+// DESC
+  .desc {
+    padding-top: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .desc__title {
+    font-size: 3rem;
+  }
+
+  .desc__item {
+    font-size: 1.125rem;
+  }
+
+  .desc__text {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .project__text {
+    font-size: 1.5rem;
+  }
+
+  .project__text-group {
+    margin-top: 5.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .express-desc {
+    padding-top: 9rem;
+    margin-bottom: 3.75rem;
+  }
+
+  .brif {
+    padding-top: 6rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .brif__title, .tech__title {
+    font-size: 2.5rem;
+  }
+
+  .brif__send-btn {
+    font-size: 1.75rem;
+  }
+
+// ABOUT
+  .tech__title {
+    max-width: 60rem;
+    margin-bottom: 4rem;
+  }
+
+  .tech__text {
+    font-size: 1.5rem;
+  }
+
+  .tech__item {
+    padding-top: 3rem;
+  }
+
+  .tech__subtitle {
+    font-size: 2.75rem;
+  }
+
+  .tech__btn {
+    margin-bottom: 2.75rem;
+  }
+
+  .acc__title {
+    font-size: 1.75rem;
+  }
+
+  .paragraph {
+    font-size: 1.125rem;
+    max-width: 18rem;
+  }
+
+  .space {
+    margin-bottom: 5.75rem;
+  }
+  .club__title {
+    margin-bottom: 4.25rem;
+  }
+
+  .club__subtitle {
+    font-size: 1.25rem;
+  }
+  .club__post, .club__link {
+    font-size: 1.125rem;
+  }
+  .we {
+    padding-bottom: 6.25rem;
   }
 }
 
@@ -121,45 +293,16 @@
 }
 
 @media (max-width: 1279px) and (min-width: 991px) {
-  .projects {
-    padding-bottom: 5.5rem;
-  }
-
   .careers {
     padding-bottom: 4.5rem;
-  }
-
-  .projects__title {
-    font-size: 1.75rem;
-  }
-
-  .univercity {
-    padding-top: 8rem;
-  }
-
-  .univercity__title, .filters__title, .filters__item, .contacts__title, .careers__title {
-    font-size: 4rem;
   }
 
   .careers__subtitle {
     font-size: 2.5rem;
   }
 
-  .service {
-    padding-top: 7.5rem;
-    padding-bottom: 6.5rem;
-  }
-
-  .service__text {
-    font-size: 2.75rem;
-  }
-
   .footer__link-social {
     margin-right: 2.5rem;
-  }
-
-  .creators__list {
-    max-width: none;
   }
 
   .brif__form {
@@ -184,20 +327,23 @@
     width: 100%;
   }
 
-  .about__title {
-    font-size: 4rem;
-  }
-  .we {
-    padding-bottom: 6.25rem;
-  }
-  .club__list {
-    grid-template-columns: 1fr 1fr;
+  // .club__list {
+  //   grid-template-columns: 1fr 1fr;
+  // }
+
+  .club__title {
+    font-size: 2.5rem;
   }
 
   .clients {
-    padding-top: 6.5rem;
-    padding-bottom: 8.25rem;
+    padding-top: 5.5rem;
+    padding-bottom: 6.25rem;
   }
+
+  .clients__text {
+    margin-bottom: 2.5rem;
+  }
+
   .clients__company {
     font-size: 3rem;
   }
@@ -213,6 +359,41 @@
   // .brif__btn-wrap {
   //   margin-top: 3rem;
   // }
+
+  .footer, .publish {
+    padding-top: 5.5rem;
+  }
+  .publish {
+    padding-bottom: 6rem;
+  }
+  .footer__address, .footer__contacts {
+    font-size: 1.75rem;
+    margin-bottom: 4rem;
+  }
+
+  .footer__link, .footer__link-social {
+    font-size: 1.25rem;
+  }
+
+  .publish__text {
+    font-size: 2rem;
+  }
+
+  .creators__post, .creators__name {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+  .creators__text-link, .next__link {
+    font-size: 1.5rem;
+  }
+
+  .creators__wrap {
+    padding-bottom: 5.5rem;
+  }
+
+  .next__title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 1120px) and (min-width: 991px) {
@@ -226,11 +407,5 @@
 
   .main__title {
     font-size: 3.625rem;
-  }
-  .publish__text {
-    font-size: 2rem;
-  }
-  .footer__link-social {
-    margin-right: 1.75rem;
   }
 }
