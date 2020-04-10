@@ -10,7 +10,7 @@ function stateAccordionHandler(evt) {
   if (this.getAttribute('state') === 'none') this.setAttribute('state', 'active');
   else this.setAttribute('state', 'none');
 
-  let accordBlock = this.parentNode.querySelector('.tech__accordion'); // элемент, которому задается высота
+  let accordBlock = this.parentNode.querySelector('[acc="item"]'); // элемент, которому задается высота
 
   if (accordBlock.style.height === "0px") {
     accordBlock.style.height = `${ accordBlock.scrollHeight }px`;

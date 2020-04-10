@@ -14,6 +14,16 @@
   }
 }
 
-.tech__accordion {
+.tech__accordion, .qa__accordion {
   transition: height 0.3s ease;
+}
+
+.qa__arrow {
+  transition: transform 0.3s ease;
+}
+
+.qa__text-wrap[state="active"] {
+  & .qa__arrow {
+    transform: rotate(-90deg);
+  }
 }

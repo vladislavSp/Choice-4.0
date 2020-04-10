@@ -1,7 +1,3 @@
-.brif__group-field:nth-of-type(2) {
-  width: 38rem;
-}
-
 .univercity__sticker {
   &--first {
     width: 31.25rem;
@@ -13,6 +9,20 @@
 
   &--third {
     width: 14.5rem;
+  }
+}
+
+.qa__item:last-child {
+  margin-bottom: 0;
+
+  & .qa__acc-group {
+    border: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .brif__group-field:nth-of-type(2) {
+    width: 37rem;
   }
 }
 
@@ -36,28 +46,13 @@
   .wrapper {
     width: 80rem;
   }
-
-  .footer__group-one {
-    margin-right: 0;
-  }
-
-  .footer__group-two {
-    margin-left: auto;
-  }
 }
 
-@media (max-width: 1599px) and (min-width: 991px) {
+@media (max-width: 1599px) and (min-width: 992px) {
   .navigation {
     padding-bottom: 6.25rem;
   }
 
-  .footer__group-one {
-    margin-right: 0;
-  }
-
-  .footer__group-two {
-    margin-left: auto;
-  }
   .creators__list {
     max-width: 70%;
   }
@@ -86,7 +81,7 @@
   }
 }
 
-@media (max-width: 1439px) and (min-width: 991px) {
+@media (max-width: 1439px) and (min-width: 992px) {
   .main__title {
     font-size: 4rem;
     margin-bottom: 2.5rem;
@@ -132,6 +127,11 @@
 
   .univercity__title, .filters__title, .filters__item, .contacts__title, .careers__title, .about__title {
     font-size: 3.625rem;
+  }
+
+  .about {
+    padding-top: 10rem;
+    padding-bottom: 5.5rem;
   }
 
   .univercity__group {
@@ -186,9 +186,7 @@
     line-height: 1.5;
   }
 
-
-
-// DESC
+  // DESC
   .desc {
     padding-top: 5rem;
     margin-bottom: 4rem;
@@ -233,7 +231,7 @@
     font-size: 1.75rem;
   }
 
-// ABOUT
+  // ABOUT
   .tech__title {
     max-width: 60rem;
     margin-bottom: 4rem;
@@ -280,6 +278,55 @@
   .we {
     padding-bottom: 6.25rem;
   }
+
+
+  // EXPRESS PAGE
+  .express {
+    padding-top: 10rem;
+  }
+
+  .express__title {
+    font-size: 4rem;
+  }
+
+  .get {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .get__item--orange {
+    margin-top: 0.75rem;
+  }
+
+  .eprojects {
+    padding-bottom: 5rem;
+  }
+
+  .qa {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .qa__title {
+    margin-right: 10rem;
+  }
+
+  .qa__subtitle {
+    max-width: 45rem;
+    font-size: 3rem;
+  }
+
+  .qa__number {
+    margin-right: 2.5rem;
+  }
+
+  .qa__text {
+    font-size: 1.375rem;
+  }
+
+  .express-brif {
+    padding: 5rem 0;
+  }
 }
 
 @media (max-width: 1279px) and (min-width: 1120px) {
@@ -292,11 +339,7 @@
   }
 }
 
-@media (max-width: 1279px) and (min-width: 991px) {
-  .careers {
-    padding-bottom: 4.5rem;
-  }
-
+@media (max-width: 1279px) and (min-width: 992px) {
   .careers__subtitle {
     font-size: 2.5rem;
   }
@@ -314,7 +357,7 @@
 
     &:first-child {
       flex-shrink: 0;
-      margin-right: 2rem;
+      margin-right: 3rem;
     }
   }
 
@@ -326,10 +369,6 @@
   .brif__forw-wrap {
     width: 100%;
   }
-
-  // .club__list {
-  //   grid-template-columns: 1fr 1fr;
-  // }
 
   .club__title {
     font-size: 2.5rem;
@@ -356,10 +395,6 @@
     margin-top: 0.5rem;
   }
 
-  // .brif__btn-wrap {
-  //   margin-top: 3rem;
-  // }
-
   .footer, .publish {
     padding-top: 5.5rem;
   }
@@ -368,7 +403,6 @@
   }
   .footer__address, .footer__contacts {
     font-size: 1.75rem;
-    margin-bottom: 4rem;
   }
 
   .footer__link, .footer__link-social {
@@ -394,9 +428,43 @@
   .next__title {
     font-size: 2.5rem;
   }
+
+  .footer__group-one {
+    margin-bottom: 4rem;
+  }
+
+  .qa__subtitle {
+    font-size: 2.5rem;
+  }
+
+  .get__item {
+    font-size: 3rem;
+  }
+
+  .express__form {
+    width: 100%;
+  }
+
+  .express__group-field {
+    width: 20rem;
+
+    &.express__group-field--sec {
+      width: auto;
+      margin-left: 2rem;
+      flex-grow: 1;
+    }
+  }
+
+  .qa__title {
+    margin-right: 5rem;
+  }
+
+  .qa__arrow {
+    margin-left: 3rem;
+  }
 }
 
-@media (max-width: 1120px) and (min-width: 991px) {
+@media (max-width: 1120px) and (min-width: 992px) {
   .wrapper--big {
     width: 60rem;
   }
@@ -407,5 +475,16 @@
 
   .main__title {
     font-size: 3.625rem;
+  }
+
+  .brif__field {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 767px) {
+  .links__list {
+    overflow-x: scroll;
   }
 }
