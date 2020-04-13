@@ -9,6 +9,7 @@ import './scss/careers.scss';
 import './scss/vacancy.scss';
 import './scss/about.scss';
 import './scss/contact.scss';
+import './scss/form.scss';
 
 //adaptive
 import './scss/adaptive.scss';
@@ -23,3 +24,4 @@ import './js/stickers.js';
 import './js/accordion.js';
 import './js/forms.js';
 import './js/hoverImage.js';
+import './js/form.js';

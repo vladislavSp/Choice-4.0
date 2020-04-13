@@ -1,0 +1,10 @@
+// .brif__field[send-field="file"] {
+//   cursor: pointer;
+// }
+
+.brif__field[state="invalid"] {
+  border-color: red;
+  &::placeholder {
+    color: red;
+  }
+}
