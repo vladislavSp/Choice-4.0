@@ -15,6 +15,9 @@ function getCoords(elem) {
 
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
+  let offsetX = evt.offsetX;
+  let offsetY = evt.offsetY;
+
   stickers.map(el => {
     if (el.getAttribute('state') === 'none') el.removeEventListener('mousedown', moveStickerHandler);
   });
@@ -27,8 +30,8 @@ function moveStickerHandler(evt) {
 
   function positionMouseHandler() {
     let top = event.pageY - getCoords(universityBlock).top;
-    sticker.style.top = `${top - evt.offsetY}px`;
-    sticker.style.left = `${event.pageX - evt.offsetX}px`;
+    sticker.style.top = `${top - offsetY}px`;
+    sticker.style.left = `${event.pageX - offsetX}px`;
   }
 
   function removeHandler() {

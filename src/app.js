@@ -22,6 +22,5 @@ import './scss/hover.scss';
 import './js/filters.js';
 import './js/stickers.js';
 import './js/accordion.js';
-import './js/forms.js';
 import './js/hoverImage.js';
 import './js/form.js';
