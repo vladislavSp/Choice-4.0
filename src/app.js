@@ -24,3 +24,4 @@ import './js/stickers.js';
 import './js/accordion.js';
 import './js/hoverImage.js';
 import './js/form.js';
+import './js/slider.js';
