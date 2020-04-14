@@ -1,0 +1,66 @@
+.view__image-right {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5e8457d23fb6cf6c6af2cdfb_cursor-image.svg'), default;
+}
+
+.view__image-left {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5e947051c307547a8605131e_cursor90.svg'), default;
+}
+
+.view__image-right--disabled {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5e957b2ac28cbe7a8f2922f4_cursor-dis.svg'), default;
+}
+
+.view__image-left--disabled {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5e957b28c7d8c276aabeadba_cursor90-dis.svg'), default;
+}
+
+.view__controls {
+  pointer-events: none;
+}
+
+.view__paginations {
+  pointer-events: all;
+}
+
+.view__point:last-child {
+  margin-right: 0;
+}
+
+.view__point {
+  position: relative;
+  animation-fill-mode: forwards;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 6.5rem;
+    background: white;
+    transform: translateX(-100%);
+  }
+}
+
+.view__point--active {
+  &:before {
+    animation: pseudoMove 9.5s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes pseudoMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .view__point {
+    &:before {
+      border-radius: 62.5rem;
+    }
+  }
+}

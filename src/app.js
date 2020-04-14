@@ -10,6 +10,7 @@ import './scss/vacancy.scss';
 import './scss/about.scss';
 import './scss/contact.scss';
 import './scss/form.scss';
+import './scss/slider.scss';
 
 //adaptive
 import './scss/adaptive.scss';

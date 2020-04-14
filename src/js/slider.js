@@ -5,13 +5,25 @@ if (expressContainer) {
     wrapperClass: 'view__images',
     slideClass: 'view__slide',
     slidesPerView: 'auto',
+    effect: 'fade',
     speed: 600,
-    spaceBetween: 32,
+    spaceBetween: 0,
     allowTouchMove: false,
+
+    fadeEffect: {
+      crossFade: true,
+    },
 
     autoplay: {
       delay: 10000,
       disableOnInteraction: false,
+    },
+
+    breakpoints: {
+      768: {
+        effect: 'fade',
+        spaceBetween: 32,
+      }
     },
 
     navigation: {
