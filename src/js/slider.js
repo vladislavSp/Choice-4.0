@@ -43,7 +43,7 @@ if (expressContainer) {
 
   expressSlider.on('slideChange', changeSlideHandler);
 
-  function changeSlideHandler() { // ПРОГРЕССБАР
+  function changeSlideHandler() { // progressbar пагинации
     let paginations = Array.from(document.querySelectorAll('.view__point'));
 
     paginations.map((el, index, arr) => {

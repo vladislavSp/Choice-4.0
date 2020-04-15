@@ -1,0 +1,9 @@
+.project-sect[lazy-load="block"] {
+  display: none;
+  transition: transform ease;
+  // transform: scale(0.85);
+}
+
+.project-sect[lazy-load="block"][state="enable"] {
+  display: block;
+}

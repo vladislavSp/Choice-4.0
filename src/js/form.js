@@ -5,7 +5,7 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
 
 
 
-// Selectors
+// Selectors for Projects
 let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
     projectField = document.querySelector('*[send-field="project"]');
 
