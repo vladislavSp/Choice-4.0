@@ -28,3 +28,4 @@ import './js/hoverImage.js';
 import './js/form.js';
 import './js/slider.js';
 import './js/dzen.js';
+import './js/view-blocks.js';
