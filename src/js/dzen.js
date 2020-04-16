@@ -24,9 +24,10 @@ function controllBlockHandler(evt) {
 
 
 
-// Если скролл зашел за половину блока
+// Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
 
+    // preloadNextProjects(); загрузка шаблона/либо
     viewBlocks[index].setAttribute('state', 'enable');
 
     // if (positionFlag < 10) previewBlocks[index].style.transform = `scale(0.90${positionFlag})`;
@@ -43,3 +44,10 @@ function controllBlockHandler(evt) {
     }
   }
 }
+//
+// function preloadNextProjects() {
+//   viewBlocks[index].setAttribute('state', 'enable');
+//  viewNextBlock();
+//  downloadProjectFromNet();
+//   axios({});
+// }
