@@ -22,13 +22,13 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-
+// console.log(positionFlag); позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
 
     // preloadNextProjects(); загрузка шаблона/либо
-    viewBlocks[index].setAttribute('state', 'enable');
+    viewBlocks[index].setAttribute('state', 'enable'); // показ первого скрытого блока
 
     // if (positionFlag < 10) previewBlocks[index].style.transform = `scale(0.90${positionFlag})`;
     if (positionFlag < hundredPercent) {
@@ -37,7 +37,7 @@ function controllBlockHandler(evt) {
     // else if (positionFlag >= 10 && positionFlag < hundredPercent) {
     //   previewBlocks[index].style.transform = `scale(0.9${positionFlag})`;
     // }
-    else if (positionFlag > hundredPercent) {
+    else if (positionFlag > hundredPercent) { // если прокрутка достигла верхней части экрана
       previewBlocks[index].style.transform = `scale(1)`;
       index++;
       if (index >= checkBlocks.length - 1) document.removeEventListener('scroll', controllBlockHandler);
