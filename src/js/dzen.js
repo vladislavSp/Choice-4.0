@@ -5,7 +5,7 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
 let index = 0;
 const hundredPercent = 100;
 
-previewBlocks.map(el => el.style.transform = `scale(0.85)`);
+previewBlocks.map(el => el.style.transform = `scale(0.5)`);
 
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
@@ -22,7 +22,7 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-// console.log(positionFlag); позиция блока относительно вьюпорта
+// console.log(positionFlag); // позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
@@ -30,8 +30,9 @@ function controllBlockHandler(evt) {
     // preloadNextProjects(); загрузка шаблона/либо
     viewBlocks[index].setAttribute('state', 'enable'); // показ первого скрытого блока
 
-    // if (positionFlag < 10) previewBlocks[index].style.transform = `scale(0.90${positionFlag})`;
-    if (positionFlag < hundredPercent) {
+    if (positionFlag < 10) {
+      previewBlocks[index].style.transform = `scale(0.0${positionFlag})`;
+    } else if (positionFlag < hundredPercent) {
       previewBlocks[index].style.transform = `scale(0.${positionFlag})`;
     }
     // else if (positionFlag >= 10 && positionFlag < hundredPercent) {

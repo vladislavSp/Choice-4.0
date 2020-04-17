@@ -1,6 +1,14 @@
+@media (min-width: 992px) {
+  .project__item:first-child .projects__title {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+}
+
 .project-sect[lazy-load="block"] {
   display: none;
-  transition: transform ease;
+  will-change: transform;
+  // transition: transform ease;
   // transform: scale(0.85);
 }
 
