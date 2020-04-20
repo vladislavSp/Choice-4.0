@@ -22,6 +22,18 @@
   }
 }
 
+.projects__list[visible-list="false"] {
+  & .project__item:nth-child(n + 9) {
+    display: none;
+  }
+}
+
+.projects__list[proj-list="brands"][visible-list="false"] {
+  & .project__item:nth-child(n + 5) {
+    display: none;
+  }
+}
+
 .project__wrap[grid="2"] {
   -ms-grid-column: span 2;
   grid-column-start: span 2;
@@ -68,7 +80,7 @@
     bottom: 0;
     left: 0;
     transition: transform 0.5s ease;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     border-bottom: 2px solid rgba(0, 0, 0, 0.6);
   }
 }
