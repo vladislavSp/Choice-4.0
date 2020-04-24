@@ -23,7 +23,7 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-console.log(positionFlag); // позиция блока относительно вьюпорта
+//console.log(positionFlag); // позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {

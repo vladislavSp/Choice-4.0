@@ -10,6 +10,28 @@
   }
 }
 
+
+// FOR CHANGE MENU COLOR
+.header[color="change"], .header--white[color="change"] {
+  & .header__svg path {
+    fill: white;
+  }
+
+  & .header__item {
+    color: white;
+  }
+}
+
+.header--white[color=""] {
+  & .header__svg path {
+    fill: black;
+  }
+
+  & .header__item {
+    color: black;
+  }
+}
+
 .header {
   pointer-events: none;
 }
