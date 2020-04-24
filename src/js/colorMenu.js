@@ -4,7 +4,7 @@ let blocks = Array.from(document.querySelectorAll('[bc="change"]'));
 if (blocks.length) document.addEventListener('scroll', changeColorHandler);
 
 function changeColorHandler() {
-  const arrTop = blocks.filter((el, i, arr) => el.getBoundingClientRect().width).map(el => Math.abs(el.getBoundingClientRect().height/5 + el.getBoundingClientRect().top)); // values for control desired block => previous to Math.abs(el.getBoundingClientRect().top)
+  const arrTop = blocks.filter((el, i, arr) => el.getBoundingClientRect().width).map(el => Math.abs(el.getBoundingClientRect().height/5 + el.getBoundingClientRect().top)); // values for control desired block => previous to Math.abs(el.getBoundingClientRect().top) 
 
   const indexArr = arrTop.indexOf(Math.min(...arrTop));
   let blockHeight = blocks[indexArr].getBoundingClientRect().height, // height this block
