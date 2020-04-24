@@ -90,6 +90,9 @@
   .links__quest, .links__item {
     font-size: 1.125rem;
     line-height: 1.375;
+  }
+
+  .links__item {
     margin-right: 2rem;
   }
 
@@ -392,7 +395,7 @@
   }
 
   .links__item {
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .footer, .publish {
@@ -461,6 +464,10 @@
 
   .qa__arrow {
     margin-left: 3rem;
+  }
+
+  .clients__wrap {
+    font-size: 3rem;
   }
 }
 

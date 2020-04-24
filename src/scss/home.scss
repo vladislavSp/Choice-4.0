@@ -5,14 +5,15 @@
 }
 
 // UNIVERCITY
-.univercity__sticker {
-  flex-basis: 100%;
-}
+// .univercity__sticker {
+//   flex-basis: 100%;
+// }
 
 .univercity__sticker {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  transition: transform 0.5s ease;
 }
 
 .univercity__image {
@@ -26,6 +27,7 @@
 .univercity__sticker[state="active"] {
   z-index: 12;
   cursor: grabbing;
+  transform: scale(0.8);
 }
 
 .service__item {

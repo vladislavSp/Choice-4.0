@@ -1,4 +1,15 @@
 @media (min-width: 768px) {
+  .project__item[grid="4"] {
+    -ms-grid-column: span 4;
+    grid-column-start: span 4;
+    -ms-grid-column-span: 4;
+    grid-column-end: span 4;
+    -ms-grid-row: span 1;
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+  }
+
   .project__item[grid="3"] {
     -ms-grid-column: span 3;
     grid-column-start: span 3;
@@ -23,13 +34,19 @@
 }
 
 .projects__list[visible-list="false"] {
-  & .project__item:nth-child(n + 9) {
+  & .project__item:nth-child(n + 8) {
+    display: none;
+  }
+}
+
+.projects__list[proj-list="express"][visible-list="false"] {
+  & .project__item:nth-child(n + 5) {
     display: none;
   }
 }
 
 .projects__list[proj-list="brands"][visible-list="false"] {
-  & .project__item:nth-child(n + 5) {
+  & .project__item:nth-child(n + 4) {
     display: none;
   }
 }

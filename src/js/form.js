@@ -1,7 +1,8 @@
 let sendBtn = document.querySelector('*[send-form="btn"]'),
     checkFields = Array.from(document.querySelectorAll('*[check-field]')),
     sendFields = Array.from(document.querySelectorAll('*[send-field]')),
-    fieldsObj = {};
+    fieldsObj = {},
+    infoBrif = new Set();
 
 
 
@@ -12,9 +13,17 @@ let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
 if (selectorsBrif.length) selectorsBrif.map(el => el.addEventListener('click', stateSelectorsHandler));
 
 function stateSelectorsHandler () {
-  selectorsBrif.map(el => el.setAttribute('state', 'disable'));
-  this.setAttribute('state', 'enable');
-  projectField.setAttribute('value-proj', `${this.textContent}`);
+  // selectorsBrif.map(el => el.setAttribute('state', 'disable'));
+  if (this.getAttribute('state') === 'enable') {
+    this.setAttribute('state', 'disable');
+    infoBrif.delete(this.textContent);
+  }
+  else {
+    this.setAttribute('state', 'enable');
+    infoBrif.add(this.textContent);
+  }
+
+  projectField.setAttribute('value-proj', `${Array.from(infoBrif)}`);
   projectField.setAttribute('state', 'valid');
 }
 
