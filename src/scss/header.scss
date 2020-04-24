@@ -19,6 +19,10 @@
 
   & .header__item {
     color: white;
+
+    & .header__text:before {
+      background-color: white;
+    }
   }
 }
 
