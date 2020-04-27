@@ -2,8 +2,9 @@
 //   cursor: pointer;
 // }
 
-.brif__field[state="invalid"], .contact__field[state="invalid"] {
+.brif__field[state="invalid"], .contact__field[state="invalid"], .express__field[state="invalid"] {
   border-color: red;
+
   &::placeholder {
     color: red;
   }

@@ -46,9 +46,36 @@
   }
 }
 
+// .contacts__text {
+//   transition: border-color 0.3s ease;
+// }
+
+.contacts__text {
+  position:  relative;
+  display: inline-flex;
+  overflow-x: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+  }
+}
+
 .contacts__text-wrap {
   &:hover .contacts__text {
     color: black;
+    border-color: currentColor;
+    &::before {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -58,7 +85,7 @@
   }
 }
 
-.footer__link, .footer__link-social, .contact__link, .brif__send-btn, .express__send-btn, .club__link {
+.footer__link, .footer__link-social, .contact__link, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .club__link {
   & svg path {
     transition: fill 0.3s ease;
   }
@@ -230,20 +257,35 @@
   // }
 }
 
-.brif__send-btn {
-  &:hover {
-    color: rgba(0, 0, 0, 0.7);
+.brif__send-btn, .brif__send-btn--express {
+  display: inline-flex;
+  overflow-x: hidden;
+  position: relative;
 
-    & svg path {
-      fill: rgba(0, 0, 0, 0.7);
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  &:hover {
+    &::before {
+      transform: translateX(0);
     }
   }
 
   &:active {
-    color: black;
+    color: #666;
 
     & svg path {
-      fill: black;
+      fill: #666;
     }
   }
 }
