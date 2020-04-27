@@ -3,14 +3,16 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
     projectSections = Array.from(document.querySelectorAll('.project-sect')),
     previewBlocks = Array.from(document.querySelectorAll('[lazy-load="preview"]')),
     viewBlocks = Array.from(document.querySelectorAll('[lazy-load="block"]'));
+
 let index = 0;
-const hundredPercent = 100, initScale = 0.5;
+const hundredPercent = 100, initScale = 0.5, timerTime = 500;
 
 previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
 function controllBlockHandler(evt) {
+  // document.querySelector('body').style.overflow = ' ';
 // window.pageYOffset; // текущая прокрутка документа
 // checkBlocks[0].clientHeight; // высота блока
 // window.innerHeight; // видимая область экрана viewport
@@ -19,7 +21,7 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-//console.log(positionFlag); // позиция блока относительно вьюпорта
+  // console.log(positionFlag); // позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
@@ -37,14 +39,28 @@ function controllBlockHandler(evt) {
     else if (positionFlag > hundredPercent) { // если прокрутка достигла верхней части экрана
       previewBlocks[index].style.transform = `scale(1)`;
     // preloadNextProjects(); загрузка след.шаблона
-      projectSections[index].remove(); //style.display = 'none'
-      index++;
-      window.scrollTo(0, 0);
 
-      if (index >= checkBlocks.length - 1) document.removeEventListener('scroll', controllBlockHandler);
+      document.querySelector('body').style.overflow = 'hidden'; // позиционирование сверху
+
+      projectSections[index].remove(); // ;style.display = 'none'
+
+      document.querySelector('body').style.overflowY = 'scroll';
+
+      index++;
+      setTimeout(timer, timerTime);
+
+      if (index >= checkBlocks.length - 1) {
+        document.removeEventListener('scroll', controllBlockHandler);
+        setTimeout(timer, timerTime);
+      }
     }
   }
 }
+
+function timer() {
+  document.querySelector('body').style.overflow = '';
+}
+
 //
 // function preloadNextProjects() {
 //   viewBlocks[index].setAttribute('state', 'enable');

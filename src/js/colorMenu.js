@@ -8,10 +8,7 @@ function changeColorHandler() {
 
   const arrTop = blocks.filter((el, i, arr) => el.getBoundingClientRect().width).map(el => Math.abs(el.getBoundingClientRect().height/5 + el.getBoundingClientRect().top)); // values for control desired block => previous to Math.abs(el.getBoundingClientRect().top)
 
-
   const indexArr = arrTop.indexOf(Math.min(...arrTop));
-
-  // console.log(indexArr, arrTop, blocks);
 
   let blockHeight = blocks[indexArr].getBoundingClientRect().height, // height this block
       blockTop = blocks[indexArr].getBoundingClientRect().top, // pos scroll relatively this block
