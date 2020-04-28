@@ -12,7 +12,6 @@ previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
 function controllBlockHandler(evt) {
-  // document.querySelector('body').style.overflow = ' ';
 // window.pageYOffset; // текущая прокрутка документа
 // checkBlocks[0].clientHeight; // высота блока
 // window.innerHeight; // видимая область экрана viewport

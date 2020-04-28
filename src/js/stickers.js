@@ -15,9 +15,10 @@ function getCoords(elem) {
 function moveStickerHandler(evt) {
   let offsetX = evt.offsetX;
   let offsetY = evt.offsetY;
+
   // document.addEventListener('mouseleave', mouseLeaveHandler); // мышь за пределами документа
   document.addEventListener('mousemove', positionMouseHandler);
-  this.addEventListener('mouseup', removeHandler);
+  document.addEventListener('mouseup', removeHandler); // this
 
   stickers.map(el => {
     if (el.getAttribute('state') === 'none') el.removeEventListener('mousedown', moveStickerHandler);
@@ -27,14 +28,18 @@ function moveStickerHandler(evt) {
   this.setAttribute('state', 'active');
 
   function positionMouseHandler() {
+    let stopLeftValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
     let top = event.pageY - getCoords(universityBlock).top;
     sticker.style.top = `${top - offsetY}px`;
-    sticker.style.left = `${event.pageX - offsetX}px`;
+    // Позиционирование стикера внутри документа (границы)
+    if ((event.pageX - offsetX) < 0) sticker.style.left = 0;
+    else if ((event.pageX - offsetX) > stopLeftValue) sticker.style.left = stopLeftValue;
+    else sticker.style.left = `${event.pageX - offsetX}px`;
   }
 
   function removeHandler() {
     document.removeEventListener('mousemove', positionMouseHandler);
-    sticker.removeEventListener('mouseup', removeHandler);
+    document.removeEventListener('mouseup', removeHandler); // sticker
     sticker.setAttribute('state', 'none');
 
     stickers.map(el => {
