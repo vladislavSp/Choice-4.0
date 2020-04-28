@@ -53,8 +53,6 @@ function moveStickerHandler(evt) {
   }
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   if (stickers.length) stickers.map(el => el.addEventListener('mousedown', moveStickerHandler));
 });
