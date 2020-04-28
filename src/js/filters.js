@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.to(projectList, {opacity:1});
 });
 
+if (localStorage.scroll) window.scrollTo(0, Number(localStorage.scroll));
+
 function changeStateFilters(evt) {
   evt.preventDefault();
+  localStorage.setItem('scroll', `${pageYOffset}`);
   let href = this.getAttribute('href');
 
   filters.map(el => el.setAttribute('state', 'disable'));
   this.setAttribute('state', 'enable');
 
-  gsap.to(projectList, {opacity: 0, onComplete:function(){
-      // document.body.style.overflow = `hidden`;
-      location.href = href;
-  }});
+  gsap.to(projectList, {opacity: 0, onComplete: () => location.href = href});
 }
