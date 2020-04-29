@@ -2,11 +2,9 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     sendAgainBtn = document.querySelector('*[send-again="btn"]'),
     checkFields = Array.from(document.querySelectorAll('*[check-field]')),
     sendFields = Array.from(document.querySelectorAll('*[send-field]')),
-    fieldsObj = {},
-    infoBrif = new Set();
-
-let formMail = document.querySelector('*[form-block="mail"]'),
-    formSuccess = document.querySelector('*[form-block="success"]');
+    formMail = document.querySelector('*[form-block="mail"]'),
+    formSuccess = document.querySelector('*[form-block="success"]'),
+    fieldsObj = {}, infoBrif = new Set();
 
 
 
