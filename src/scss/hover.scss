@@ -136,6 +136,24 @@
   }
 }
 
+.contact__link[link-color="white"] {
+  &:hover {
+    color: white;
+
+    & svg path {
+      fill: white;
+    }
+  }
+
+  &:active {
+    color: white;
+
+    & svg path {
+      fill: white;
+    }
+  }
+}
+
 // COLOR LINK
 .links__item, .projects__btn-text {
   &:hover, &:active {

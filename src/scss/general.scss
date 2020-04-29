@@ -36,3 +36,19 @@ input:-webkit-autofill {
 .clients__your-company {
   display: inline-flex;
 }
+
+.contact__link {
+  transition: color 0.3s ease;
+
+  & .arrow svg path {
+    transition: fill 0.3s ease;
+  }
+}
+
+.contact__link[link-color="white"] {
+  color: white;
+
+  & .arrow svg path {
+    fill: white;
+  }
+}
