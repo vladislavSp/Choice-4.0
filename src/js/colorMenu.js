@@ -31,7 +31,7 @@ if (link) document.addEventListener('scroll', colorLinkHandler);
 
 function colorLinkHandler() {
   let newBlocks = blocks.filter(el => el.getBoundingClientRect().width > 0);
-  let elements = newBlocks.map(el => Math.abs(el.getBoundingClientRect().y + el.getBoundingClientRect().height/2)); // el.getBoundingClientRect().y > link.getBoundingClientRect()
+  let elements = newBlocks.map(el => Math.abs(el.getBoundingClientRect().top)); // el.getBoundingClientRect().y > link.getBoundingClientRect()  + el.getBoundingClientRect().height/2
 
   const indexElement = elements.indexOf(Math.min(...elements));
 
@@ -45,11 +45,11 @@ function colorLinkHandler() {
   else link.setAttribute(`link-color`, `black`);
 }
 
-function getCoords(elem) {
-  let box = elem.getBoundingClientRect();
-
-  return {
-    top: box.top + pageYOffset,
-    left: box.left + pageXOffset
-  };
-}
+// function getCoords(elem) {
+//   let box = elem.getBoundingClientRect();
+//
+//   return {
+//     top: box.top + pageYOffset,
+//     left: box.left + pageXOffset
+//   };
+// }
