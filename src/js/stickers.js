@@ -20,7 +20,7 @@ function moveStickerHandler(evt) {
   document.addEventListener('mousemove', positionMouseHandler);
   document.addEventListener('mouseup', removeHandler); // this
 
-  stickers.map(el => {
+  stickers.forEach(el => {
     if (el.getAttribute('state') === 'none') el.removeEventListener('mousedown', moveStickerHandler);
   });
 
@@ -42,7 +42,7 @@ function moveStickerHandler(evt) {
     document.removeEventListener('mouseup', removeHandler); // sticker
     sticker.setAttribute('state', 'none');
 
-    stickers.map(el => {
+    stickers.forEach(el => {
       if (el.getAttribute('state') === 'none') el.addEventListener('mousedown', moveStickerHandler);
     });
   }
@@ -54,5 +54,5 @@ function moveStickerHandler(evt) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (stickers.length) stickers.map(el => el.addEventListener('mousedown', moveStickerHandler));
+  if (stickers.length) stickers.forEach(el => el.addEventListener('mousedown', moveStickerHandler));
 });

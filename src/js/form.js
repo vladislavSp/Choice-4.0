@@ -32,7 +32,7 @@ function stateSelectorsHandler () {
 
 if (sendBtn) sendBtn.addEventListener('click', checkFormsHandler);
 if (sendAgainBtn) sendAgainBtn.addEventListener('click', sendFormsAgainHandler);
-if (checkFields.length) checkFields.map(el => el.addEventListener('focus', validInputHandler));
+if (checkFields.length) checkFields.forEach(el => el.addEventListener('focus', validInputHandler));
 
 function checkFormsHandler() {
   checkFields.forEach(el => {

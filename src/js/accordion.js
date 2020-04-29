@@ -1,7 +1,7 @@
 let accordionItem = Array.from(document.querySelectorAll('[acc="item"]'));
 let accBtn = Array.from(document.querySelectorAll('[acc="btn"]'));
 
-if (accBtn.length > 0) accBtn.map(el => el.addEventListener('click', stateAccordionHandler));
+if (accBtn.length > 0) accBtn.forEach(el => el.addEventListener('click', stateAccordionHandler));
 if (accordionItem.length > 0) accordionItem.map(el => el.style.height = `${0}px`);
 
 

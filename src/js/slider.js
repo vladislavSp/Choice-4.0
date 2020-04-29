@@ -46,7 +46,7 @@ if (expressContainer) {
   function changeSlideHandler() { // progressbar пагинации
     let paginations = Array.from(document.querySelectorAll('.view__point'));
 
-    paginations.map((el, index, arr) => {
+    paginations.forEach((el, index, arr) => {
       if (index < expressSlider.activeIndex) el.style.backgroundColor = 'white';
       else if (index >= expressSlider.activeIndex) el.style.backgroundColor = '';
     });
