@@ -30,6 +30,11 @@
 
 .header {
   pointer-events: none;
+  transition: transform 0.3s ease;
+
+  &--hid {
+    transform: translateY(-100%);
+  }
 }
 
 .header__item {
