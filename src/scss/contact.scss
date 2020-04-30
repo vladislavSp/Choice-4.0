@@ -2,14 +2,14 @@
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.brif__item--contact {
-  &:hover {
-    color: white;
-    background-color: black;
-  }
-}
-
 @media (min-width: 768px) {
+  .brif__item--contact {
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+
   .brif__item--contact[state="enable"] {
     color: white;
     background-color: black;
@@ -20,5 +20,9 @@
   .brif__item--contact[state="enable"] {
     color: #1D4AD9;
     border-color: #1D4AD9;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
