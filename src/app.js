@@ -31,3 +31,4 @@ import './js/dzen.js';
 import './js/view-blocks.js';
 import './js/colorMenu.js';
 import './js/customSpeedScroll.js';
+import './js/randomCircleImage.js';

@@ -15,15 +15,19 @@
 }
 
 .tech__accordion, .qa__accordion {
-  transition: height 0.3s ease;
+  transition: height 0.2s ease;
 }
 
 .qa__arrow {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .qa__text-wrap[state="active"] {
   & .qa__arrow {
     transform: rotate(-90deg);
   }
+}
+
+.tech__item:last-child {
+  border-color: transparent;
 }

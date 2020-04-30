@@ -1,5 +1,5 @@
 .publish__emb, .careers__emb, .next__emb {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .publish__item {
@@ -35,17 +35,48 @@
 }
 // hover всех ссылок на сайте
 .footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text {
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
+}
+
+.header__text {
+  transition: border-color 0.1s ease;
 }
 
 .header__item {
   &:hover {
-    & .header__text::before {
-      transform: translateX(0);
+    & .header__text {
+      border-color: black;
     }
   }
 }
 
+.header[color="change"] .header__item {
+  &:hover {
+    & .header__text {
+      border-color: white;
+    }
+  }
+}
+
+.header--white {
+  & .header__item {
+    &:hover {
+      & .header__text {
+        border-color: white;
+      }
+    }
+  }
+}
+
+.header--white[color=""] {
+  & .header__item {
+    &:hover {
+      & .header__text {
+        border-color: black;
+      }
+    }
+  }
+}
 // .contacts__text {
 //   transition: border-color 0.3s ease;
 // }
@@ -64,7 +95,7 @@
     background-color: currentColor;
     bottom: 0;
     left: 0;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
     transform: translateX(-100%);
   }
 }
@@ -87,7 +118,7 @@
 
 .footer__link, .footer__link-social, .contact__link, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .club__link {
   & svg path {
-    transition: fill 0.3s ease;
+    transition: fill 0.2s ease;
   }
 }
 
@@ -161,6 +192,16 @@
   }
 }
 
+.arrow svg path {
+  transition: fill 0.2s ease;
+}
+
+.links__item:hover {
+  & .arrow svg path {
+    fill: black;
+  }
+}
+
 // .body--express {
 //   & .header__item {
 //     &:hover, &:active {
@@ -174,43 +215,27 @@
 }
 
 .projects__title, .eprojects__title {
-  transition: border-color 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
-  }
-}
-
-.projects__title::before {
-  background-color: #000000;
+  transition: border-color 0.2s ease;
 }
 
 .projects__image {
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .project__link-wrap {
   &:hover {
-    & .projects__title::before, & .eprojects__title::before {
-      transform: translateX(0);
+    & .projects__title {
+      border-color: black;
+    }
+
+    & .eprojects__title {
+      border-color: white;
     }
 
     & .projects__image {
       transform: scale(1.1);
     }
   }
-}
-
-.eprojects__title::before {
-  background-color: white;
 }
 
 .eprojects__btn-text {
@@ -220,7 +245,7 @@
 }
 
 .univercity__emb, .creators__emb, .vacancy__emb {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .univercity__btn {
@@ -238,7 +263,7 @@
 }
 
 .publish__text, .tech__btn-text {
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .publish__item {
@@ -253,12 +278,6 @@
       transform: translateX(-7px);
     }
   }
-
-  // &:active {
-  //   & .creators__emb {
-  //     transform: translateX(0);
-  //   }
-  // }
 }
 
 .vacancy__back {
@@ -267,12 +286,6 @@
       transform: translateX(-7px);
     }
   }
-
-  // &:active {
-  //   & .vacancy__emb {
-  //     transform: translateX(0);
-  //   }
-  // }
 }
 
 .brif__send-btn, .brif__send-btn--express {
@@ -289,7 +302,7 @@
     bottom: 0;
     left: 0;
     background-color: currentColor;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     transform: translateX(-100%);
   }
 
@@ -308,17 +321,9 @@
   }
 }
 
-// .express__arrow {
-//   transition: transform 0.3s ease;
-// }
-
 .express__send-btn {
   &:hover {
     color: rgba(255, 255, 255, 0.7);
-
-    // & .express__arrow {
-    //   transform: translate(5px, -5px);
-    // }
 
     & svg path {
       fill: rgba(255, 255, 255, 0.7);
@@ -354,7 +359,7 @@
     width: 100%;
     height: 2px;
     background-color: #0e4cd1;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     transform: translateX(-100%);
   }
 
@@ -363,4 +368,8 @@
       transform: translateX(0%);
     }
   }
+}
+
+.service__desc {
+  transition: opacity 0.2s ease;
 }
