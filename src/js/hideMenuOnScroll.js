@@ -1,10 +1,12 @@
-let header = document.querySelector('.header');
+let header = document.querySelector('[hr="color"]');
 let positionInit = pageYOffset;
 
 document.addEventListener('scroll', hideMenuHandler);
 
 function hideMenuHandler(evt) {
   let dif = pageYOffset - positionInit;
+
+  if (pageYOffset < 100) dif = 49;
 
   if (dif > 50) {
     positionInit = pageYOffset;

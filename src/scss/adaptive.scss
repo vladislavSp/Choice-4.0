@@ -352,7 +352,10 @@
 @media (max-width: 1279px) and (min-width: 992px) {
   .main__title {
     font-size: 3rem;
-    max-width: 40rem;
+    max-width: 45rem;
+  }
+  .univercity__btn-text {
+    min-width: auto;
   }
   .navigation {
     padding-bottom: 3.5rem;
@@ -488,6 +491,10 @@
 @media (max-width: 1119px) and (min-width: 992px) {
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 60rem;
+  }
+
+  .service__list {
+    grid-column-gap: 1.5rem;
   }
 
   .wrapper {

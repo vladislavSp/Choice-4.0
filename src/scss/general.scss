@@ -52,3 +52,9 @@ input:-webkit-autofill {
     fill: white;
   }
 }
+
+.contact__field, .brif__field {
+  &:focus {
+    border-color: black;
+  }
+}

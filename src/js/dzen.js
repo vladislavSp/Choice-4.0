@@ -2,7 +2,8 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
     checkBlocks = Array.from(document.querySelectorAll('[lazy-load="begin"]')),
     projectSections = Array.from(document.querySelectorAll('.project-sect')),
     previewBlocks = Array.from(document.querySelectorAll('[lazy-load="preview"]')),
-    viewBlocks = Array.from(document.querySelectorAll('[lazy-load="block"]'));
+    viewBlocks = Array.from(document.querySelectorAll('[lazy-load="block"]')),
+    header = document.querySelector('[hr="color"]');
 
 let index = 0;
 const hundredPercent = 100, initScale = 0.5, timerTime = 500;
@@ -47,6 +48,8 @@ function controllBlockHandler(evt) {
 
       index++;
       setTimeout(timer, timerTime);
+
+      header.classList.remove('header--hid');
 
       if (index >= checkBlocks.length - 1) {
         document.removeEventListener('scroll', controllBlockHandler);

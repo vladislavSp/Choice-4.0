@@ -34,8 +34,17 @@
   }
 }
 // hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text {
+.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text {
   transition: color 0.2s ease;
+}
+
+.publish__text, .tech__btn-text, .clients__your-company, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .projects__title, .eprojects__title, .brif__blue-text {
+  transition: border-color 0.2s ease;
+}
+
+.brif__blue-text:hover {
+  color: black;
+  border-color: black;
 }
 
 .header__text {
@@ -214,10 +223,6 @@
   overflow-x: hidden;
 }
 
-.projects__title, .eprojects__title {
-  transition: border-color 0.2s ease;
-}
-
 .projects__image {
   transition: transform 0.3s ease;
 }
@@ -262,10 +267,6 @@
   }
 }
 
-.publish__text, .tech__btn-text {
-  transition: border-color 0.2s ease;
-}
-
 .publish__item {
   &:hover .publish__text {
     border-color: black;
@@ -288,28 +289,9 @@
   }
 }
 
-.brif__send-btn, .brif__send-btn--express {
-  display: inline-flex;
-  overflow-x: hidden;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: currentColor;
-    transition: transform 0.2s ease;
-    transform: translateX(-100%);
-  }
-
+.brif__send-btn {
   &:hover {
-    &::before {
-      transform: translateX(0);
-    }
+    border-color: currentColor;
   }
 
   &:active {
@@ -321,21 +303,9 @@
   }
 }
 
-.express__send-btn {
+.brif__send-btn--express, .express__send-btn {
   &:hover {
-    color: rgba(255, 255, 255, 0.7);
-
-    & svg path {
-      fill: rgba(255, 255, 255, 0.7);
-    }
-  }
-
-  &:active {
-    color: white;
-
-    & svg path {
-      fill: white;
-    }
+    border-color: white;
   }
 }
 
@@ -348,25 +318,9 @@
 }
 
 .clients__your-company {
-  position: relative;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #0e4cd1;
-    transition: transform 0.2s ease;
-    transform: translateX(-100%);
-  }
-
   &:hover {
-    &::before {
-      transform: translateX(0%);
-    }
+    color: black;
+    border-color: black;
   }
 }
 

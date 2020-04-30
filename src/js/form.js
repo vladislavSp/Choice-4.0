@@ -52,8 +52,10 @@ function checkFormsHandler() {
 };
 
 function sendForms(obj) {
-  gsap.to(formMail, {duration: 0.3, opacity: 0, zIndex:-1, position: `absolute`});
-  gsap.to(formSuccess, {duration: 0.4, opacity: 1, zIndex:1});
+  formMail.style.display = 'none';
+  formSuccess.style.display = 'block';
+  // gsap.to(formMail, {duration: 0.3, opacity: 0, zIndex:-1, position: `absolute`});
+  // gsap.to(formSuccess, {duration: 0.4, opacity: 1, zIndex:1});
   resetForm();
 }
 
@@ -64,8 +66,10 @@ function resetForm() {
 }
 
 function sendFormsAgainHandler() {
-  gsap.to(formSuccess, {duration: 0.3, opacity: 0, zIndex: -1});
-  gsap.to(formMail, {duration: 0.3, opacity: 1, zIndex: 1, position: `relative`});
+  formMail.style.display = '';
+  formSuccess.style.display = 'none';
+  // gsap.to(formSuccess, {duration: 0.3, opacity: 0, zIndex: -1});
+  // gsap.to(formMail, {duration: 0.3, opacity: 1, zIndex: 1, position: `relative`});
 }
 
 function validInputHandler() {
