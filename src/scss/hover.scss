@@ -1,11 +1,14 @@
-.publish__emb, .careers__emb, .next__emb {
+.careers__emb, .next__emb {
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.publish__emb {
+  transition: opacity 0.2s ease;
 }
 
 .publish__item {
   &:hover {
     & .publish__emb {
-      transform: translateX(0%);
       opacity: 1;
     }
   }
@@ -86,36 +89,16 @@
     }
   }
 }
-// .contacts__text {
-//   transition: border-color 0.3s ease;
-// }
 
 .contacts__text {
-  position:  relative;
-  display: inline-flex;
-  overflow-x: hidden;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
-    bottom: 0;
-    left: 0;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
-  }
+  transition: border-color 0.3s ease;
 }
+
 
 .contacts__text-wrap {
   &:hover .contacts__text {
     color: black;
     border-color: currentColor;
-    &::before {
-      transform: translateX(0);
-    }
   }
 }
 
@@ -195,6 +178,10 @@
 }
 
 // COLOR LINK
+.projects__btn-text {
+  border-color: currentColor;
+}
+
 .links__item, .projects__btn-text {
   &:hover, &:active {
     color: #000000;
@@ -256,7 +243,7 @@
 .univercity__btn {
   &:hover {
     & .univercity__emb {
-      transform: translateX(10px);
+      transform: translateX(7px);
     }
   }
 
