@@ -26,11 +26,12 @@
   }
 }
 
+// Основные контрольные точки разрешений
 @media (max-width: 1800px) and (min-width: 1601px) {
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 100rem;
   }
-  .wrapper {
+  .wrapper, .exp__wrapper {
     width: 90rem;
   }
 
@@ -43,7 +44,7 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 90rem;
   }
-  .wrapper {
+  .wrapper, .exp__wrapper {
     width: 80rem;
   }
 
@@ -54,6 +55,48 @@
   }
 }
 
+@media (max-width: 1440px) and (min-width: 1281px) {
+  .wrapper--big, .wrapper--contact, .header__wrapper {
+    width: 80rem;
+  }
+
+  .wrapper, .exp__wrapper {
+    width: 70rem;
+  }
+}
+
+@media (max-width: 1280px) and (min-width: 1121px) {
+  .wrapper--big, .wrapper--contact, .header__wrapper {
+    width: 70rem;
+  }
+
+  .wrapper, .exp__wrapper {
+    width: 60rem;
+  }
+}
+
+@media (max-width: 1120px) and (min-width: 992px) {
+  .wrapper--big, .wrapper--contact, .header__wrapper {
+    width: 60rem;
+  }
+
+  .service__list {
+    grid-column-gap: 1.5rem;
+  }
+
+  .wrapper, .exp__wrapper {
+    width: 55rem;
+  }
+
+  .brif__field {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+
+
+// Адаптив элементов
 @media (max-width: 1600px) and (min-width: 992px) {
   .navigation {
     padding-bottom: 6.25rem;
@@ -64,8 +107,7 @@
   }
 
   .brif__sec-group {
-    margin-left: 0;
-    margin-top: 3rem;
+    margin-left: auto;
   }
 
   .brif__add-group {
@@ -74,16 +116,6 @@
 
   .brif__title--vacancy {
     margin-bottom: 4rem;
-  }
-}
-
-@media (max-width: 1440px) and (min-width: 1281px) {
-  .wrapper--big, .wrapper--contact, .header__wrapper {
-    width: 80rem;
-  }
-
-  .wrapper {
-    width: 70rem;
   }
 }
 
@@ -161,8 +193,22 @@
     font-size: 3rem;
   }
 
-  .univercity__title, .contacts__title, .careers__title, .about__title {
+  .univercity__title, .careers__title, .about__title {
     font-size: 3.625rem;
+  }
+
+  .contacts {
+    padding-top: 9.5rem;
+    padding-bottom: 5rem;
+  }
+  .brif-contact {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .contacts__title {
+    font-size: 3rem;
+    margin-bottom: 4.25rem;
   }
 
   .about {
@@ -267,9 +313,19 @@
   .brif__title, .tech__title {
     font-size: 2.5rem;
   }
-
+  .brif__title {
+    max-width: 56rem;
+  }
   .brif__send-btn {
     font-size: 1.75rem;
+  }
+  .brif__forw-wrap {
+    width: 60%;
+  }
+
+  .brif__sec-group {
+    margin-left: 0;
+    margin-top: 3rem;
   }
 
   // ABOUT
@@ -320,6 +376,9 @@
     padding-bottom: 6.25rem;
   }
 
+  .careers {
+    padding-top: 9.5rem;
+  }
 
   // EXPRESS PAGE
   .express {
@@ -333,6 +392,10 @@
   .get {
     padding-top: 7rem;
     padding-bottom: 7rem;
+  }
+
+  .get__item {
+    font-size: 3.25rem;
   }
 
   .get__item--orange {
@@ -369,7 +432,6 @@
     padding: 5rem 0;
   }
 
-
   // clients
   .clients {
     padding-top: 5.5rem;
@@ -390,15 +452,10 @@
   .publish__emb svg {
     width: 1.5rem;
   }
-}
 
-@media (max-width: 1280px) and (min-width: 1121px) {
-  .wrapper--big, .wrapper--contact, .header__wrapper {
-    width: 70rem;
-  }
-
-  .wrapper {
-    width: 62.5rem;
+  .vacancy {
+    padding-top: 9.5rem;
+    padding-bottom: 5.5rem;
   }
 }
 
@@ -520,6 +577,11 @@
     font-size: 3rem;
   }
 
+  .get {
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+
   .express__form {
     width: 100%;
   }
@@ -550,25 +612,6 @@
     grid-template-columns: auto 55%;
   }
 
-}
-
-@media (max-width: 1120px) and (min-width: 992px) {
-  .wrapper--big, .wrapper--contact, .header__wrapper {
-    width: 60rem;
-  }
-
-  .service__list {
-    grid-column-gap: 1.5rem;
-  }
-
-  .wrapper {
-    width: 55rem;
-  }
-
-  .brif__field {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {

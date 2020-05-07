@@ -314,3 +314,26 @@
 .service__desc {
   transition: opacity 0.2s ease;
 }
+
+.get__item {
+  cursor: default;
+  transition: background-color 0.3s ease;
+  will-change: border-radius,
+  &--round {
+    border-radius: 6.25rem;
+  }
+
+  &[gi="first"] {
+    background-color: #F4F900;
+  }
+  &[gi="second"] {
+    background-color: #0E4CD1;
+  }
+  &[gi="third"] {
+    background-color: #FA6823;
+  }
+  &--round:hover {
+    // border-radius: 0rem;
+    background-color: white;
+  }
+}
