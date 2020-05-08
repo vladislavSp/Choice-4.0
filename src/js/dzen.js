@@ -7,8 +7,9 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
     let wrapperBig = document.querySelector('.wrapper--big');
 
 let index = 0;
-const hundredPercent = 100, timerTime = 500, valueScale = 0.0015; // initScale = 0.85
+const hundredPercent = 100, timerTime = 500; // initScale = 0.85  valueScale = 0.0015
 let initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
+let valueScale = (1 - initScale)/hundredPercent;
 
 previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 
@@ -17,7 +18,6 @@ previewBlocks.map(el => el.style.transform = `matrix( ${initScale}, 0, 0, ${init
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
 function controllBlockHandler(evt) {
-  initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
 // window.pageYOffset; // текущая прокрутка документа
 // checkBlocks[0].clientHeight; // высота блока
 // window.innerHeight; // видимая область экрана viewport
@@ -36,20 +36,22 @@ function controllBlockHandler(evt) {
     if (positionFlag < 10) {
       previewBlocks[index].style.transform = `matrix( ${initScale}, 0, 0, ${initScale}, 0, 0)`; // scale(0.0${positionFlag})
     } else if (positionFlag < hundredPercent) {
-      previewBlocks[index].style.transform = `matrix( ${initScale + valueScale * positionFlag}, 0, 0, ${initScale + valueScale * positionFlag}, 0, 0)`; // scale 0.positionFlag - scale(${initScale + valueScale * positionFlag})
+      previewBlocks[index].style.transform = `matrix( ${initScale + valueScale * positionFlag}, 0, 0, ${initScale + valueScale * positionFlag}, 0, 0)`; // матрица преобразования
     }
     // else if (positionFlag >= 10 && positionFlag < hundredPercent) {
     //   previewBlocks[index].style.transform = `scale(0.9${positionFlag})`;
     // }
-    else if (positionFlag > hundredPercent) { // если прокрутка достигла верхней части экрана
+    else if (positionFlag > hundredPercent) { // если scroll достиг верx-части экрана
       previewBlocks[index].style.transform = `matrix( 1, 0, 0, 1, 0, 0)`;
     // preloadNextProjects(); загрузка след.шаблона
 
-      document.querySelector('body').style.overflow = 'hidden'; // позиционирование сверху
+    //  document.querySelector('body').style.overflow = 'hidden'; // position top
+      scrollControl('lock');
 
       projectSections[index].remove(); // ;style.display = 'none'
 
-      document.querySelector('body').style.overflowY = 'scroll';
+      scrollControl('unlock');
+    //  document.querySelector('body').style.overflowY = 'scroll';
 
       index++;
       setTimeout(timerOverflowed, timerTime);
@@ -75,3 +77,31 @@ function timerOverflowed() {
 //  downloadProjectFromNet();
 //   axios({});
 // }
+
+function scrollControl(param) {
+  let scrollControlSize = window.pageYOffset || document.documentElement.scrollTop, // scroll page
+      scrollControlBarSize = window.innerWidth - document.body.clientWidth, // width scroll bar
+      scrollControlBody = document.querySelector('body');
+
+  // block scroll
+  if (param == 'lock' && scrollControlBody.getAttribute('scrollControlState') != 'lock'){
+    scrollControlBody.style.overflow = 'hidden';
+    scrollControlBody.style.paddingRight = scrollControlBarSize + 'px'; // body padding right == width scroll bar
+
+    let scrollControlElem = document.createElement('div'); // add object in position scroll bar
+    // add style in object
+    scrollControlElem.setAttribute(`style`, `width: ${scrollControlBarSize}px; height: 100%; position: fixed; top: 0; right: 0; background-color: #fafafa;`);
+    scrollControlElem.setAttribute('class', 'scrollControlBar'); // add class in object
+    scrollControlBody.append(scrollControlElem);// add object in DOM
+    scrollControlBody.setAttribute('scrollControlState', 'lock');// state
+  }
+
+  // unlock scroll
+  if (param == 'unlock' && scrollControlBody.getAttribute('scrollControlState') != 'unlock') {
+    scrollControlBody.style.overflow = ''; // body overflow default
+    scrollControlBody.style.paddingRight = ''; // body padding right default
+    document.querySelector('.scrollControlBar').remove(); // remove scrollControlElem
+  // state
+    scrollControlBody.setAttribute('scrollControlState', 'unlock');
+  }
+}
