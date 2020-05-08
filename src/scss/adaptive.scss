@@ -172,8 +172,11 @@
     font-size: 2.5rem;
   }
 
-  .publish__text-group, .filters__list {
+  .filters__list {
     max-width: 55rem;
+  }
+  .publish__text-group {
+    max-width: 63rem;
   }
   .publish__emb {
     vertical-align: bottom;
@@ -547,7 +550,7 @@
     font-size: 2rem;
   }
   .publish__text-group {
-    max-width: 40rem;
+    max-width: 51rem;
   }
   .creators__post, .creators__name {
     font-size: 1.25rem;
