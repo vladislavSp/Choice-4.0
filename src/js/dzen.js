@@ -4,15 +4,18 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
     previewBlocks = Array.from(document.querySelectorAll('[lazy-load="preview"]')),
     viewBlocks = Array.from(document.querySelectorAll('[lazy-load="block"]')),
     header = document.querySelector('[hr="color"]');
+    let wrapperBig = document.querySelector('.wrapper--big');
 
 let index = 0;
-const hundredPercent = 100, initScale = 0.85, timerTime = 500, valueScale = 0.0015;
+const hundredPercent = 100, timerTime = 500, valueScale = 0.0015; // initScale = 0.85
+let initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
 
 previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
 function controllBlockHandler(evt) {
+  initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
 // window.pageYOffset; // текущая прокрутка документа
 // checkBlocks[0].clientHeight; // высота блока
 // window.innerHeight; // видимая область экрана viewport
@@ -21,7 +24,7 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-  console.log(0.002 * positionFlag); // позиция блока относительно вьюпорта
+  // console.log(positionFlag); // позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
@@ -29,7 +32,7 @@ function controllBlockHandler(evt) {
     viewBlocks[index].setAttribute('state', 'enable'); // показ следующего скрытого блока
 
     if (positionFlag < 10) {
-      previewBlocks[index].style.transform = `scale(0.0${positionFlag})`;
+      previewBlocks[index].style.transform = `scale(${initScale})`; //scale(0.0${positionFlag})
     } else if (positionFlag < hundredPercent) {
       previewBlocks[index].style.transform = `scale(${initScale + (valueScale * positionFlag)})`; // scale 0.positionFlag
     }
@@ -47,19 +50,19 @@ function controllBlockHandler(evt) {
       document.querySelector('body').style.overflowY = 'scroll';
 
       index++;
-      setTimeout(timer, timerTime);
+      setTimeout(timerOverflowed, timerTime);
 
       header.classList.remove('header--hid');
 
       if (index >= checkBlocks.length - 1) {
         document.removeEventListener('scroll', controllBlockHandler);
-        setTimeout(timer, timerTime);
+        setTimeout(timerOverflowed, timerTime);
       }
     }
   }
 }
 
-function timer() {
+function timerOverflowed() {
   document.querySelector('body').style.overflow = '';
 }
 
