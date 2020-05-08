@@ -12,6 +12,8 @@ let initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
 
 previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 
+previewBlocks.map(el => el.style.transform = `matrix( ${initScale}, 0, 0, ${initScale}, 0, 0)`);
+
 if (bodyFlag) document.addEventListener('scroll', controllBlockHandler);
 
 function controllBlockHandler(evt) {
@@ -32,15 +34,15 @@ function controllBlockHandler(evt) {
     viewBlocks[index].setAttribute('state', 'enable'); // показ следующего скрытого блока
 
     if (positionFlag < 10) {
-      previewBlocks[index].style.transform = `scale(${initScale})`; //scale(0.0${positionFlag})
+      previewBlocks[index].style.transform = `matrix( ${initScale}, 0, 0, ${initScale}, 0, 0)`; // scale(0.0${positionFlag})
     } else if (positionFlag < hundredPercent) {
-      previewBlocks[index].style.transform = `scale(${initScale + (valueScale * positionFlag)})`; // scale 0.positionFlag
+      previewBlocks[index].style.transform = `matrix( ${initScale + valueScale * positionFlag}, 0, 0, ${initScale + valueScale * positionFlag}, 0, 0)`; // scale 0.positionFlag - scale(${initScale + valueScale * positionFlag})
     }
     // else if (positionFlag >= 10 && positionFlag < hundredPercent) {
     //   previewBlocks[index].style.transform = `scale(0.9${positionFlag})`;
     // }
     else if (positionFlag > hundredPercent) { // если прокрутка достигла верхней части экрана
-      previewBlocks[index].style.transform = `scale(1)`;
+      previewBlocks[index].style.transform = `matrix( 1, 0, 0, 1, 0, 0)`;
     // preloadNextProjects(); загрузка след.шаблона
 
       document.querySelector('body').style.overflow = 'hidden'; // позиционирование сверху
