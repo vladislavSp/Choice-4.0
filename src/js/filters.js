@@ -8,9 +8,7 @@ if (projectList) {
 
   if (sessionStorage.scroll) window.scrollTo(0, Number(sessionStorage.scroll));
 
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.to(projectList, {opacity:1});
-  });
+  document.addEventListener("DOMContentLoaded", () => gsap.to(projectList, {opacity:1}));
 }
 
 function changeStateFilters(evt) {

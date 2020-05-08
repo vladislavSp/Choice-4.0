@@ -28,15 +28,13 @@ function moveStickerHandler(evt) {
   this.setAttribute('state', 'active');
 
   function positionMouseHandler(event) {
-    let stopLeftValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
+    let leftStopValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
     let top = event.pageY - getCoords(universityBlock).top;
     sticker.style.top = `${top - offsetY}px`;
 
-console.log(event.pageX, offsetX);
-
     // Позиционирование стикера внутри документа (границы)
     if ((event.pageX - offsetX) < 0) sticker.style.left = 0;
-    else if ((event.pageX - offsetX) > stopLeftValue) sticker.style.left = stopLeftValue;
+    else if ((event.pageX - offsetX) > leftStopValue) sticker.style.left = leftStopValue;
     else sticker.style.left = `${event.pageX - offsetX}px`;
   }
 

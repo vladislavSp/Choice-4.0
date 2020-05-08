@@ -31,6 +31,5 @@ function hiddenText(obj) {
 }
 
 function viewTextHandler() {
-  console.log(this);
   this.querySelector('.service__desc').style.opacity = '';
 }
