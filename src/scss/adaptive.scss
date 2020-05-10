@@ -31,7 +31,7 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 100rem;
   }
-  .wrapper, .exp__wrapper {
+  .wrapper {
     width: 90rem;
   }
 
@@ -44,7 +44,7 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 90rem;
   }
-  .wrapper, .exp__wrapper {
+  .wrapper {
     width: 80rem;
   }
 
@@ -60,7 +60,7 @@
     width: 80rem;
   }
 
-  .wrapper, .exp__wrapper {
+  .wrapper {
     width: 70rem;
   }
 }
@@ -70,7 +70,7 @@
     width: 70rem;
   }
 
-  .wrapper, .exp__wrapper {
+  .wrapper {
     width: 60rem;
   }
 }
@@ -84,7 +84,7 @@
     grid-column-gap: 1.5rem;
   }
 
-  .wrapper, .exp__wrapper {
+  .wrapper {
     width: 55rem;
   }
 
@@ -189,6 +189,7 @@
     font-size: 0.875rem;
     line-height: 1.25;
   }
+
   .navigation {
     padding-top: 8.75rem;
   }
@@ -259,6 +260,7 @@
   .univercity__btn-text {
     font-size: 1.125rem;
     line-height: 1.22222;
+    min-width: auto;
   }
   .univercity__text {
     font-size: 0.875rem;
@@ -524,13 +526,8 @@
     font-size: 3rem;
     max-width: 42rem;
   }
-
   .about__title {
     max-width: 55rem;
-  }
-
-  .univercity__btn-text {
-    min-width: auto;
   }
   .navigation {
     padding-bottom: 3.5rem;
