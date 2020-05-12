@@ -1,10 +1,9 @@
 html {
   height: 100%;
-  overflow:auto;
+  overflow: auto;
 }
 
 body {
-  // overflow-x: hidden;
   height: 100%;
 }
 
@@ -20,11 +19,6 @@ input:-webkit-autofill {
   -webkit-box-shadow:inset 0 0 0 50px white;
   -webkit-text-fill-color:black;
 }
-
-// for the stickers
-// .main {
-//   overflow-x: hidden;
-// }
 
 .wrapper--contact {
   pointer-events: none;
@@ -53,8 +47,15 @@ input:-webkit-autofill {
   }
 }
 
+// ВЫДЕЛЕНИЕ ПОЛЕЙ ВВОДА
 .contact__field, .brif__field {
   &:focus {
     border-color: black;
+  }
+}
+
+.express__field {
+  &:focus {
+    border-color: white;
   }
 }

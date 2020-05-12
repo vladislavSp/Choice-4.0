@@ -206,9 +206,9 @@
 //   }
 // }
 
-.project__link-wrap {
-  overflow-x: hidden;
-}
+// .project__link-wrap {
+//   overflow: hidden;
+// }
 
 .projects__image {
   transition: transform 0.3s ease;
@@ -285,7 +285,7 @@
     color: #666;
 
     & svg path {
-      fill: #666;
+      stroke: #666;
     }
   }
 }
@@ -293,6 +293,20 @@
 .brif__send-btn--express, .express__send-btn {
   &:hover {
     border-color: white;
+  }
+}
+
+.express__send-btn {
+  &:active {
+    color: rgba(255, 255, 255, 0.7);
+
+    &:hover {
+      border-color: currentColor;
+    }
+
+    & svg path {
+      stroke: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
@@ -309,10 +323,6 @@
     color: black;
     border-color: black;
   }
-}
-
-.service__desc {
-  transition: opacity 0.2s ease;
 }
 
 .get__item {

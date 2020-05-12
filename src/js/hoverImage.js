@@ -27,9 +27,9 @@ function positioningImage(x, y, obj) {
 }
 
 function hiddenText(obj) {
-  obj.querySelector('.service__desc').style.opacity = '0';
+  obj.querySelector('.service__desc').style.zIndex = '-2';
 }
 
 function viewTextHandler() {
-  this.querySelector('.service__desc').style.opacity = '';
+  this.querySelector('.service__desc').style.zIndex = '';
 }

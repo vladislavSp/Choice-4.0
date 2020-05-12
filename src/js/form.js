@@ -4,9 +4,10 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     sendFields = Array.from(document.querySelectorAll('*[send-field]')),
     formMail = document.querySelector('*[form-block="mail"]'),
     formSuccess = document.querySelector('*[form-block="success"]'),
+    nameUser = document.querySelector('[brif-name="user"]'),
     fieldsObj = {}, infoBrif = new Set();
 
-
+console.log(nameUser);
 
 // Selectors for Projects
 let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
@@ -45,6 +46,7 @@ function checkFormsHandler() {
   // проверка всех полей и отправка данных sendForms(fieldsObj)
     sendFields.forEach(el => {
       el.getAttribute('send-field') === 'project' ? fieldsObj[el.getAttribute('send-field')] = el.getAttribute('value-proj') : fieldsObj[el.getAttribute('send-field')] = el.value;
+      if (el.getAttribute('send-field') === 'name') nameUser.textContent = el.value;
     });
 
     sendForms(fieldsObj);
