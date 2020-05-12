@@ -5,9 +5,38 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     formMail = document.querySelector('*[form-block="mail"]'),
     formSuccess = document.querySelector('*[form-block="success"]'),
     nameUser = document.querySelector('[brif-name="user"]'),
+    textArea = document.querySelector('[brif="textarea"]'),
     fieldsObj = {}, infoBrif = new Set();
 
-console.log(nameUser);
+if (textArea) {
+  autosize(textArea);
+
+  // let initRows = 2, increase = false;
+  //
+  // textArea.setAttribute('resize', 'none');
+  // textArea.setAttribute('rows', `${initRows}`);
+  //
+  // textArea.addEventListener('keyup', function(evt) {
+  //   // console.log(this.value.length, evt);
+  //   // console.log(textArea.getAttribute('rows');
+  //   // if (this.value.length > 60) textArea.setAttribute('rows', '5');
+  //   console.log(this.scrollTop, this.scrollHeight, initRows);
+  //   console.log(this.getBoundingClientRect());
+  //   console.log(textArea.scrollHeight);
+  //
+  //   if (this.scrollTop > 0) {
+  //     initRows = initRows + 1;
+  //     textArea.setAttribute('rows', `${initRows}`);}
+  //   //   // this.style.height = this.scrollHeight + "px";
+  //   //   increase = true;
+  //   // } else if (this.scrollTop === 0 && increase) {
+  //   //   initRows = initRows - 1;
+  //   //   textArea.setAttribute('rows', `${initRows}`);
+  //   //   // this.style.height = this.scrollHeight + "px";
+  //   //   increase = false;
+  //   // }
+  // });
+}
 
 // Selectors for Projects
 let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
