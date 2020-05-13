@@ -6,8 +6,6 @@ import './scss/home.scss';
 import './scss/header.scss';
 import './scss/projects.scss';
 import './scss/project.scss';
-import './scss/careers.scss';
-import './scss/vacancy.scss';
 import './scss/about.scss';
 import './scss/contact.scss';
 import './scss/form.scss';

@@ -8,12 +8,12 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     textArea = document.querySelector('[brif="textarea"]'),
     fieldsObj = {}, infoBrif = new Set();
 
-if (textArea) autosize(textArea);
-  // let initRows = 2, increase = false;
-  //
-  // textArea.setAttribute('resize', 'none');
-  // textArea.setAttribute('rows', `${initRows}`);
-  //
+if (textArea) {
+  textArea.setAttribute('rows', `1`);
+  autosize(textArea);
+}
+  // let initRows = 1; // increase = false;
+
   // textArea.addEventListener('keyup', function(evt) {
   //   // console.log(this.value.length, evt);
   //   // console.log(textArea.getAttribute('rows');
@@ -42,12 +42,6 @@ let nameField = document.querySelector('[send-field="name"]');
 // let mailField = document.querySelector('[send-field="mail"]');
 
 if (nameField) {
-  // var maskNameOptions = {
-  //   mask: /[^0-9.]/g
-  // };
-  //
-  // var maskName = IMask(nameField, maskNameOptions);
-
   nameField.addEventListener('input', function() {
     let numbers = [];
     let value = this.value;

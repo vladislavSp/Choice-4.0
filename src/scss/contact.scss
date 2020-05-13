@@ -3,12 +3,12 @@
 }
 
 @media (min-width: 768px) {
-  .brif__item--contact {
-    &:hover {
-      color: white;
-      background-color: black;
-    }
-  }
+  // .brif__item--contact {
+  //   &:hover {
+  //     color: white;
+  //     background-color: black;
+  //   }
+  // }
 
   .brif__item--contact[state="enable"] {
     color: white;

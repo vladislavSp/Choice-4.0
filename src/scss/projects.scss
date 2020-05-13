@@ -34,7 +34,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .project__item[grid="4"] {
+  .project__item[grid="4"], .project__item[grid="3"], .project__item[grid="2"], .project__item[grid="2"] + .project__item {
     -ms-grid-column: span 2;
     grid-column-start: span 2;
     -ms-grid-column-span: 2;
@@ -45,15 +45,8 @@
     grid-row-end: span 1;
   }
 
-  .project__item[grid="2"], .project__item[grid="2"] + .project__item {
-    -ms-grid-column: span 2;
-    grid-column-start: span 2;
-    -ms-grid-column-span: 2;
-    grid-column-end: span 2;
-    -ms-grid-row: span 1;
-    grid-row-start: span 1;
-    -ms-grid-row-span: 1;
-    grid-row-end: span 1;
+  .project__item[grid="3"] + .project__item {
+    order: 9999;
   }
 }
 
