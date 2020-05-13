@@ -8,9 +8,7 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     textArea = document.querySelector('[brif="textarea"]'),
     fieldsObj = {}, infoBrif = new Set();
 
-if (textArea) {
-  autosize(textArea);
-
+if (textArea) autosize(textArea);
   // let initRows = 2, increase = false;
   //
   // textArea.setAttribute('resize', 'none');
@@ -36,7 +34,37 @@ if (textArea) {
   //   //   increase = false;
   //   // }
   // });
+
+
+
+// INPUT MASK
+let nameField = document.querySelector('[send-field="name"]');
+// let mailField = document.querySelector('[send-field="mail"]');
+
+if (nameField) {
+  // var maskNameOptions = {
+  //   mask: /[^0-9.]/g
+  // };
+  //
+  // var maskName = IMask(nameField, maskNameOptions);
+
+  nameField.addEventListener('input', function() {
+    let numbers = [];
+    let value = this.value;
+    let initArr = [];
+
+    numbers.push(value.replace(/[^\d]/g,'')); // находится значения цифр в инпуте
+    initArr = value.split(''); // создается весь массив ввода, разделенный ","
+    let num = initArr.indexOf(numbers[0]); // поиск первого ввода цифры
+
+    if (num > 0) {
+      initArr.splice(num, 1); // удаление этого ввода
+      this.value = initArr.join(''); // подстановка в поле ввода значения без цифр
+    }
+  });
 }
+
+
 
 // Selectors for Projects
 let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
@@ -85,8 +113,6 @@ function checkFormsHandler() {
 function sendForms(obj) {
   formMail.style.display = 'none';
   formSuccess.style.display = 'block';
-  // gsap.to(formMail, {duration: 0.3, opacity: 0, zIndex:-1, position: `absolute`});
-  // gsap.to(formSuccess, {duration: 0.4, opacity: 1, zIndex:1});
   resetForm();
 }
 
@@ -99,8 +125,6 @@ function resetForm() {
 function sendFormsAgainHandler() {
   formMail.style.display = '';
   formSuccess.style.display = 'none';
-  // gsap.to(formSuccess, {duration: 0.3, opacity: 0, zIndex: -1});
-  // gsap.to(formMail, {duration: 0.3, opacity: 1, zIndex: 1, position: `relative`});
 }
 
 function validInputHandler() {

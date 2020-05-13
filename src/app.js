@@ -33,4 +33,3 @@ import './js/colorMenu.js';
 import './js/customSpeedScroll.js';
 import './js/randomCircleImage.js';
 import './js/hideMenuOnScroll.js';
-import './js/inputMask.js';
