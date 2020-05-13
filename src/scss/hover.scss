@@ -347,3 +347,13 @@
     background-color: white;
   }
 }
+
+@media (min-width: 992px) {
+  .tech__item {
+    &:hover {
+      & .tech__image {
+        display: block;
+      }
+    }
+  }
+}

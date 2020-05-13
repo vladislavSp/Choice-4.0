@@ -30,4 +30,8 @@
 
 .tech__item:last-child {
   border-color: transparent;
+
+  & .tech__accordion .acc {
+    padding-bottom: 0;
+  }
 }

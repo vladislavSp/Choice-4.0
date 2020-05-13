@@ -18,6 +18,9 @@
   & .qa__acc-group {
     border: none;
   }
+  & .qa__acc-group {
+    padding-bottom: 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -87,6 +90,10 @@
   .wrapper {
     width: 55rem;
   }
+
+  .qa__arrow {
+    margin-left: 3rem;
+  }
 }
 
 
@@ -130,31 +137,25 @@
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
   }
-
   .project__item:first-child .projects__title {
     font-size: 1.375rem;
     line-height: 1.1818;
   }
-
   .projects__title, .eprojects__title {
     font-size: 1.125rem;
     line-height: 1.91818;
   }
-
   .project__title-wrap {
     margin-top: 1rem;
   }
-
   .projects__text {
     font-size: 1rem;
     line-height: 1.5;
   }
-
   .projects__btn-text {
     font-size: 1.25rem;
     line-height: 1.2;
   }
-
   .project__text-group {
     margin-top: 5.5rem;
     margin-bottom: 5rem;
@@ -164,6 +165,13 @@
     padding-top: 9rem;
     padding-bottom: 5.5rem;
   }
+  .filters__list {
+    max-width: 55rem;
+  }
+  .filters__title, .filters__item {
+    font-size: 3rem;
+  }
+
   .main__title {
     font-size: 4rem;
     line-height: 1.15625;
@@ -175,7 +183,6 @@
     font-size: 1.125rem;
     line-height: 1.375;
   }
-
   .links__item {
     margin-right: 2rem;
   }
@@ -184,15 +191,9 @@
     font-size: 2.25rem;
     line-height: 1.333333;
   }
-
-  .filters__list {
-    max-width: 55rem;
-  }
-
   .publish__text-group {
     max-width: 57rem;
   }
-
   .publish__emb {
     vertical-align: bottom;
   }
@@ -210,10 +211,6 @@
     padding-bottom: 5.5rem;
   }
 
-  .filters__title, .filters__item {
-    font-size: 3rem;
-  }
-
   .univercity__title, .careers__title, .about__title {
     font-size: 3.625rem;
     line-height: 1.137931;
@@ -227,29 +224,29 @@
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
   }
-
   .contacts__title {
     font-size: 3rem;
-    margin-bottom: 4.25rem;
+    margin-bottom: 4rem;
   }
 
   .about {
     padding-top: 10rem;
     padding-bottom: 5.5rem;
   }
+  .about__title {
+    max-width: 62rem;
+  }
 
   .univercity {
     padding-top: 7rem;
     padding-bottom: 4.25rem;
   }
-
   .univercity__group {
     margin-top: 4.5rem;
   }
   .univercity__title {
     max-width: 58rem;
   }
-
   .univercity__sticker {
     &.univercity__sticker--first {
       width: 22rem;
@@ -283,36 +280,30 @@
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
   }
-
   .service__list {
     margin-top: 2.75rem;
   }
-
   .service__title {
     font-size: 1.25rem;
     line-height: 1.2;
     margin-bottom: 3.75rem;
   }
-
   .service__text {
     font-size: 2.25rem;
     line-height: 1.33333;
     max-width: 48rem;
     padding-bottom: 2.75rem;
   }
-
   .service__subtitle {
     font-size: 1.625rem;
     line-height: 1.15384;
   }
-
   .service__desc {
     margin-top: 1rem;
     max-width: 18rem;
     font-size: 1rem;
     line-height: 1.75;
   }
-
   .publish__title {
     font-size: 1.25rem;
     line-height: 1.2;
@@ -320,86 +311,98 @@
   .publish__list {
     margin-top: 3.75rem;
   }
+
   // DESC
   .desc {
     padding-top: 5rem;
     margin-bottom: 4rem;
   }
-
   .desc__title, .preview__title {
     font-size: 3rem;
   }
-
   .desc__item {
     font-size: 1.125rem;
   }
-
   .desc__text {
     font-size: 1.5rem;
     margin-top: 2rem;
   }
 
+  // EXPRESS PAGE
+  .express {
+    padding-top: 10rem;
+  }
   .express-desc {
     padding-top: 9rem;
     margin-bottom: 3.75rem;
   }
+  .express__title {
+    font-size: 4rem;
+  }
+  .express-brif {
+    padding: 5rem 0;
+  }
 
+  .eprojects {
+    padding-bottom: 5rem;
+  }
+
+ // BRIF
   .brif {
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
   }
-
   .brif__title, .tech__title {
     font-size: 2.5rem;
+    line-height: 1.3333;
   }
-
   .brif__title {
     margin-bottom: 3rem;
     max-width: 56rem;
   }
-
   .brif__title--vacancy {
     margin-bottom: 2.5rem;
   }
-
   .brif__send-btn {
     font-size: 1.75rem;
+  }
+  .brif__sec-group {
+    order: -1;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+  .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, {
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
   .contact__forw-wrap {
     width: 60%;
   }
 
-  .brif__sec-group {
-    order: -1;
-    margin-left: 0;
-    margin-bottom: 3rem;
-  }
-
-  .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
 
   // ABOUT
+  .tech {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
   .tech__title {
     max-width: 60rem;
     margin-bottom: 4rem;
   }
-
   .tech__text {
     font-size: 1.5rem;
   }
-
   .tech__item {
     padding-top: 3rem;
   }
-
   .tech__subtitle {
     font-size: 2.75rem;
   }
-
   .tech__btn {
     margin-bottom: 2.75rem;
+  }
+  .tech__image {
+    top: 0.75rem;
   }
 
   .acc__title {
@@ -412,76 +415,68 @@
   }
 
   .space {
-    margin-bottom: 5.75rem;
-  }
-  .club__title {
-    margin-bottom: 4.25rem;
+    margin-bottom: 4.5rem;
   }
 
+  .club__title {
+    font-size: 2.5rem;
+    line-height: 1.333;
+    margin-bottom: 4rem;
+  }
   .club__subtitle {
     font-size: 1.25rem;
   }
   .club__post, .club__link {
     font-size: 1.125rem;
   }
+
   .we {
-    padding-bottom: 6.25rem;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
   }
 
   .careers {
-    padding-top: 9.5rem;
+    padding-top: 8.5rem;
   }
-
-  // EXPRESS PAGE
-  .express {
-    padding-top: 10rem;
+  .careers__subtitle {
+    font-size: 2.5rem;
+    line-height: 1.333;
   }
-
-  .express__title {
-    font-size: 4rem;
+  .careers__item {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .get {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 5.5rem;
+    padding-bottom: 6rem;
   }
-
+  .main__text {
+    margin-bottom: 3rem;
+  }
   .get__item {
     font-size: 3.25rem;
   }
-
   .get__item--orange {
     margin-top: 0.75rem;
-  }
-
-  .eprojects {
-    padding-bottom: 5rem;
   }
 
   .qa {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
-
   .qa__title {
-    margin-right: 10rem;
+    margin-right: 8rem;
   }
-
   .qa__subtitle {
     max-width: 45rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-
   .qa__number {
     margin-right: 2.5rem;
   }
-
   .qa__text {
     font-size: 1.375rem;
-  }
-
-  .express-brif {
-    padding: 5rem 0;
   }
 
   // clients
@@ -489,14 +484,12 @@
     padding-top: 5.5rem;
     padding-bottom: 7.25rem;
   }
-
   .clients__wrap {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    max-width: 58rem;
   }
-  .tech {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
-  }
+
+
   .video {
     margin-bottom: 5rem;
   }
@@ -528,32 +521,36 @@
     font-size: 1.5rem;
   }
 
-  .footer__address, .footer__contacts {
-    font-size: 1.625rem;
-    line-height: 1.231;
+  .creators__wrap {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
   }
+  .creators__post, .creators__name {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+  .creators__text-link, .next__link {
+    font-size: 1.5rem;
+  }
+
   .footer {
     padding-top: 5.5rem;
     padding-bottom: 3rem;
   }
-
+  .footer__address, .footer__contacts {
+    font-size: 1.625rem;
+    line-height: 1.231;
+  }
   .footer__group-one {
     margin-bottom: 3.75rem;
   }
-
   .footer__link, .footer__link-social {
     font-size: 1.125rem;
     line-height: 1.22222;
     margin-right: 1.75rem;
   }
-
   .footer__link-social {
     margin-right: 1.5rem;
-  }
-
-  .creators__wrap {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
   }
 }
 
@@ -567,9 +564,6 @@
   }
   .navigation {
     padding-bottom: 3.5rem;
-  }
-  .careers__subtitle {
-    font-size: 2.5rem;
   }
 
   .brif__form-wrap {
@@ -594,19 +588,13 @@
     width: 100%;
   }
 
-  .club__title {
-    font-size: 2.5rem;
-  }
-
   .clients {
     padding-bottom: 6.25rem;
   }
-
   .clients__text {
     margin-bottom: 2.5rem;
   }
-
-  .clients__company {
+  .clients__wrap {
     font-size: 3rem;
   }
 
@@ -634,23 +622,8 @@
   .publish__text-group {
     max-width: 51rem;
   }
-  .creators__post, .creators__name {
-    font-size: 1.25rem;
-    line-height: 1.2;
-  }
-  .creators__text-link, .next__link {
-    font-size: 1.5rem;
-  }
-
-  .creators__wrap {
-    padding-bottom: 5.5rem;
-  }
 
   .next__title {
-    font-size: 2.5rem;
-  }
-
-  .qa__subtitle {
     font-size: 2.5rem;
   }
 
@@ -679,14 +652,6 @@
 
   .qa__title {
     margin-right: 5rem;
-  }
-
-  .qa__arrow {
-    margin-left: 3rem;
-  }
-
-  .clients__wrap {
-    font-size: 3rem;
   }
 
   .footer__group-one, .footer__group-two {

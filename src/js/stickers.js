@@ -1,5 +1,6 @@
 let stickers = Array.from(document.querySelectorAll('[sticker="item"]'));
 let universityBlock = document.querySelector('[sticker-block="flag"]');
+let bodyScrollHeight = document.body.scrollHeight;
 
 // ВЫЧИСЛЕНИЕ КООРДИНАТ БЛОКА ОТНОСИТЕЛЬНО ДОКУМЕНТА
 function getCoords(elem) {
@@ -30,9 +31,15 @@ function moveStickerHandler(evt) {
   function positionMouseHandler(event) {
     let leftStopValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
     let top = event.pageY - getCoords(universityBlock).top;
-    sticker.style.top = `${top - offsetY}px`;
+    let stopBottomValue = bodyScrollHeight - getCoords(universityBlock).top - sticker.getBoundingClientRect().height;
 
-    // Позиционирование стикера внутри документа (границы)
+    // console.log(top - offsetY, stopBottomValue);
+
+    // Нижняя граница документа для стикера
+    if ((top - offsetY) > stopBottomValue) sticker.style.top = stopBottomValue;
+    else sticker.style.top = `${top - offsetY}px`;
+
+    // Позиционирование стикера внутри границ документа
     if ((event.pageX - offsetX) < 0) sticker.style.left = 0;
     else if ((event.pageX - offsetX) > leftStopValue) sticker.style.left = leftStopValue;
     else sticker.style.left = `${event.pageX - offsetX}px`;
