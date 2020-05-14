@@ -37,15 +37,17 @@
   }
 }
 
-.service__item {
-  cursor: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  user-select: none;
+@media (min-width: 992px) {
+  .service__item {
+    cursor: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 
-  &:hover {
-    & .service__image {
-      display: block;
+    &:hover {
+      & .service__image {
+        display: block;
+      }
     }
   }
 }

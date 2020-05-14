@@ -9,7 +9,11 @@ let bodyFlag = document.querySelector('[attr="dzen"]'),
 let index = 0;
 const hundredPercent = 100, timerTime = 500; // initScale = 0.85  valueScale = 0.0015
 let initScale = wrapperBig.getBoundingClientRect().width/window.innerWidth;
+
+if (window.matchMedia("(max-width: 479px)").matches) initScale = 0.85; // фикс скейла на мобильных
+
 let valueScale = (1 - initScale)/hundredPercent;
+
 
 previewBlocks.map(el => el.style.transform = `scale(${initScale})`);
 

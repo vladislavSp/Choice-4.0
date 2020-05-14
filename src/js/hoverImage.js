@@ -1,7 +1,6 @@
-let serviceItems = Array.from(document.querySelectorAll('*[service-item]'));
-let image;
+let serviceItems = Array.from(document.querySelectorAll('*[service-item]')), image;
 
-if (serviceItems.length) {
+if (serviceItems.length && window.matchMedia("(min-width: 992px)").matches) {
   serviceItems.forEach(el => {
     el.addEventListener('mousemove', imageHoverHandler);
     el.addEventListener('mouseleave', viewTextHandler);

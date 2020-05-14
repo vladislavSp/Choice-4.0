@@ -378,7 +378,9 @@
   .contact__forw-wrap {
     width: 60%;
   }
-
+  .brif__btn-wrap {
+    margin-top: 3rem;
+  }
 
   // ABOUT
   .tech {
@@ -489,7 +491,6 @@
     max-width: 58rem;
   }
 
-
   .video {
     margin-bottom: 5rem;
   }
@@ -498,7 +499,6 @@
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
   }
-
   .publish__emb {
     margin-left: 1rem;
 
@@ -511,12 +511,10 @@
     padding-top: 7.5rem;
     padding-bottom: 5.5rem;
   }
-
   .vacancy__title {
     font-size: 2.25rem;
     line-height: 1.3333;
   }
-
   .vacancy__desc {
     font-size: 1.5rem;
   }
@@ -566,10 +564,16 @@
     padding-bottom: 3.5rem;
   }
 
-  .brif__form-wrap {
+  .contacts {
+    padding-top: 8.5rem;
+  }
+  .contact__forw-wrap {
     width: 100%;
   }
 
+  .brif__form-wrap {
+    width: 100%;
+  }
   .brif__group-field {
     width: 20rem;
 
@@ -578,14 +582,12 @@
       margin-right: 3rem;
     }
   }
-
   .brif__group-field:nth-of-type(2) {
     width: auto;
     flex-grow: 1;
   }
-
-  .contact__forw-wrap {
-    width: 100%;
+  .brif__list {
+    width: auto;
   }
 
   .clients {
@@ -596,10 +598,6 @@
   }
   .clients__wrap {
     font-size: 3rem;
-  }
-
-  .brif__list {
-    width: auto;
   }
 
   .links__item {
@@ -657,7 +655,6 @@
   .footer__group-one, .footer__group-two {
     grid-template-columns: auto 55%;
   }
-
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -676,11 +673,11 @@
 }
 
 @media (max-width: 767px) {
-  // .links__list {
-  //   overflow-x: scroll;
-  // }
-
   .service__list[visible="false"] .service__item:nth-child(n + 3), .publish__list[visible="false"] .publish__item:nth-child(n + 3) {
     display: none;
+  }
+
+  .footer__link-social:last-of-type {
+    margin-bottom: 0;
   }
 }

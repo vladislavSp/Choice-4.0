@@ -6,6 +6,7 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     formSuccess = document.querySelector('*[form-block="success"]'),
     nameUser = document.querySelector('[brif-name="user"]'),
     textArea = document.querySelector('[brif="textarea"]'),
+    scrollBlock = document.querySelector('[scroll="form"]'),
     fieldsObj = {}, infoBrif = new Set();
 
 if (textArea) {
@@ -13,7 +14,6 @@ if (textArea) {
   autosize(textArea);
 }
   // let initRows = 1; // increase = false;
-
   // textArea.addEventListener('keyup', function(evt) {
   //   // console.log(this.value.length, evt);
   //   // console.log(textArea.getAttribute('rows');
@@ -86,7 +86,7 @@ if (checkFields.length) checkFields.forEach(el => el.addEventListener('focus', v
 
 function checkFormsHandler() {
   checkFields.forEach(el => {
-    if (el.value === '') el.setAttribute('state', 'invalid'); // || el.getAttribute('value-proj') === 'invalid'
+    if (el.value === '') el.setAttribute('state', 'invalid'); // el.getAttribute('value-proj') === 'invalid'
     else el.setAttribute('state', 'valid');
   });
 
@@ -105,6 +105,11 @@ function checkFormsHandler() {
 };
 
 function sendForms(obj) {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    let topScrollBlock = scrollBlock.getBoundingClientRect().top + pageYOffset - 100;
+    window.scrollTo(0, topScrollBlock);
+  }
+
   formMail.style.display = 'none';
   formSuccess.style.display = 'block';
   resetForm();
