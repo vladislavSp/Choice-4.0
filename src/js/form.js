@@ -105,6 +105,7 @@ function checkFormsHandler() {
 };
 
 function sendForms(obj) {
+  // скролл к верхней части блока
   if (window.matchMedia("(max-width: 767px)").matches) {
     let topScrollBlock = scrollBlock.getBoundingClientRect().top + pageYOffset - 100;
     window.scrollTo(0, topScrollBlock);
