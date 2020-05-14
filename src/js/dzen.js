@@ -30,22 +30,24 @@ function controllBlockHandler(evt) {
 
   let positionFlag = Math.floor(hundredPercent - ((checkBlocks[index].getBoundingClientRect().height + checkBlocks[index].getBoundingClientRect().top) / window.innerHeight) * hundredPercent);
 
-  // console.log(positionFlag); // позиция блока относительно вьюпорта
+  console.log(positionFlag, valueScale); // позиция блока относительно вьюпорта
 
 // Если скролл зашел за половину блока (время для подзагрузки)
   if ((window.innerHeight - checkBlocks[index].getBoundingClientRect().top) > checkBlocks[index].clientHeight / 2) {
 
     viewBlocks[index].setAttribute('state', 'enable'); // показ следующего скрытого блока
 
-    if (positionFlag < 10) {
+    if (positionFlag < 40) {
       previewBlocks[index].style.transform = `matrix( ${initScale}, 0, 0, ${initScale}, 0, 0)`; // scale(0.0${positionFlag})
     } else if (positionFlag < hundredPercent) {
-      previewBlocks[index].style.transform = `matrix( ${initScale + valueScale * positionFlag}, 0, 0, ${initScale + valueScale * positionFlag}, 0, 0)`; // матрица преобразования
+      console.log(valueScale * positionFlag);
+      previewBlocks[index].style.transform = `matrix( ${initScale + valueScale * positionFlag - 0.11875}, 0, 0, ${initScale + valueScale * positionFlag - 0.11875}, 0, 0)`; // матрица преобразования
     }
     // else if (positionFlag >= 10 && positionFlag < hundredPercent) {
     //   previewBlocks[index].style.transform = `scale(0.9${positionFlag})`;
     // }
-    else if (positionFlag > hundredPercent) { // если scroll достиг верx-части экрана
+    else if (positionFlag > hundredPercent ) { // если scroll достиг верx-части экрана
+      previewBlocks[index].classList.add('project-effect--next');
       previewBlocks[index].style.transform = `matrix( 1, 0, 0, 1, 0, 0)`;
     // preloadNextProjects(); загрузка след.шаблона
 
