@@ -109,3 +109,14 @@ function scrollControl(param) {
     scrollControlBody.setAttribute('scrollControlState', 'unlock');
   }
 }
+
+// const scrollbar = Scrollbar.init(`html`, {
+//   damping: 0.2,
+// });
+
+//
+// $(document).ready(
+//     function() {
+//         $("html").niceScroll();
+//     }
+// );
