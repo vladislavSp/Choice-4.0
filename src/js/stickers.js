@@ -14,15 +14,33 @@ function getCoords(elem) {
 
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
-  let offsetX = evt.offsetX; // координаты щелчка
-  let offsetY = evt.offsetY;
+  evt.preventDefault();
+  let type = evt.type;
+  let offsetX, offsetY;
 
-  // document.addEventListener('mouseleave', mouseLeaveHandler); // мышь за пределами документа
-  document.addEventListener('mousemove', positionMouseHandler);
-  document.addEventListener('mouseup', removeHandler); // this
+  if (type === 'mousedown') {
+    offsetX = evt.offsetX; // координаты щелчка на стикере
+    offsetY = evt.offsetY;
+  } else if (type === 'touchstart') {
+    console.log(evt.touches[0].screenY, evt.touches[0].clientY);
+    offsetX = evt.touches[0].pageX - evt.touches[0].target.offsetLeft;
+    offsetY = evt.touches[0].pageY - evt.touches[0].pageY;
+  }
+
+  // console.log(offsetX, offsetY);
+  if (type === 'mousedown') {
+    document.addEventListener('mousemove', positionMouseHandler);
+    document.addEventListener('mouseup', removeHandler); // this
+  } else if (type === 'touchstart') {
+    document.addEventListener('touchmove', positionMouseHandler);
+    document.addEventListener('touchend', removeHandler); // this
+  }
 
   stickers.forEach(el => {
-    if (el.getAttribute('state') === 'none') el.removeEventListener('mousedown', moveStickerHandler);
+    if (el.getAttribute('state') === 'none') {
+      el.removeEventListener('mousedown', moveStickerHandler);
+      if (type === 'touchstart') el.removeEventListener('touchstart', moveStickerHandler);
+    }
   });
 
   let sticker = this;
@@ -30,10 +48,13 @@ function moveStickerHandler(evt) {
 
   function positionMouseHandler(event) {
     let leftStopValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
+
+    // if (type === 'touchstart') console.log(event.touches[0].pageY);
+
     let top = event.pageY - getCoords(universityBlock).top;
     let stopBottomValue = bodyScrollHeight - getCoords(universityBlock).top - sticker.getBoundingClientRect().height;
 
-    // console.log(top - offsetY, stopBottomValue);
+// console.log(leftStopValue, top, stopBottomValue);
 
     // Нижняя граница документа для стикера
     if ((top - offsetY) > stopBottomValue) sticker.style.top = stopBottomValue;
@@ -46,21 +67,29 @@ function moveStickerHandler(evt) {
   }
 
   function removeHandler() {
-    document.removeEventListener('mousemove', positionMouseHandler);
-    document.removeEventListener('mouseup', removeHandler); // sticker
+    if (type === 'mousedown') {
+      document.removeEventListener('mousemove', positionMouseHandler);
+      document.removeEventListener('mouseup', removeHandler); // sticker
+    } else if (type === 'touchstart') {
+      document.removeEventListener('touchmove', positionMouseHandler);
+      document.removeEventListener('touchend', removeHandler); // sticker
+    }
+
     sticker.setAttribute('state', 'none');
 
     stickers.forEach(el => {
-      if (el.getAttribute('state') === 'none') el.addEventListener('mousedown', moveStickerHandler);
+      if (el.getAttribute('state') === 'none') {
+        el.addEventListener('mousedown', moveStickerHandler);
+        el.addEventListener('touchstart', moveStickerHandler);
+      }
     });
-  }
-
-  function mouseLeaveHandler(evt) {
-    if (evt.type === 'mouseleave') console.log(evt.type);
-    removeHandler();
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   if (stickers.length) stickers.forEach(el => el.addEventListener('mousedown', moveStickerHandler));
+
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    stickers.forEach(el => el.addEventListener('touchstart', moveStickerHandler));
+  }
 });

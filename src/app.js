@@ -1,4 +1,5 @@
 // SCSS - General
+import './scss/fonts.scss';
 import './scss/general.scss';
 
 // SCSS - All

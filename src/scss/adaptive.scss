@@ -385,7 +385,7 @@
   // ABOUT
   .tech {
     padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
+    padding-bottom: 3.5rem;
   }
   .tech__title {
     max-width: 60rem;
@@ -400,7 +400,7 @@
   .tech__subtitle {
     font-size: 2.75rem;
   }
-  .tech__btn {
+  .tech__wrap {
     margin-bottom: 2.75rem;
   }
   .tech__image {
@@ -418,6 +418,10 @@
 
   .space {
     margin-bottom: 4.5rem;
+  }
+
+  .club__list {
+    grid-row-gap: 4.25rem;
   }
 
   .club__title {
@@ -673,11 +677,15 @@
 }
 
 @media (max-width: 767px) {
-  .service__list[visible="false"] .service__item:nth-child(n + 3), .publish__list[visible="false"] .publish__item:nth-child(n + 3) {
-    display: none;
-  }
+  // .service__list[visible="false"] .service__item:nth-child(n + 3), .publish__list[visible="false"] .publish__item:nth-child(n + 3) {
+  //   display: none;
+  // }
 
   .footer__link-social:last-of-type {
     margin-bottom: 0;
+  }
+
+  .view__paginations {
+    overflow-x: scroll;
   }
 }

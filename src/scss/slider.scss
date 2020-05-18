@@ -6,12 +6,12 @@
   cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5eb2c2ff11df0accdeb223cc_2.png'), pointer;
 }
 
-.view__image-right--disabled {
-  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5eb2c2ff6830872bf1dd7930_1-dis.png'), default;
+.view__image-right.swiper-button-disabled {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5eb2c2ff6830872bf1dd7930_1-dis.png'), pointer;
 }
 
-.view__image-left--disabled {
-  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5eb2c2ff683087ba4add7933_2-dis.png'), default;
+.view__image-left.swiper-button-disabled {
+  cursor: url('https://uploads-ssl.webflow.com/5e81b2e4dad44dfcda3175d3/5eb2c2ff683087ba4add7933_2-dis.png'), pointer;
 }
 
 .view__controls {

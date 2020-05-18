@@ -1,18 +1,27 @@
-.tech__btn[state="none"] {
-  & .tech__minus {
-    display: none;
+.tech__wrap {
+  &:hover {
+    .tech__subtitle {
+      border-color: white;
+    }
+  }
+
+  &[state="none"] {
+    & .tech__minus {
+      display: none;
+    }
+  }
+
+  &[state="active"] {
+    & .tech__plus {
+      display: none;
+    }
+
+    & .tech__minus {
+      display: block;
+    }
   }
 }
 
-.tech__btn[state="active"] {
-  & .tech__plus {
-    display: none;
-  }
-
-  & .tech__minus {
-    display: block;
-  }
-}
 
 .tech__accordion, .qa__accordion {
   transition: height 0.2s ease;
@@ -34,4 +43,8 @@
   & .tech__accordion .acc {
     padding-bottom: 0;
   }
+
+  // & .tech__wrap {
+  //   margin-bottom: 0;
+  // }
 }

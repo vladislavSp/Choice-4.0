@@ -24,11 +24,8 @@
 
 @media (max-width: 767px) {
   .brif__item--contact[state="enable"] {
-    color: #1D4AD9;
-    border-color: #1D4AD9;
-
-    &:hover {
-      background-color: transparent;
-    }
+    color: white;
+    background-color: black;
+    // border-color: black;
   }
 }
