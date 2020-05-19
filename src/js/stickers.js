@@ -1,6 +1,7 @@
-let stickers = Array.from(document.querySelectorAll('[sticker="item"]'));
-let universityBlock = document.querySelector('[sticker-block="flag"]');
-let bodyScrollHeight = document.body.scrollHeight;
+let stickers = Array.from(document.querySelectorAll('[sticker="item"]')),
+    universityBlock = document.querySelector('[sticker-block="flag"]'),
+    bodyScrollHeight = document.body.scrollHeight,
+    bodyWidth = document.body.getBoundingClientRect().width;
 
 // ВЫЧИСЛЕНИЕ КООРДИНАТ БЛОКА ОТНОСИТЕЛЬНО ДОКУМЕНТА
 function getCoords(elem) {
@@ -15,24 +16,17 @@ function getCoords(elem) {
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
   evt.preventDefault();
-  let type = evt.type;
-  let offsetX, offsetY;
+  let type = evt.type, offsetX, offsetY;
 
   if (type === 'mousedown') {
     offsetX = evt.offsetX; // координаты щелчка на стикере
     offsetY = evt.offsetY;
-  } else if (type === 'touchstart') {
-    console.log(evt.touches[0].screenY, evt.touches[0].clientY);
-    offsetX = evt.touches[0].pageX - evt.touches[0].target.offsetLeft;
-    offsetY = evt.touches[0].pageY - evt.touches[0].pageY;
-  }
-
-  // console.log(offsetX, offsetY);
-  if (type === 'mousedown') {
     document.addEventListener('mousemove', positionMouseHandler);
     document.addEventListener('mouseup', removeHandler); // this
   } else if (type === 'touchstart') {
-    document.addEventListener('touchmove', positionMouseHandler);
+    offsetX = evt.touches[0].pageX - evt.touches[0].target.offsetLeft;
+    offsetY = evt.touches[0].clientY;
+    document.addEventListener('touchmove', positionMouseHandler, { passive: false });
     document.addEventListener('touchend', removeHandler); // this
   }
 
@@ -47,23 +41,35 @@ function moveStickerHandler(evt) {
   this.setAttribute('state', 'active');
 
   function positionMouseHandler(event) {
-    let leftStopValue = document.body.getBoundingClientRect().width - sticker.getBoundingClientRect().width;
+    if (event.cancelable) event.preventDefault();
 
-    // if (type === 'touchstart') console.log(event.touches[0].pageY);
+    let stickerHeight = sticker.getBoundingClientRect().height,
+        stickerWidth = sticker.getBoundingClientRect().width,
+        leftStopValue = bodyWidth - stickerWidth,
+        topRelativeBlock = getCoords(universityBlock).top,
+        top = event.pageY - topRelativeBlock,
+        stopBottomValue = bodyScrollHeight - topRelativeBlock - stickerHeight;
 
-    let top = event.pageY - getCoords(universityBlock).top;
-    let stopBottomValue = bodyScrollHeight - getCoords(universityBlock).top - sticker.getBoundingClientRect().height;
+    if (type === 'touchstart') {
+      let stickerHalfWidth = stickerWidth/2;
+      leftStopValue = bodyWidth - stickerHalfWidth;
+      top = event.touches[0].pageY - topRelativeBlock - (event.touches[0].target.clientHeight/2);
 
-// console.log(leftStopValue, top, stopBottomValue);
+      sticker.style.top = `${top}px`;
 
-    // Нижняя граница документа для стикера
-    if ((top - offsetY) > stopBottomValue) sticker.style.top = stopBottomValue;
-    else sticker.style.top = `${top - offsetY}px`;
+      if ((event.touches[0].pageX - offsetX) < stickerHalfWidth) sticker.style.left = stickerHalfWidth;
+      else if ((event.touches[0].pageX - offsetX) > leftStopValue) sticker.style.left = leftStopValue;
+      else sticker.style.left = `${event.touches[0].pageX - offsetX}px`;
+    } else {
+      // Нижняя граница документа для стикера
+      if ((top - offsetY) > stopBottomValue) sticker.style.top = stopBottomValue;
+      else sticker.style.top = `${top - offsetY}px`;
 
-    // Позиционирование стикера внутри границ документа
-    if ((event.pageX - offsetX) < 0) sticker.style.left = 0;
-    else if ((event.pageX - offsetX) > leftStopValue) sticker.style.left = leftStopValue;
-    else sticker.style.left = `${event.pageX - offsetX}px`;
+      // Позиционирование стикера внутри границ документа
+      if ((event.pageX - offsetX) < 0) sticker.style.left = 0;
+      else if ((event.pageX - offsetX) > leftStopValue) sticker.style.left = leftStopValue;
+      else sticker.style.left = `${event.pageX - offsetX}px`;
+    }
   }
 
   function removeHandler() {
