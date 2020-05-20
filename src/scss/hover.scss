@@ -200,7 +200,11 @@
   }
 }
 
-.projects__image, .project__video {
+.project__image-wrap {
+  pointer-events: none;
+}
+
+.projects__image, .project__video, .projects__img-cont {
   transition: transform 0.5s ease;
 }
 
@@ -214,7 +218,7 @@
       border-color: white;
     }
 
-    & .projects__image, & .project__video {
+    & .projects__image, & .project__video, & .projects__img-cont {
       transform: scale(1.08);
     }
   }
@@ -345,4 +349,8 @@
       }
     }
   }
+}
+
+.project__image-wrap {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
