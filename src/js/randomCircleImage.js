@@ -1,4 +1,4 @@
-let imageWrappers = Array.from(document.querySelectorAll('.club__image-wrap'));
+let imageWrappers = [...document.querySelectorAll('.club__image-wrap')];
 
 if (imageWrappers.length) randomImage(imageWrappers);
 

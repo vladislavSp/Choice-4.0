@@ -7,12 +7,16 @@ let sendBtn = document.querySelector('*[send-form="btn"]'),
     nameUser = document.querySelector('[brif-name="user"]'),
     textArea = document.querySelector('[brif="textarea"]'),
     scrollBlock = document.querySelector('[scroll="form"]'),
+    fileField = document.querySelector('[send-field="file"]'),
     fieldsObj = {}, infoBrif = new Set();
 
 if (textArea) {
   textArea.setAttribute('rows', `1`);
   autosize(textArea);
 }
+
+// if (fileField) fileField.setAttribute('type', 'file');
+
   // let initRows = 1; // increase = false;
   // textArea.addEventListener('keyup', function(evt) {
   //   // console.log(this.value.length, evt);

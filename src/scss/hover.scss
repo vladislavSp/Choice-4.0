@@ -200,20 +200,8 @@
   }
 }
 
-// .body--express {
-//   & .header__item {
-//     &:hover, &:active {
-//       color: rgba(255, 255, 255, 0.6);
-//     }
-//   }
-// }
-
-// .project__link-wrap {
-//   overflow: hidden;
-// }
-
-.projects__image {
-  transition: transform 0.3s ease;
+.projects__image, .project__video {
+  transition: transform 0.5s ease;
 }
 
 .project__link-wrap {
@@ -226,8 +214,8 @@
       border-color: white;
     }
 
-    & .projects__image {
-      transform: scale(1.1);
+    & .projects__image, & .project__video {
+      transform: scale(1.08);
     }
   }
 }
@@ -345,7 +333,6 @@
     background-color: #FA6823;
   }
   &--round:hover {
-    // border-radius: 0rem;
     background-color: white;
   }
 }
