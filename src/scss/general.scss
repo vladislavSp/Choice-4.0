@@ -26,13 +26,14 @@ input:-webkit-autofill {
   -webkit-text-fill-color:black;
 }
 
-.wrapper--contact {
+.wrapper--contact, .view__image-wrap {
   pointer-events: none;
 }
 
 .contact {
   pointer-events: all;
 }
+
 .clients__your-company {
   display: inline-flex;
 }

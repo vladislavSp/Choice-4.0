@@ -15,32 +15,6 @@ if (textArea) {
   autosize(textArea);
 }
 
-// if (fileField) fileField.setAttribute('type', 'file');
-
-  // let initRows = 1; // increase = false;
-  // textArea.addEventListener('keyup', function(evt) {
-  //   // console.log(this.value.length, evt);
-  //   // console.log(textArea.getAttribute('rows');
-  //   // if (this.value.length > 60) textArea.setAttribute('rows', '5');
-  //   console.log(this.scrollTop, this.scrollHeight, initRows);
-  //   console.log(this.getBoundingClientRect());
-  //   console.log(textArea.scrollHeight);
-  //
-  //   if (this.scrollTop > 0) {
-  //     initRows = initRows + 1;
-  //     textArea.setAttribute('rows', `${initRows}`);}
-  //   //   // this.style.height = this.scrollHeight + "px";
-  //   //   increase = true;
-  //   // } else if (this.scrollTop === 0 && increase) {
-  //   //   initRows = initRows - 1;
-  //   //   textArea.setAttribute('rows', `${initRows}`);
-  //   //   // this.style.height = this.scrollHeight + "px";
-  //   //   increase = false;
-  //   // }
-  // });
-
-
-
 // INPUT MASK
 let nameField = document.querySelector('[send-field="name"]');
 // let mailField = document.querySelector('[send-field="mail"]');

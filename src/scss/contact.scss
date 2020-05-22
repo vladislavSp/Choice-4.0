@@ -3,29 +3,15 @@
 }
 
 @media (min-width: 768px) {
-  // .brif__item--contact {
-  //   &:hover {
-  //     color: white;
-  //     background-color: black;
-  //   }
-  // }
-
   .brif__item--contact[state="enable"] {
     color: white;
     background-color: black;
   }
-  // .brif__item--contact[state="disable"] {
-  //   &:hover {
-  //     color: #666;
-  //     background-color: white;
-  //   }
-  // }
 }
 
 @media (max-width: 767px) {
   .brif__item--contact[state="enable"] {
     color: white;
     background-color: black;
-    // border-color: black;
   }
 }

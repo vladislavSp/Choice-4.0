@@ -1,19 +1,18 @@
-let header = document.querySelector('[hr="color"]');
-let positionInit = pageYOffset;
+let header = document.querySelector('[hr="scroll"]');
+let positionInit = pageYOffset; // начальная прокрутка док-та
 
 document.addEventListener('scroll', hideMenuHandler);
 
 function hideMenuHandler(evt) {
-  let heightHeader = header.getBoundingClientRect().height;
-  let dif = pageYOffset - positionInit;
+  let heightHeader = header.getBoundingClientRect().height; // 121
+  let dif = pageYOffset - positionInit; // разница текущей прокрутки с изначальной
 
-  if (pageYOffset < 100) dif = 40;
+  if (pageYOffset < heightHeader/2) dif = -1; // вначале страницы
 
-  if (dif > (heightHeader/2)) {
-    positionInit = pageYOffset;
+  if (dif > 2) {
+    positionInit = pageYOffset; // увел-е начальной позиции в соответствии с прокруткой
     header.classList.add('header--hid');
-  }
-  else if (dif < -10) {
+  } else if (dif < 0) {
     positionInit = pageYOffset;
     header.classList.remove('header--hid');
   }

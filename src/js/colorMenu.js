@@ -1,4 +1,4 @@
-let header = document.querySelector('[hr="color"]');
+let header = document.querySelector('[header="color"]');
 let block = document.querySelector('[bc="change"]');
 
 if (block) document.addEventListener('scroll', changeColorHandler);
@@ -19,30 +19,6 @@ function changeColorHandler() {
       // console.log(positionBlock, arrTop, indexArr);
   if (blockTop < headerHeight && positionBlock > 0) header.setAttribute('color', 'change');
   else header.setAttribute('color', '');
-}
-
-
-
-// Цвет GetinTouch
-let link = document.querySelector('[link-color="black"]'),
-    blocks = Array.from(document.querySelectorAll('*[link-color="block"]'));
-
-if (link) document.addEventListener('scroll', colorLinkHandler);
-
-function colorLinkHandler() {
-  let newBlocks = blocks.filter(el => el.getBoundingClientRect().width > 0);
-  let elements = newBlocks.map(el => Math.abs(el.getBoundingClientRect().top)); // el.getBoundingClientRect().y > link.getBoundingClientRect()  + el.getBoundingClientRect().height/2
-
-  const indexElement = elements.indexOf(Math.min(...elements));
-
-  let linkTop = link.getBoundingClientRect().top,
-      linkHeight = link.getBoundingClientRect().height/2,
-      blockTop = newBlocks[indexElement].getBoundingClientRect().top,
-      blockBottom = newBlocks[indexElement].getBoundingClientRect().bottom,
-      blockHeight = newBlocks[indexElement].getBoundingClientRect().height;
-
-  if (linkTop > (blockTop - linkHeight) && linkTop < (blockBottom - linkHeight)) link.setAttribute(`link-color`, `white`);
-  else link.setAttribute(`link-color`, `black`);
 }
 
 // function getCoords(elem) {

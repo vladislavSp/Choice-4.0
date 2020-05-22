@@ -8,8 +8,6 @@
 .project-sect[lazy-load="block"] {
   display: none;
   will-change: transform;
-  // transition: transform ease;
-  // transform: scale(0.85);
 }
 
 .project-sect[lazy-load="block"][state="enable"] {

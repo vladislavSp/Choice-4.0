@@ -1,10 +1,4 @@
 .tech__wrap {
-  &:hover {
-    .tech__subtitle {
-      border-color: white;
-    }
-  }
-
   &[state="none"] {
     & .tech__minus {
       display: none;
@@ -21,7 +15,6 @@
     }
   }
 }
-
 
 .tech__accordion, .qa__accordion {
   transition: height 0.2s ease;
@@ -43,4 +36,22 @@
   & .tech__accordion .acc {
     padding-bottom: 0;
   }
+}
+
+.video__btn {
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  &:active {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+
+.video-pointer {
+  cursor: pointer;
 }

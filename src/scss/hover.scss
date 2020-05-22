@@ -1,9 +1,31 @@
-.careers__emb, .next__emb {
-  transition: transform 0.2s ease, opacity 0.2s ease;
+// hover всех ссылок на сайте
+.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link {
+  transition: color 0.2s ease;
 }
 
-.publish__emb {
+.hello-vacancy {
+  transition: background-color 0.2s ease;
+}
+
+.careers__emb, .hello__emb, .univercity__emb, .creators__emb, .vacancy__emb {
+  transition: transform 0.2s ease;
+}
+
+.publish__emb, .careers__emb {
   transition: opacity 0.2s ease;
+}
+
+.hello-vacancy {
+  &:hover {
+    background-color: white;
+
+    // & .brif__group-vacancy {
+    //   display: block;
+    // }
+    // & .hello__link-wrap {
+    //   display: none;
+    // }
+  }
 }
 
 .publish__item {
@@ -17,88 +39,37 @@
 .careers__item {
   &:hover {
     & .careers__emb {
-      transform: translateX(0%);
+      transform: translateX(0);
       opacity: 1;
     }
   }
 }
 
-.next__link{
+.hello__link {
   &:hover {
-    & .next__emb {
-      transform: translateX(5px);
-    }
-  }
+    color: #666;
 
-  &:active {
-    & .next__emb {
-      transform: translateX(0);
+    & .hello__emb {
+      transform: translateX(4px);
+    }
+
+    & svg path {
+      stroke: currentColor;
     }
   }
 }
-// hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text {
-  transition: color 0.2s ease;
-}
 
-.publish__text, .tech__btn-text, .clients__your-company, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .projects__title, .eprojects__title, .brif__blue-text {
+.publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
   transition: border-color 0.2s ease;
 }
 
 .brif__blue-text:hover {
-  color: black;
-  border-color: black;
+  color: #666;
 }
-
-.header__text {
-  transition: border-color 0.1s ease;
-}
-
-.header__item {
-  &:hover {
-    & .header__text {
-      border-color: black;
-    }
-  }
-}
-
-.header[color="change"] .header__item {
-  &:hover {
-    & .header__text {
-      border-color: white;
-    }
-  }
-}
-
-.header--white {
-  & .header__item {
-    &:hover {
-      & .header__text {
-        border-color: white;
-      }
-    }
-  }
-}
-
-.header--white[color=""] {
-  & .header__item {
-    &:hover {
-      & .header__text {
-        border-color: black;
-      }
-    }
-  }
-}
-
-.contacts__text, .club__link {
-  transition: border-color 0.2s ease;
-}
-
 
 .contacts__text-wrap {
   &:hover .contacts__text {
     color: black;
-    // border-color: currentColor;
   }
 }
 
@@ -146,50 +117,24 @@
 .contact__link {
   &:hover {
     color: #666666;
-
-    & svg path {
-      fill: #666666;
-    }
   }
 
   &:active {
     color: #000000;
-
-    & svg path {
-      fill: #000000;
-    }
-  }
-}
-
-.contact__link[link-color="white"] {
-  &:hover {
-    color: white;
-
-    & svg path {
-      fill: white;
-    }
-  }
-
-  &:active {
-    color: white;
-
-    & svg path {
-      fill: white;
-    }
   }
 }
 
 // COLOR LINK
-.projects__btn-text {
-  border-color: currentColor;
-}
-
-.links__item, .projects__btn-text {
+.links__item {
   &:hover, &:active {
-    color: #000000;
+    color: #000;
   }
 }
-
+.projects__btn-text {
+  &:hover, &:active {
+    color: #666;
+  }
+}
 .arrow svg path {
   transition: fill 0.2s ease;
 }
@@ -202,6 +147,7 @@
 
 .project__image-wrap {
   pointer-events: none;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .projects__image, .project__video, .projects__img-cont {
@@ -230,14 +176,10 @@
   }
 }
 
-.univercity__emb, .creators__emb, .vacancy__emb {
-  transition: transform 0.2s ease;
-}
-
 .univercity__btn {
   &:hover {
     & .univercity__emb {
-      transform: translateX(7px);
+      transform: translateX(4px);
     }
   }
 
@@ -256,26 +198,33 @@
 
 .creators__back {
   &:hover {
+    color: #666;
+
+    & svg path {
+      stroke: currentColor;
+    }
+
     & .creators__emb {
-      transform: translateX(-5px);
+      transform: translateX(-4px);
     }
   }
 }
 
 .vacancy__back {
   &:hover {
+    color: #666;
+    & svg path {
+      stroke: currentColor;
+    }
+
     & .vacancy__emb {
-      transform: translateX(-5px);
+      transform: translateX(-4px);
     }
   }
 }
 
 .brif__send-btn {
   &:hover {
-    border-color: currentColor;
-  }
-
-  &:active {
     color: #666;
 
     & svg path {
@@ -284,19 +233,15 @@
   }
 }
 
-.brif__send-btn--express, .express__send-btn {
+.brif__send-btn--express {
   &:hover {
     border-color: white;
   }
 }
 
 .express__send-btn {
-  &:active {
+  &:hover {
     color: rgba(255, 255, 255, 0.7);
-
-    &:hover {
-      border-color: currentColor;
-    }
 
     & svg path {
       stroke: rgba(255, 255, 255, 0.7);
@@ -315,14 +260,15 @@
 .clients__your-company {
   &:hover {
     color: black;
-    border-color: currentColor;
+    // border-color: currentColor;
   }
 }
 
 .get__item {
   cursor: default;
   transition: background-color 0.3s ease;
-  will-change: border-radius,
+  will-change: border-radius;
+
   &--round {
     border-radius: 6.25rem;
   }
@@ -349,8 +295,4 @@
       }
     }
   }
-}
-
-.project__image-wrap {
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }

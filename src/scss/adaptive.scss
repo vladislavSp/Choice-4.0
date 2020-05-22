@@ -37,10 +37,6 @@
   .wrapper {
     width: 90rem;
   }
-
-  .brif__sec-group {
-    margin-left: auto;
-  }
 }
 
 @media (max-width: 1600px) and (min-width: 1441px) {
@@ -50,7 +46,6 @@
   .wrapper {
     width: 80rem;
   }
-
   .main__title {
     font-size: 5rem;
     margin-bottom: 2.5rem;
@@ -62,7 +57,6 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 80rem;
   }
-
   .wrapper {
     width: 70rem;
   }
@@ -72,7 +66,6 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 70rem;
   }
-
   .wrapper {
     width: 60rem;
   }
@@ -82,7 +75,6 @@
   .wrapper--big, .wrapper--contact, .header__wrapper {
     width: 60rem;
   }
-
   .service__list {
     grid-column-gap: 1.5rem;
   }
@@ -108,10 +100,6 @@
     max-width: 70%;
   }
 
-  .brif__sec-group {
-    margin-left: auto;
-  }
-
   .brif__add-group {
     display: block;
   }
@@ -122,6 +110,12 @@
 }
 
 @media (max-width: 1440px) and (min-width: 992px) {
+  .contact {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    width: 9rem;
+  }
+
   .header__item {
     font-size: 1rem;
   }
@@ -159,6 +153,16 @@
   .project__text-group {
     margin-top: 5.5rem;
     margin-bottom: 5rem;
+  }
+
+  .seemore {
+    padding: 5.5rem 0 5.5rem;
+  }
+
+  .seemore__title {
+    font-size: 2.75rem;
+    line-height: 1.3333;
+    margin-bottom: 3rem;
   }
 
   .filters {
@@ -226,7 +230,6 @@
   }
   .contacts__title {
     font-size: 3rem;
-    margin-bottom: 4rem;
   }
 
   .about {
@@ -317,9 +320,22 @@
     padding-top: 5rem;
     margin-bottom: 4rem;
   }
-  .desc__title, .preview__title {
+
+  .hello {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .hello__text {
+    margin-right: 0.9rem;
+  }
+  .hello__emb {
+    width: 1.5rem;
+  }
+
+  .desc__title, .preview__title, .hello__title {
     font-size: 3rem;
   }
+
   .desc__item {
     font-size: 1.125rem;
   }
@@ -367,16 +383,11 @@
     font-size: 1.75rem;
   }
   .brif__sec-group {
-    order: -1;
-    margin-left: 0;
     margin-bottom: 2rem;
   }
   .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, {
     font-size: 1.5rem;
     line-height: 1.2;
-  }
-  .contact__forw-wrap {
-    width: 60%;
   }
   .brif__btn-wrap {
     margin-top: 3rem;
@@ -531,7 +542,7 @@
     font-size: 1.25rem;
     line-height: 1.2;
   }
-  .creators__text-link, .next__link {
+  .creators__text-link, .hello__link {
     font-size: 1.5rem;
   }
 
@@ -572,7 +583,7 @@
     padding-top: 8.5rem;
   }
   .contact__forw-wrap {
-    width: 100%;
+    width: 60%;
   }
 
   .brif__form-wrap {
@@ -589,9 +600,6 @@
   .brif__group-field:nth-of-type(2) {
     width: auto;
     flex-grow: 1;
-  }
-  .brif__list {
-    width: auto;
   }
 
   .clients {
@@ -625,7 +633,7 @@
     max-width: 51rem;
   }
 
-  .next__title {
+  .hello__title {
     font-size: 2.5rem;
   }
 
@@ -677,15 +685,12 @@
 }
 
 @media (max-width: 767px) {
-  // .service__list[visible="false"] .service__item:nth-child(n + 3), .publish__list[visible="false"] .publish__item:nth-child(n + 3) {
-  //   display: none;
-  // }
-
   .footer__link-social:last-of-type {
     margin-bottom: 0;
   }
 
   .view__paginations {
-    overflow-x: scroll;
+    // overflow-x: scroll;
+    overflow-x: hidden;
   }
 }
