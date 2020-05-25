@@ -384,12 +384,16 @@
   .brif__sec-group {
     margin-bottom: 2rem;
   }
-  .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, {
+  .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, .file-label {
     font-size: 1.5rem;
     line-height: 1.2;
   }
   .brif__btn-wrap {
     margin-top: 3rem;
+  }
+
+  .file-label {
+    height: 3.125rem;
   }
 
   // ABOUT
