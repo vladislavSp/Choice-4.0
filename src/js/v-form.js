@@ -1,4 +1,4 @@
-let vBtn = document.querySelector('[v-btn="form"]'),
+let vBtn = document.querySelector('[v-btn="btn"]'),
     vForm = document.querySelector('[v-form="form"]');
 
 // let vacancyBlock = document.querySelector('.hello-vacancy');
@@ -9,8 +9,10 @@ if (vBtn) {
 
 function formVisHandler(e) {
   e.preventDefault();
-  // console.log(this);
-  this.parentNode.style.display = 'none';
+
+  vBtn.classList.add('hello-vacancy--npoint');
+
+  vBtn.querySelector('.hello__link-wrap').style.display = 'none';
   vForm.style.display = 'block';
-  vacancyBlock.addEventListener('mouseleave', formVisHandler);
+  // vacancyBlock.addEventListener('mouseleave', formVisHandler);
 }

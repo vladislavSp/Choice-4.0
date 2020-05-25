@@ -1,6 +1,12 @@
 // hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link {
+.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title {
   transition: color 0.2s ease;
+}
+
+.contacts__title {
+  &:hover {
+    color: #666;
+  }
 }
 
 .hello-vacancy {
@@ -19,6 +25,17 @@
   &:hover {
     background-color: white;
 
+    & .hello__link {
+      color: #666;
+
+      & .hello__emb {
+        transform: translateX(4px);
+      }
+
+      & svg path {
+        stroke: currentColor;
+      }
+    }
     // & .brif__group-vacancy {
     //   display: block;
     // }
@@ -26,6 +43,10 @@
     //   display: none;
     // }
   }
+}
+
+.hello-vacancy--npoint {
+  cursor: default;
 }
 
 .publish__item {
@@ -45,19 +66,6 @@
   }
 }
 
-.hello__link {
-  &:hover {
-    color: #666;
-
-    & .hello__emb {
-      transform: translateX(4px);
-    }
-
-    & svg path {
-      stroke: currentColor;
-    }
-  }
-}
 
 .publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
   transition: border-color 0.2s ease;
@@ -87,19 +95,11 @@
 
 .club__link {
   &:hover {
-    color: black;
+    color: #666;
     border-color: currentColor;
 
     & svg path {
-      fill: black;
-    }
-  }
-  &:active {
-    color: #666666;
-    border-color: currentColor;
-
-    & svg path {
-      fill: #666666;
+      fill: #666;
     }
   }
 }
@@ -151,7 +151,7 @@
 }
 
 .projects__image, .project__video, .projects__img-cont {
-  transition: transform 0.5s ease;
+  transition: transform 0.2s ease;
 }
 
 .project__link-wrap {
@@ -165,7 +165,7 @@
     }
 
     & .projects__image, & .project__video, & .projects__img-cont {
-      transform: scale(1.08);
+      transform: scale(1.025);
     }
   }
 }
@@ -227,9 +227,9 @@
   &:hover {
     color: #666;
 
-    & svg path {
-      stroke: #666;
-    }
+    // & svg path {
+    //   stroke: #666;
+    // }
   }
 }
 
@@ -259,8 +259,8 @@
 
 .clients__your-company {
   &:hover {
-    color: black;
-    // border-color: currentColor;
+    color: #666;
+    border-color: currentColor;
   }
 }
 

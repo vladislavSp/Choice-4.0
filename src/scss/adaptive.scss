@@ -158,7 +158,6 @@
   .seemore {
     padding: 5.5rem 0 5.5rem;
   }
-
   .seemore__title {
     font-size: 2.75rem;
     line-height: 1.3333;
@@ -221,7 +220,7 @@
   }
 
   .contacts {
-    padding-top: 9.5rem;
+    padding-top: 9rem;
     padding-bottom: 5rem;
   }
   .brif-contact {
@@ -233,7 +232,7 @@
   }
 
   .about {
-    padding-top: 10rem;
+    padding-top: 9rem;
     padding-bottom: 5.5rem;
   }
   .about__title {
@@ -509,6 +508,11 @@
   .video {
     margin-bottom: 5rem;
   }
+  .video__btn {
+    width: 5rem;
+    font-size: 1.375rem;
+    line-height: 1.3333;
+  }
 
   .publish {
     padding-top: 5.5rem;
@@ -692,5 +696,14 @@
   .view__paginations {
     // overflow-x: scroll;
     overflow-x: hidden;
+  }
+}
+
+@media (max-width: 479px) {
+  .footer__link-social:nth-child(n + 2) {
+    margin-bottom: 1rem;
+  }
+  .footer__link-social:last-child {
+    margin-bottom: 0;
   }
 }

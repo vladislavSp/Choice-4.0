@@ -21,15 +21,15 @@ let nameField = document.querySelector('[send-field="name"]');
 
 if (nameField) {
   nameField.addEventListener('input', function() {
-    let numbers = [];
+    let numbers = [], initArr = [];
     let value = this.value;
-    let initArr = [];
 
     numbers.push(value.replace(/[^\d]/g,'')); // находится значения цифр в инпуте
     initArr = value.split(''); // создается весь массив ввода, разделенный ","
+
     let num = initArr.indexOf(numbers[0]); // поиск первого ввода цифры
 
-    if (num > 0) {
+    if (num >= 0) {
       initArr.splice(num, 1); // удаление этого ввода
       this.value = initArr.join(''); // подстановка в поле ввода значения без цифр
     }
