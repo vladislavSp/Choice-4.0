@@ -14,5 +14,6 @@ function formVisHandler(e) {
 
   vBtn.querySelector('.hello__link-wrap').style.display = 'none';
   vForm.style.display = 'block';
+  vBtn.removeEventListener('click', formVisHandler);
   // vacancyBlock.addEventListener('mouseleave', formVisHandler);
 }

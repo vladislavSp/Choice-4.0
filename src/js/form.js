@@ -43,6 +43,9 @@ let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
     projectField = document.querySelector('*[send-field="project"]');
 
 if (selectorsBrif.length) selectorsBrif.forEach(el => el.addEventListener('click', stateSelectorsHandler));
+if (sendBtn) sendBtn.addEventListener('click', checkFormsHandler);
+if (sendAgainBtn) sendAgainBtn.addEventListener('click', sendFormsAgainHandler);
+if (checkFields.length) checkFields.forEach(el => el.addEventListener('focus', validInputHandler));
 
 function stateSelectorsHandler () {
   if (this.getAttribute('state') === 'enable') {
@@ -57,10 +60,6 @@ function stateSelectorsHandler () {
   projectField.setAttribute('value-proj', `${Array.from(infoBrif)}`);
   // projectField.setAttribute('state', 'valid');
 }
-
-if (sendBtn) sendBtn.addEventListener('click', checkFormsHandler);
-if (sendAgainBtn) sendAgainBtn.addEventListener('click', sendFormsAgainHandler);
-if (checkFields.length) checkFields.forEach(el => el.addEventListener('focus', validInputHandler));
 
 function checkFormsHandler() {
   checkFields.forEach(el => {
