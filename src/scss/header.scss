@@ -4,7 +4,7 @@
 
   &--hid {
     transition: transform 0.15s ease;
-    transform: translateY(-100%);
+    transform: translateY(-101%);
   }
 }
 
@@ -15,6 +15,10 @@
     &:hover {
       color: rgba(255, 255, 255, 0.8);
     }
+  }
+
+  & .header__svg path {
+    fill: white;
   }
 }
 

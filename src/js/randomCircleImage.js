@@ -4,7 +4,7 @@ if (imageWrappers.length) randomImage(imageWrappers);
 
 function randomImage(arr) {
   let randomNum = randomInteger(0, arr.length - 1);
-  let images = Array.from(imageWrappers[randomNum].querySelectorAll('img'));
+  let images = Array.from(imageWrappers[randomNum].querySelectorAll('.club__image'));
 
   images.forEach(el => el.style.borderRadius = `50%`);
 }

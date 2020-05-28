@@ -12,6 +12,7 @@
   }
 }
 
+
 .qa__item:last-child {
   margin-bottom: 0;
 
@@ -20,6 +21,12 @@
   }
   & .qa__acc-group {
     padding-bottom: 0;
+  }
+}
+
+.filters__item:last-child {
+  & .filters__sign {
+    display: none;
   }
 }
 
@@ -214,7 +221,7 @@
     padding-bottom: 5.5rem;
   }
 
-  .univercity__title, .careers__title, .about__title {
+  .univercity__title, .careers__title {
     font-size: 3.625rem;
     line-height: 1.137931;
   }
@@ -227,7 +234,7 @@
     padding-top: 5.5rem;
     padding-bottom: 5.5rem;
   }
-  .contacts__title {
+  .contacts__title, .about__title {
     font-size: 3rem;
   }
 
@@ -267,6 +274,9 @@
       left: 35rem;
       top: 4rem;
     }
+  }
+  .univercity__btn {
+    font-size: 1.125rem;
   }
   .univercity__btn-text {
     font-size: 1.125rem;

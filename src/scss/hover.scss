@@ -1,9 +1,9 @@
 // hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title {
+.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__address, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title, .vacancy__mail-link {
   transition: color 0.2s ease;
 }
 
-.contacts__title {
+.contacts__title, .vacancy__mail-link {
   &:hover {
     color: #666;
   }
@@ -13,11 +13,15 @@
   transition: background-color 0.2s ease;
 }
 
-.careers__emb, .hello__emb, .univercity__emb, .creators__emb, .vacancy__emb {
+.hello__emb, .univercity__emb, .creators__emb, .vacancy__emb, .brif__arrow, .brif__arrow--back {
   transition: transform 0.2s ease;
 }
 
-.publish__emb, .careers__emb {
+.careers__emb {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.publish__emb {
   transition: opacity 0.2s ease;
 }
 
@@ -36,17 +40,26 @@
         stroke: currentColor;
       }
     }
-    // & .brif__group-vacancy {
-    //   display: block;
-    // }
-    // & .hello__link-wrap {
-    //   display: none;
-    // }
+  }
+}
+
+.hello__link {
+  &:hover {
+    color: #666;
+
+    & .hello__emb {
+      transform: translateX(4px);
+    }
+
+    & svg path {
+      stroke: currentColor;
+    }
   }
 }
 
 .hello-vacancy--npoint {
   cursor: default;
+  background-color: white;
 }
 
 .publish__item {
@@ -81,7 +94,7 @@
   }
 }
 
-.footer__tel, .footer__mail {
+.footer__tel, .footer__mail, .footer__address {
   &:hover {
     color: rgba(255, 255, 255, 0.6);
   }
@@ -150,7 +163,7 @@
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.projects__image, .project__video, .projects__img-cont {
+.projects__image, .project__video, .projects__img-cont, .express__arrow, .express__arrow-back {
   transition: transform 0.2s ease;
 }
 
@@ -227,24 +240,26 @@
   &:hover {
     color: #666;
 
-    // & svg path {
-    //   stroke: #666;
-    // }
+    & .brif__arrow {
+      transform: translateX(4px);
+    }
+
+    & .brif__arrow--back {
+      transform: translateX(-4px);
+    }
   }
 }
 
-.brif__send-btn--express {
-  &:hover {
-    border-color: white;
-  }
-}
-
-.express__send-btn {
+.express__send-btn, .brif__send-btn--express {
   &:hover {
     color: rgba(255, 255, 255, 0.7);
 
-    & svg path {
-      stroke: rgba(255, 255, 255, 0.7);
+    & .express__arrow {
+      transform: translateX(4px);
+    }
+
+    & .express__arrow-back {
+      transform: translateX(-4px);
     }
   }
 }

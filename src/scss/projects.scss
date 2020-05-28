@@ -1,5 +1,5 @@
 @media (min-width: 992px) {
-  .project__item[grid="4"] {
+  .body--projects .project__item:first-child {
     -ms-grid-column: span 4;
     grid-column-start: span 4;
     -ms-grid-column-span: 4;
@@ -8,6 +8,19 @@
     grid-row-start: span 1;
     -ms-grid-row-span: 1;
     grid-row-end: span 1;
+  }
+
+  .body--projects {
+    & .project__item {
+      order: 2;
+      &[grid='2'], &[grid='3'] {
+        order: 0;
+      }
+    }
+  }
+
+  .body--projects .project__item:first-child + .project__item {
+    order: 1;
   }
 
   .project__item[grid="3"] {
@@ -21,7 +34,7 @@
     grid-row-end: span 1;
   }
 
-  .project__item[grid="2"], .project__item[grid="2"] + .project__item {
+  .project__item[grid="2"] { //.project__item[grid="2"] + .project__item
     -ms-grid-column: span 2;
     grid-column-start: span 2;
     -ms-grid-column-span: 2;
@@ -34,7 +47,8 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .project__item[grid="4"], .project__item[grid="3"], .project__item[grid="2"], .project__item[grid="2"] + .project__item {
+  //.project__item[grid="2"] + .project__item
+  .project__item[grid="4"], .project__item[grid="3"], .project__item[grid="2"] {
     -ms-grid-column: span 2;
     grid-column-start: span 2;
     -ms-grid-column-span: 2;
