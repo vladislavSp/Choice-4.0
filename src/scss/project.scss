@@ -20,3 +20,9 @@
   cursor: default;
   pointer-events: none;
 }
+
+.project__item {
+  &[visible="false"] {
+    display: none;
+  }
+}

@@ -38,46 +38,36 @@ function changeStateFilters(evt) {
 
   let clickFilter =  this.getAttribute('filter');
 
-  if (clickFilter === 'all') {
-    gsap.to(projectList, { opacity: 0, onComplete: () => {
-        projectList.style.opacity = ``;
-        projectItems.forEach( el => el.style.display = '' );
-      }
-    });
-    window.history.replaceState({clickFilter}, 'filter', `${location.pathname}`);
-  } else {
-    window.history.replaceState({clickFilter}, 'filter', `${location.pathname}?filter=${clickFilter}`);
-    setFilter(clickFilter);
-  }
-
   filters.forEach(el => el.setAttribute('state', 'disable'));
   this.setAttribute('state', 'enable');
+
+  if (clickFilter === 'all') {
+    gsap.to(projectList, { opacity: 0, onComplete: () => {
+      projectItems.forEach( el => el.setAttribute('visible', 'true') );
+      projectList.style.opacity = ``;
+    }});
+    window.history.replaceState(clickFilter, 'filter', `${location.pathname}`);
+    stateVisibleProject(false);
+  } else {
+    window.history.replaceState(clickFilter, 'filter', `${location.pathname}?filter=${clickFilter}`);
+    setFilter(clickFilter);
+  }
 }
 
 function setFilter(clickFilter, upd = true) {
-  projectItems.forEach((el, i, arr) => {
-    let categArr = el.getAttribute('category').split('||').filter(elem => elem === clickFilter);
-    console.log(categArr);
-    if (!categArr.length) {
-        gsap.to(projectList, { opacity: 0, onComplete: () => {
-          arr[i].style.display = `none`;
-          projectList.style.opacity = ``;
-        }});
-    } else {
-      gsap.to(projectList, { opacity: 0, onComplete: () => {
-        arr[i].style.display = ``;
-        projectList.style.opacity = ``;
-      }});
-    }
-  });
+  let visibleItems = projectItems.filter(item => item.getAttribute('category').split('||').includes(clickFilter)); // Элементы, которые надо показать (другие скрыть)
+
+  gsap.to(projectList, { opacity: 0, onComplete: () => {
+    projectItems.forEach(el => el.setAttribute('visible', 'false'));
+    visibleItems.forEach(el => el.setAttribute('visible', 'true'));
+    projectList.style.opacity = ``;
+  }});
+
+  stateVisibleProject(true);
 }
 
-// function gsapOpacity(arr, param) {
-//   arr.style.display = param ? `none` : ``;
-//   projectList.style.opacity = `1`;
-// }
-
-// () => {
-//     arr[i].style.display = `none`;
-//     projectList.style.opacity = ``;
-//   }
+// setHistory()
+function stateVisibleProject(f) {
+  projectList.setAttribute('visible-list', `${f}`);
+  viewBtn.style.display = f ? `none` : ``;
+}

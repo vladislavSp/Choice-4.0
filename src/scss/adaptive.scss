@@ -30,6 +30,11 @@
   }
 }
 
+// .projects__img-cont {
+//   background-size: cover;
+//   background-position: 50% 50%;
+// }
+
 @media (min-width: 992px) {
   .brif__group-field:nth-of-type(2) {
     width: 37rem;
@@ -392,14 +397,26 @@
     font-size: 1.75rem;
   }
   .brif__sec-group {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .brif__field, .brif__textarea, .contact__field, .contact__textarea, .express__field, .express__textarea, .file-label {
     font-size: 1.5rem;
     line-height: 1.2;
   }
+
   .brif__btn-wrap {
     margin-top: 3rem;
+  }
+
+  .brif__subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .brif__item--contact {
+    min-height: 3rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 
   .file-label {
@@ -710,6 +727,11 @@
   .view__paginations {
     // overflow-x: scroll;
     overflow-x: hidden;
+  }
+  .body--home, .body--projects {
+    & .project__item:first-of-type {
+      height: 29.375rem;
+    }
   }
 }
 
