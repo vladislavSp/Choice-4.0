@@ -16,16 +16,7 @@ function changeColorHandler() {
       // height block +pos relative viewport - 1/2 header
       positionBlock = blockHeight + blockTop - (headerHeight);
 
-      // console.log(positionBlock, arrTop, indexArr);
+  // console.log(positionBlock, arrTop, indexArr);
   if (blockTop < headerHeight && positionBlock > 0) header.setAttribute('color', 'change');
   else header.setAttribute('color', '');
 }
-
-// function getCoords(elem) {
-//   let box = elem.getBoundingClientRect();
-//
-//   return {
-//     top: box.top + pageYOffset,
-//     left: box.left + pageXOffset
-//   };
-// }

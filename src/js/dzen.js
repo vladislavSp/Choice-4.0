@@ -75,13 +75,6 @@ if (bodyFlag) {
   }
 }
 
-// function preloadNextProjects() {
-//   viewBlocks[index].setAttribute('state', 'enable');
-//  viewNextBlock();
-//  downloadProjectFromNet();
-//   axios({});
-// }
-
 function scrollControl(param) {
   let scrollControlSize = window.pageYOffset || document.documentElement.scrollTop, // scroll page
       scrollControlBarSize = window.innerWidth - document.body.clientWidth, // width scroll bar
@@ -109,14 +102,3 @@ function scrollControl(param) {
     scrollControlBody.setAttribute('scrollControlState', 'unlock');
   }
 }
-
-// const scrollbar = Scrollbar.init(`html`, {
-//   damping: 0.2,
-// });
-
-//
-// $(document).ready(
-//     function() {
-//         $("html").niceScroll();
-//     }
-// );

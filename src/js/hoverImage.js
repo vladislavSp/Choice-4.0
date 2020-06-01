@@ -21,13 +21,3 @@ function positioningImage(x, y, obj) {
   image.style.top = `${y - (imageHeight/2)}px`;
   image.style.left = `${x - (imageWidth/2)}px`;
 }
-
-// function hiddenText(obj) {
-//   // obj.querySelector('.service__desc').style.zIndex = '-2';
-//   let descs = [...document.querySelectorAll('.service__desc')];
-//   descs.forEach(el =>    el.style.zIndex = '-2');
-// }
-
-// function viewTextHandler() {
-//   this.querySelector('.service__desc').style.zIndex = '';
-// }

@@ -1,7 +1,5 @@
-let playBtn = document.querySelector('[videobtn="play"]'),
+let playBtn = document.querySelector('[videobtn="play"]'), play = 1,
     video = document.querySelector('.video-content');
-
-let play = 1;
 
 if (playBtn) {
   playBtn.addEventListener('click', playVideo);

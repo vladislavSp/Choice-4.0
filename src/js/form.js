@@ -88,6 +88,12 @@ function sendForms(obj) {
     window.scrollTo(0, topScrollBlock);
   }
 
+  // axios({
+  //     method: 'post',
+  //     url: 'assets/choice/php/send.php',
+  //     data: ` name=${name}&phone=${contact} `
+  //   }).then();
+
   formMail.style.display = 'none';
   formSuccess.style.display = 'block';
   resetForm();

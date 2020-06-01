@@ -11,7 +11,7 @@ if (fileInput) {
 function changeStateLabel() {
   // console.log(this.files[0]);
   if (this.files[0]) {
-    labelFile.textContent = `Файл выбран: ${this.files[0].name}`;
+    labelFile.textContent = `${this.files[0].name}`;
     labelFile.classList.add('file-label--pick');
   } else {
     labelFile.textContent = `Pick up our file`;
