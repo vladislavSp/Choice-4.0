@@ -1,5 +1,5 @@
-let vBtn = document.querySelector('[v-btn="btn"]'),
-    vForm = document.querySelector('[v-form="form"]');
+let vBtn = document.querySelector('[data-v-btn="btn"]'),
+    vForm = document.querySelector('[data-v-form="form"]');
 
 // let vacancyBlock = document.querySelector('.hello-vacancy');
 

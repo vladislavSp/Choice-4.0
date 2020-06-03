@@ -13,7 +13,7 @@
   .body--projects {
     & .project__item {
       order: 2;
-      &[grid='2'], &[grid='3'] {
+      &[data-grid='2'], &[data-grid='3'] {
         order: 0;
       }
     }
@@ -23,7 +23,7 @@
     order: 1;
   }
 
-  .project__item[grid="3"] {
+  .project__item[data-grid="3"] {
     -ms-grid-column: span 3;
     grid-column-start: span 3;
     -ms-grid-column-span: 3;
@@ -34,7 +34,7 @@
     grid-row-end: span 1;
   }
 
-  .project__item[grid="2"] { //.project__item[grid="2"] + .project__item
+  .project__item[data-grid="2"] { //.project__item[grid="2"] + .project__item
     -ms-grid-column: span 2;
     grid-column-start: span 2;
     -ms-grid-column-span: 2;
@@ -48,7 +48,7 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   //.project__item[grid="2"] + .project__item
-  .project__item[grid="4"], .project__item[grid="3"], .project__item[grid="2"] {
+  .project__item[data-grid="4"], .project__item[data-grid="3"], .project__item[data-grid="2"] {
     -ms-grid-column: span 2;
     grid-column-start: span 2;
     -ms-grid-column-span: 2;
@@ -59,30 +59,30 @@
     grid-row-end: span 1;
   }
 
-  .project__item[grid="3"] + .project__item {
+  .project__item[data-grid="3"] + .project__item {
     order: 9999;
   }
 }
 
-.projects__list[visible-list="false"] {
+.projects__list[data-visible-list="false"] {
   & .project__item:nth-child(n + 8) {
     display: none;
   }
 }
 
-.projects__list[proj-list="express"][visible-list="false"] {
+.projects__list[data-proj-list="express"][data-visible-list="false"] {
   & .project__item:nth-child(n + 5) {
     display: none;
   }
 }
 
-.projects__list[proj-list="brands"][visible-list="false"] {
-  & .project__item:nth-child(n + 4) {
-    display: none;
-  }
-}
+// .projects__list[data-proj-list="brands"][data-visible-list="false"] {
+//   & .project__item:nth-child(n + 4) {
+//     display: none;
+//   }
+// }
 
-.project__wrap[grid="2"] {
+.project__wrap[data-grid="2"] {
   -ms-grid-column: span 2;
   grid-column-start: span 2;
   -ms-grid-column-span: 2;
@@ -104,7 +104,7 @@
     }
   }
 
-  &[state="enable"] {
+  &[data-state="enable"] {
     .filters__text {
       color: #000000;
       border-color: currentColor;// #0E4CD1;

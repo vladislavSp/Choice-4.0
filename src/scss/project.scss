@@ -7,22 +7,13 @@
   }
 }
 
-.project-sect[lazy-load="block"] {
-  display: none;
-  will-change: transform;
-}
-
-.project-sect[lazy-load="block"][state="enable"] {
-  display: block;
-}
-
-.filters__item[state="enable"] {
+.filters__item[data-state="enable"] {
   cursor: default;
   pointer-events: none;
 }
 
 .project__item {
-  &[visible="false"] {
+  &[data-visible="false"] {
     display: none;
   }
 }

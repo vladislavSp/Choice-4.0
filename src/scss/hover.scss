@@ -288,13 +288,13 @@
     border-radius: 6.25rem;
   }
 
-  &[gi="first"] {
+  &[data-gi="first"] {
     background-color: #F4F900;
   }
-  &[gi="second"] {
+  &[data-gi="second"] {
     background-color: #0E4CD1;
   }
-  &[gi="third"] {
+  &[data-gi="third"] {
     background-color: #FA6823;
   }
   &--round:hover {

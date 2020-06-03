@@ -1,4 +1,4 @@
-let playBtn = document.querySelector('[videobtn="play"]'), play = 1,
+let playBtn = document.querySelector('[data-videobtn="play"]'), play = 1,
     video = document.querySelector('.video-content');
 
 if (playBtn) {

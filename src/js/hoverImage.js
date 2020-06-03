@@ -1,4 +1,4 @@
-let serviceItems = Array.from(document.querySelectorAll('*[service-item]')), image;
+let serviceItems = [...document.querySelectorAll('*[data-service-item]')], image;
 
 if (serviceItems.length && window.matchMedia("(min-width: 992px)").matches) {
   serviceItems.forEach(el => el.addEventListener('mousemove', imageHoverHandler));

@@ -1,14 +1,14 @@
-let filters = [...document.querySelectorAll('*[filter]')], filter,
-    projectList = document.querySelector('[proj-list]'),
-    viewBtn = document.querySelector('[project-btn="add"]'),
-    projectItems = [...document.querySelectorAll('[category]')];
-let update = false;
+let filters = [...document.querySelectorAll('*[data-filter]')], filter,
+    projectList = document.querySelector('[data-proj-list]'),
+    viewBtn = document.querySelector('[data-project-btn="add"]'),
+    projectItems = [...document.querySelectorAll('[data-category]')];
+// let update = false;
 
 // ПОКАЗ БЛОКОВ
 if (viewBtn) {
   viewBtn.addEventListener('click', viewBlockHandler);
 
-  if (projectList.getAttribute('proj-list') === 'express' && projectList.children.length <= 4) viewBtn.style.display = 'none';
+  if (projectList.getAttribute('data-proj-list') === 'express' && projectList.children.length <= 4) viewBtn.style.display = 'none';
 }
 
 if (filters.length > 0) {
@@ -17,10 +17,10 @@ if (filters.length > 0) {
   filter = location.search.split('=')[1];
 
   if (filter) {
-    setFilter(filter, update);
+    setFilter(filter); //, update
     filters.forEach(el => {
-      if (el.getAttribute('filter') === filter) el.setAttribute('state', 'enable');
-      else el.setAttribute('state', 'disable');
+      if (el.getAttribute('data-filter') === filter) el.setAttribute('data-state', 'enable');
+      else el.setAttribute('data-state', 'disable');
     });
   }
 }
@@ -32,17 +32,17 @@ function viewBlockHandler() {
 function changeStateFilters(evt) {
   evt.preventDefault();
 
-  let clickFilter =  this.getAttribute('filter');
+  let clickFilter =  this.getAttribute('data-filter');
 
-  filters.forEach(el => el.setAttribute('state', 'disable'));
-  this.setAttribute('state', 'enable');
+  filters.forEach(el => el.setAttribute('data-state', 'disable'));
+  this.setAttribute('data-state', 'enable');
 
   if (clickFilter === 'all') {
     gsap.to(projectList, { opacity: 0, onComplete: () => {
-      projectItems.forEach( el => el.setAttribute('visible', 'true') );
+      projectItems.forEach( el => el.setAttribute('data-visible', 'true') );
       gsap.to(projectList, { opacity: 1, duration: 0.5});
     }});
-    window.history.replaceState(clickFilter, 'filter', `${location.pathname}`);
+    window.history.replaceState(clickFilter, 'data-filter', `${location.pathname}`);
     stateVisibleProject(false);
   } else {
     window.history.replaceState(clickFilter, 'filter', `${location.pathname}?filter=${clickFilter}`);
@@ -51,11 +51,11 @@ function changeStateFilters(evt) {
 }
 
 function setFilter(clickFilter, upd = true) {
-  let visibleItems = projectItems.filter(item => item.getAttribute('category').split('||').includes(clickFilter)); // Элементы, которые надо показать (другие скрыть)
+  let visibleItems = projectItems.filter(item => item.getAttribute('data-category').split('||').includes(clickFilter)); // Элементы, которые надо показать (другие скрыть)
 
   gsap.to(projectList, { opacity: 0, duration: 0.5, onComplete: () => {
-    projectItems.forEach(el => el.setAttribute('visible', 'false'));
-    visibleItems.forEach(el => el.setAttribute('visible', 'true'));
+    projectItems.forEach(el => el.setAttribute('data-visible', 'false'));
+    visibleItems.forEach(el => el.setAttribute('data-visible', 'true'));
     gsap.to(projectList, { opacity: 1, duration: 0.5});
   }});
 
@@ -63,6 +63,6 @@ function setFilter(clickFilter, upd = true) {
 }
 
 function stateVisibleProject(f) {
-  projectList.setAttribute('visible-list', `${f}`);
+  projectList.setAttribute('data-visible-list', `${f}`);
   viewBtn.style.display = f ? `none` : ``;
 }

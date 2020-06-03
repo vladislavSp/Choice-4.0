@@ -1,5 +1,4 @@
 // SCSS - General
-import './scss/fonts.scss';
 import './scss/general.scss';
 
 // SCSS - All
@@ -8,7 +7,6 @@ import './scss/header.scss';
 import './scss/projects.scss';
 import './scss/project.scss';
 import './scss/about.scss';
-import './scss/contact.scss';
 import './scss/form.scss';
 import './scss/slider.scss';
 

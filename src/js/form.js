@@ -1,13 +1,13 @@
-let sendBtn = document.querySelector('*[send-form="btn"]'),
-    sendAgainBtn = document.querySelector('*[send-again="btn"]'),
-    checkFields = Array.from(document.querySelectorAll('*[check-field]')),
-    sendFields = Array.from(document.querySelectorAll('*[send-field]')),
-    formMail = document.querySelector('*[form-block="mail"]'),
-    formSuccess = document.querySelector('*[form-block="success"]'),
-    nameUser = document.querySelector('[brif-name="user"]'),
-    textArea = document.querySelector('[brif="textarea"]'),
-    scrollBlock = document.querySelector('[scroll="form"]'),
-    fileField = document.querySelector('[send-field="file"]'),
+let sendBtn = document.querySelector('*[data-send-form="btn"]'),
+    sendAgainBtn = document.querySelector('*[data-send-again="btn"]'),
+    checkFields = Array.from(document.querySelectorAll('*[data-check-field]')),
+    sendFields = Array.from(document.querySelectorAll('*[data-send-field]')),
+    formMail = document.querySelector('*[data-form-block="mail"]'),
+    formSuccess = document.querySelector('*[data-form-block="success"]'),
+    nameUser = document.querySelector('[data-brif-name="user"]'),
+    textArea = document.querySelector('[data-brif="textarea"]'),
+    scrollBlock = document.querySelector('[data-scroll="form"]'),
+    fileField = document.querySelector('[data-send-field="file"]'),
     fieldsObj = {}, infoBrif = new Set();
 
 if (textArea) {
@@ -16,7 +16,7 @@ if (textArea) {
 }
 
 // INPUT MASK
-let nameField = document.querySelector('[send-field="name"]');
+let nameField = document.querySelector('[data-send-field="name"]');
 // let mailField = document.querySelector('[send-field="mail"]');
 
 if (nameField) {
@@ -39,8 +39,8 @@ if (nameField) {
 
 
 // Selectors for Projects
-let selectorsBrif = Array.from(document.querySelectorAll('*[selector="brif"]')),
-    projectField = document.querySelector('*[send-field="project"]');
+let selectorsBrif = Array.from(document.querySelectorAll('*[data-selector="brif"]')),
+    projectField = document.querySelector('*[data-send-field="project"]');
 
 if (selectorsBrif.length) selectorsBrif.forEach(el => el.addEventListener('click', stateSelectorsHandler));
 if (sendBtn) sendBtn.addEventListener('click', checkFormsHandler);
@@ -48,33 +48,32 @@ if (sendAgainBtn) sendAgainBtn.addEventListener('click', sendFormsAgainHandler);
 if (checkFields.length) checkFields.forEach(el => el.addEventListener('focus', validInputHandler));
 
 function stateSelectorsHandler () {
-  if (this.getAttribute('state') === 'enable') {
-    this.setAttribute('state', 'disable');
+  if (this.getAttribute('data-state') === 'enable') {
+    this.setAttribute('data-state', 'disable');
     infoBrif.delete(this.textContent);
   }
   else {
-    this.setAttribute('state', 'enable');
+    this.setAttribute('data-state', 'enable');
     infoBrif.add(this.textContent);
   }
 
-  projectField.setAttribute('value-proj', `${Array.from(infoBrif)}`);
-  // projectField.setAttribute('state', 'valid');
+  projectField.setAttribute('data-value-proj', `${Array.from(infoBrif)}`);
 }
 
 function checkFormsHandler() {
   checkFields.forEach(el => {
-    if (el.value === '') el.setAttribute('state', 'invalid'); // el.getAttribute('value-proj') === 'invalid'
-    else el.setAttribute('state', 'valid');
+    if (el.value === '') el.setAttribute('data-state', 'invalid'); // el.getAttribute('value-proj') === 'invalid'
+    else el.setAttribute('data-state', 'valid');
   });
 
 // проверка каждого элемента (требующего валидации) на заполненность
-  let sendFlag = checkFields.every(el => el.getAttribute('state') === 'valid');
+  let sendFlag = checkFields.every(el => el.getAttribute('data-state') === 'valid');
 
   if (sendFlag) {
-  // проверка всех полей и отправка данных sendForms(fieldsObj)
+  // проверка всех полей и отправка данных fieldsObj
     sendFields.forEach(el => {
-      el.getAttribute('send-field') === 'project' ? fieldsObj[el.getAttribute('send-field')] = el.getAttribute('value-proj') : fieldsObj[el.getAttribute('send-field')] = el.value;
-      if (el.getAttribute('send-field') === 'name') nameUser.textContent = el.value;
+      el.getAttribute('data-send-field') === 'project' ? fieldsObj[el.getAttribute('data-send-field')] = el.getAttribute('data-value-proj') : fieldsObj[el.getAttribute('data-send-field')] = el.value;
+      if (el.getAttribute('data-send-field') === 'name') nameUser.textContent = el.value;
     });
 
     sendForms(fieldsObj);
@@ -102,7 +101,7 @@ function sendForms(obj) {
 function resetForm() {
   let form = formMail.getElementsByTagName(`form`);
   form[0].reset();
-  selectorsBrif.forEach(el => el.setAttribute('state', 'disable'));
+  selectorsBrif.forEach(el => el.setAttribute('data-state', 'disable'));
 }
 
 function sendFormsAgainHandler() {
@@ -111,5 +110,5 @@ function sendFormsAgainHandler() {
 }
 
 function validInputHandler() {
-  this.setAttribute('state', '');
+  this.setAttribute('data-state', '');
 }

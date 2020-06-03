@@ -1,4 +1,4 @@
-.brif__field[state="invalid"], .contact__field[state="invalid"], .express__field[state="invalid"] {
+.brif__field[data-state="invalid"], .contact__field[data-state="invalid"], .express__field[data-state="invalid"] {
   border-color: red;
 
   &::placeholder {
@@ -6,10 +6,26 @@
   }
 }
 
-.brif__list[state="invalid"] {
+.brif__list[data-state="invalid"] {
   & .brif__item--contact {
     color: white;
     background-color: red;
+  }
+}
+
+.brif__item--contact {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .brif__item--contact[data-state="enable"] {
+    color: white;
+    background-color: black;
+  }
+}
+@media (max-width: 767px) {
+  .brif__item--contact[data-state="enable"] {
+    color: white;
+    background-color: black;
   }
 }
 

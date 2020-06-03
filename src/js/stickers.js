@@ -1,5 +1,5 @@
-let stickers = Array.from(document.querySelectorAll('[sticker="item"]')),
-    universityBlock = document.querySelector('[sticker-block="flag"]'),
+let stickers = Array.from(document.querySelectorAll('[data-sticker="item"]')),
+    universityBlock = document.querySelector('[data-sticker-block="flag"]'),
     bodyScrollHeight = document.body.scrollHeight,
     bodyWidth = document.body.getBoundingClientRect().width;
 
@@ -31,14 +31,14 @@ function moveStickerHandler(evt) {
   }
 
   stickers.forEach(el => {
-    if (el.getAttribute('state') === 'none') {
+    if (el.getAttribute('data-state') === 'none') {
       el.removeEventListener('mousedown', moveStickerHandler);
       if (type === 'touchstart') el.removeEventListener('touchstart', moveStickerHandler);
     }
   });
 
   let sticker = this;
-  this.setAttribute('state', 'active');
+  this.setAttribute('data-state', 'active');
 
   function positionMouseHandler(event) {
     if (event.cancelable) event.preventDefault();
@@ -81,10 +81,10 @@ function moveStickerHandler(evt) {
       document.removeEventListener('touchend', removeHandler); // sticker
     }
 
-    sticker.setAttribute('state', 'none');
+    sticker.setAttribute('data-state', 'none');
 
     stickers.forEach(el => {
-      if (el.getAttribute('state') === 'none') {
+      if (el.getAttribute('data-state') === 'none') {
         el.addEventListener('mousedown', moveStickerHandler);
         el.addEventListener('touchstart', moveStickerHandler);
       }

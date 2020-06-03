@@ -1,5 +1,5 @@
-let header = document.querySelector('[hr="scroll"]');
-let positionInit = pageYOffset; // начальная прокрутка док-та
+let header = document.querySelector('[data-hr="scroll"]'),
+    positionInit = pageYOffset; // начальная прокрутка док-та
 
 document.addEventListener('scroll', hideMenuHandler);
 

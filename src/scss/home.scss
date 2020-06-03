@@ -15,7 +15,7 @@
   pointer-events: none;
 }
 
-.univercity__sticker[state="none"], .picture__sticker[state="none"] {
+.univercity__sticker[data-state="none"], .picture__sticker[data-state="none"] {
   cursor: grab;
 }
 
@@ -24,7 +24,7 @@
   will-change: transform;
 }
 
-.univercity__sticker[state="active"], .picture__sticker[state="active"] {
+.univercity__sticker[data-state="active"], .picture__sticker[data-state="active"] {
   z-index: 12;
   cursor: grabbing;
 

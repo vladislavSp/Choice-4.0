@@ -1,5 +1,5 @@
-let accordionItem = Array.from(document.querySelectorAll('[acc="item"]'));
-let accBtn = Array.from(document.querySelectorAll('[acc="btn"]'));
+let accordionItem = Array.from(document.querySelectorAll('[data-acc="item"]'));
+let accBtn = Array.from(document.querySelectorAll('[data-acc="btn"]'));
 
 if (accBtn.length > 0) accBtn.forEach(el => el.addEventListener('click', stateAccordionHandler));
 if (accordionItem.length > 0) accordionItem.forEach(el => el.style.height = `${0}px`);
@@ -7,10 +7,10 @@ if (accordionItem.length > 0) accordionItem.forEach(el => el.style.height = `${0
 
 
 function stateAccordionHandler(evt) {
-  if (this.getAttribute('state') === 'none') this.setAttribute('state', 'active');
-  else this.setAttribute('state', 'none');
+  if (this.getAttribute('data-state') === 'none') this.setAttribute('data-state', 'active');
+  else this.setAttribute('data-state', 'none');
 
-  let accordBlock = this.parentNode.querySelector('[acc="item"]'); // элемент, которому задается высота
+  let accordBlock = this.parentNode.querySelector('[data-acc="item"]'); // элемент, которому задается высота
 
   if (accordBlock.style.height === "0px") {
     accordBlock.style.height = `${ accordBlock.scrollHeight }px`;
