@@ -36,7 +36,7 @@ if (expressContainer) {
     },
   });
 
-  let wrapperStories = document.querySelector('[story="express"]');
+  let wrapperStories = document.querySelector('[data-story="express"]');
   let paginations = [...document.querySelectorAll('.view__point')];
 
   let initTime = 9000, rangeTime = 9, initSeconds = 0, newTimer; //
