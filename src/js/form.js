@@ -73,10 +73,11 @@ function checkFormsHandler() {
   // проверка всех полей и отправка данных fieldsObj
     sendFields.forEach(el => {
       el.getAttribute('data-send-field') === 'project' ? fieldsObj[el.getAttribute('data-send-field')] = el.getAttribute('data-value-proj') : fieldsObj[el.getAttribute('data-send-field')] = el.value;
-      if (el.getAttribute('data-send-field') === 'name') nameUser.textContent = el.value;
+      if (el.getAttribute('data-send-field') === 'name' && nameUser) nameUser.textContent = el.value;
     });
 
-    sendForms(fieldsObj);
+    fieldsObj.type = this.getAttribute('data-type-form');
+    sendForms(JSON.stringify(fieldsObj));
   }
 };
 
@@ -87,11 +88,13 @@ function sendForms(obj) {
     window.scrollTo(0, topScrollBlock);
   }
 
-  // axios({
-  //     method: 'post',
-  //     url: 'assets/choice/php/send.php',
-  //     data: ` name=${name}&phone=${contact} `
-  //   }).then();
+  axios({
+      method: 'post',
+      url: '/back/send.php',
+      data: ` data=${obj} `
+    }).then((response) => {
+      console.log(response.data);
+    });
 
   formMail.style.display = 'none';
   formSuccess.style.display = 'block';

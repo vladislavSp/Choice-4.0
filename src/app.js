@@ -30,4 +30,4 @@ import './js/colorMenu.js';
 import './js/randomCircleImage.js';
 import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
-import './js/input-file.js';
+// import './js/input-file.js';

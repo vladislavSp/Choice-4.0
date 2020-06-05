@@ -9,10 +9,11 @@ function clean($value){
     return $value;
 }
 
-$name = clean($_POST["name"]);
-$phone = clean($_POST["phone"]);
+// $name = clean($_POST["name"]);
+// $phone = clean($_POST["phone"]);
+$object = "object";
 
-echo $name;
+echo $object;
 
 
 // use PHPMailer\PHPMailer\PHPMailer;
