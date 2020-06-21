@@ -104,7 +104,12 @@ function sendForms(obj) {
 function resetForm() {
   let form = formMail.getElementsByTagName(`form`);
   form[0].reset();
+
   selectorsBrif.forEach(el => el.setAttribute('data-state', 'disable'));
+  if (projectField) {
+    infoBrif.clear();
+    projectField.setAttribute('data-value-proj', '');
+  }
 }
 
 function sendFormsAgainHandler() {
