@@ -30,10 +30,11 @@
   }
 }
 
-// .projects__img-cont {
-//   background-size: cover;
-//   background-position: 50% 50%;
-// }
+.preview__video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
 @media (min-width: 992px) {
   .brif__group-field:nth-of-type(2) {
@@ -122,6 +123,9 @@
 }
 
 @media (max-width: 1440px) and (min-width: 992px) {
+  .preview {
+    height: 27.5rem;
+  }
   .contact {
     font-size: 1.25rem;
     line-height: 1.2;
@@ -611,6 +615,9 @@
 }
 
 @media (max-width: 1280px) and (min-width: 992px) {
+  .preview {
+    height: 22.5rem;
+  }
   .main__title, .about__title {
     font-size: 3rem;
     max-width: 42rem;
@@ -724,6 +731,9 @@
   }
   .publish__emb {
     vertical-align: top;
+  }
+  .preview {
+    height: 19rem;
   }
 }
 
