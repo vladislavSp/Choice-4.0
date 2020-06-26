@@ -71,16 +71,6 @@
     -ms-grid-row-span: 1;
     grid-row-end: span 1;
   }
-  // .project__item[data-grid="4"], .project__item[data-grid="3"], .project__item[data-grid="2"] {
-  //   -ms-grid-column: span 2;
-  //   grid-column-start: span 2;
-  //   -ms-grid-column-span: 2;
-  //   grid-column-end: span 2;
-  //   -ms-grid-row: span 1;
-  //   grid-row-start: span 1;
-  //   -ms-grid-row-span: 1;
-  //   grid-row-end: span 1;
-  // }
 }
 
 .projects__list[data-visible-list="false"] {

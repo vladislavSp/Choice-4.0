@@ -1,4 +1,5 @@
 let expressContainer = document.querySelector('.view__container');
+let backgroundDivs = [...document.querySelectorAll('.view__blur[data-active]')];
 
 if (expressContainer) {
   let expressSlider = new Swiper(expressContainer, {
@@ -89,10 +90,17 @@ if (expressContainer) {
 
   function changeSlideHandler() { // progressbar пагинации
     initSeconds = 1;
+    // console.log(expressSlider.activeIndex);
+    backgroundDivs.forEach(el => {
+      let numSlide = Number(el.dataset.active);
+      if (numSlide === expressSlider.activeIndex + 1) el.dataset.state = `active`;
+      else el.dataset.state = `inactive`;
+    })
+    
     // if (!newTimer) newTimer = setTimeout(nextSlide, 1000);
     paginations.forEach((el, index, arr) => {
       if (index < expressSlider.activeIndex) el.style.backgroundColor = 'white';
       else if (index >= expressSlider.activeIndex) el.style.backgroundColor = '';
-    });
+    }); 
   }
 }

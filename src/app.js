@@ -9,6 +9,7 @@ import './scss/project.scss';
 import './scss/about.scss';
 import './scss/form.scss';
 import './scss/slider.scss';
+import './scss/express.scss';
 
 // adaptive
 import './scss/adaptive.scss';
