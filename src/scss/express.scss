@@ -26,7 +26,7 @@
         background-image: url('/assets/images/pims/1.jpg');
         filter: blur(100px);
         -webkit-filter: blur(100px);
-        transform: scale(1.5);
+        transform: scale(12);
 
         &[data-state="active"] {
           display: block;
@@ -36,7 +36,11 @@
         }
       }
     }
-  
+
+    & .view__paginations {
+      width: 100%;
+    }
+
     & .view__wrap {
       width: 33rem;
       left: 50%;
