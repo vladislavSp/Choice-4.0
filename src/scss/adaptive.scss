@@ -36,9 +36,14 @@
   position: relative;
 }
 
+
+
 @media (min-width: 992px) {
   .brif__group-field:nth-of-type(2) {
     width: 37rem;
+  }
+  .project__image-wrap {
+    height: 530px;
   }
 }
 
@@ -99,6 +104,9 @@
   .qa__arrow {
     margin-left: 3rem;
   }
+  .project__image-wrap {
+    height: 270px;
+  }
 }
 
 
@@ -120,9 +128,15 @@
   .brif__title--vacancy {
     margin-bottom: 4rem;
   }
+  .project__image-wrap {
+    height: 470px;
+  }
 }
 
 @media (max-width: 1440px) and (min-width: 992px) {
+  .project__image-wrap {
+    height: 420px;
+  }
   .preview {
     height: 32rem;
   }
@@ -147,13 +161,10 @@
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
   }
-  .project__item:first-child .projects__title {
-    font-size: 1.375rem;
-    line-height: 1.1818;
-  }
   .projects__title, .eprojects__title {
     font-size: 1.125rem;
     line-height: 1.91818;
+    padding-bottom: 0.4rem;
   }
   .project__title-wrap {
     margin-top: 1rem;
@@ -615,6 +626,9 @@
 }
 
 @media (max-width: 1280px) and (min-width: 992px) {
+  .project__image-wrap {
+    height: 325px;
+  }
   .preview {
     height: 25rem;
   }
@@ -723,6 +737,9 @@
   .footer__link-social:last-child {
     margin-top: 1rem;
   }
+  .project__image-wrap {
+    height: 205px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -743,7 +760,6 @@
   }
 
   .view__paginations {
-    // overflow-x: scroll;
     overflow-x: hidden;
   }
   .body--home, .body--projects {

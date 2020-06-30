@@ -13,6 +13,7 @@ function getCoords(elem) {
   };
 }
 
+
 // ПОЗИЦИЯ МЫШИ
 function moveStickerHandler(evt) {
   evt.preventDefault();
