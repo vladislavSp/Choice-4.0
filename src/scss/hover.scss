@@ -9,6 +9,10 @@
   }
 }
 
+.publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
+  transition: border-color 0.2s ease;
+}
+
 .hello-vacancy {
   transition: background-color 0.2s ease;
 }
@@ -79,11 +83,6 @@
   }
 }
 
-
-.publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
-  transition: border-color 0.2s ease;
-}
-
 .brif__blue-text:hover {
   color: #666;
 }
@@ -108,11 +107,11 @@
 
 .club__link {
   &:hover {
-    color: #666;
+    color: rgb(0, 0, 0);
     border-color: currentColor;
 
     & svg path {
-      fill: #666;
+      fill: rgb(0, 0, 0);
     }
   }
 }
@@ -308,6 +307,16 @@
       & .tech__image {
         display: block;
       }
+
+      & .tech__btn {
+        border-color: #FFFFFF;
+      }
     }
   }
+}
+
+.tech__btn {
+  transition: border-color 0.2s ease;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }

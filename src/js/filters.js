@@ -111,3 +111,6 @@ function stateVisibleProject(f) {
   projectList.setAttribute('data-visible-list', `${f}`);
   viewBtn.style.display = f ? `none` : ``;
 }
+
+
+///////////////
