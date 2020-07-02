@@ -4,9 +4,8 @@ let filters = [...document.querySelectorAll('*[data-filter]')], filter,
     projectItems = [...document.querySelectorAll('[data-category]')];
 // let update = false;
 
-let initialProjectArray = projectItems.map(el => el.setAttribute('data-sort', 0));
-
-console.log(initialProjectArray);
+let initialProjectArray = [...projectItems];
+initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
 
 // ПОКАЗ БЛОКОВ
 if (viewBtn) {
@@ -35,7 +34,6 @@ function viewBlockHandler() {
 
 function changeStateFilters(evt) {
   evt.preventDefault();
-
   let clickFilter =  this.getAttribute('data-filter');
 
   filters.forEach(el => el.setAttribute('data-state', 'disable'));
@@ -45,7 +43,7 @@ function changeStateFilters(evt) {
     gsap.to(projectList, { opacity: 0, onComplete: () => {
       projectItems.forEach( el => el.setAttribute('data-visible', 'true') );
 
-      sortProject(initialProjectArray);
+      setDefaultMassive(initialProjectArray);
 
       gsap.to(projectList, { opacity: 1, duration: 0.5});
     }});
@@ -81,7 +79,11 @@ function setFilter(clickFilter, upd = true) {
   stateVisibleProject(true);
 }
 
-
+function setDefaultMassive(arr) {
+  let parent = arr[0].parentNode;
+  parent.innerHTML = '';
+  arr.forEach(el => parent.appendChild(el));
+}
 
 // Функция сортировки дом-элементов
 function sortProject(items, filter) {
