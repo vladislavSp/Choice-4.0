@@ -1,4 +1,14 @@
 @media (min-width: 992px) {
+  .project__item:first-child {
+    -ms-grid-column: span 3;
+    grid-column-start: span 3;
+    -ms-grid-column-span: 3;
+    grid-column-end: span 3;
+    -ms-grid-row: span 1;
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+  }
   // .project__item[data-grid="3"] {
   //   -ms-grid-column: span 3;
   //   grid-column-start: span 3;
