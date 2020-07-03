@@ -731,6 +731,9 @@
   .footer__group-one, .footer__group-two {
     grid-template-columns: auto 55%;
   }
+  .vacancy__portfolio {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {

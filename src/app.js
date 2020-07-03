@@ -19,7 +19,6 @@ import './scss/hover.scss';
 // animation
 
 // JS
-// import 'idempotent-babel-polyfill';
 import './js/filters.js';
 import './js/stickers.js';
 import './js/accordion.js';
@@ -31,4 +30,4 @@ import './js/colorMenu.js';
 import './js/randomCircleImage.js';
 import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
-// import './js/input-file.js';
+import './js/randomColor.js';
