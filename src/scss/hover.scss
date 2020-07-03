@@ -1,5 +1,5 @@
 // hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .contact__link, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__address, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title, .vacancy__mail-link {
+.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__address, .footer__mail, .contacts__text, .clients__your-company, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title, .vacancy__mail-link {
   transition: color 0.2s ease;
 }
 
@@ -13,7 +13,7 @@
   transition: border-color 0.2s ease;
 }
 
-.hello-vacancy {
+.hello-vacancy, .contact__link {
   transition: background-color 0.2s ease;
 }
 
@@ -126,15 +126,15 @@
   }
 }
 
-.contact__link {
-  &:hover {
-    color: #666666;
-  }
+// .contact__link {
+//   &:hover {
+//     color: #666666;
+//   }
 
-  &:active {
-    color: #000000;
-  }
-}
+//   &:active {
+//     color: #000000;
+//   }
+// }
 
 // COLOR LINK
 .links__item {
