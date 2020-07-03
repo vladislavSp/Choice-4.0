@@ -11,7 +11,6 @@
       grid-row-end: span 1;
     }
     & .project__item:nth-child(6n-3), .project__item:nth-child(6n-2) {
-      // border: 1px solid red;
       grid-column: auto / span 2;
     }
     & .project__item[data-grid="2"] {
