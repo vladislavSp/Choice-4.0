@@ -31,3 +31,4 @@ import './js/randomCircleImage.js';
 import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
 import './js/randomColor.js';
+import './js/space.js';

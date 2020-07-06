@@ -1,8 +1,12 @@
+import ProjectGrid from './ProjectGrid';
+
 let filters = [...document.querySelectorAll('*[data-filter]')], filter,
     projectList = document.querySelector('[data-proj-list]'),
     viewBtn = document.querySelector('[data-project-btn="add"]'),
     projectItems = [...document.querySelectorAll('[data-category]')];
-// let update = false;
+
+let pictureLoad = new ProjectGrid;
+pictureLoad.calc();
 
 let initialProjectArray = [...projectItems];
 initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
@@ -10,13 +14,11 @@ initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
 // ПОКАЗ БЛОКОВ
 if (viewBtn) {
   viewBtn.addEventListener('click', viewBlockHandler);
-
   if (projectList.getAttribute('data-proj-list') === 'express' && projectList.children.length <= 4) viewBtn.style.display = 'none';
 }
 
 if (filters.length > 0) {
   filters.forEach(el => el.addEventListener('click', changeStateFilters));
-
   filter = location.search.split('=')[1]; // находим фильтр в строке адреса
 
   if (filter) {
@@ -42,10 +44,11 @@ function changeStateFilters(evt) {
   if (clickFilter === 'all') {
     gsap.to(projectList, { opacity: 0, onComplete: () => {
       projectItems.forEach( el => el.setAttribute('data-visible', 'true') );
-
-      setDefaultMassive(initialProjectArray);
+      
+      setDefaultMassive(initialProjectArray); // начальная сортировка
 
       gsap.to(projectList, { opacity: 1, duration: 0.5});
+      pictureLoad.calc();
     }});
 
     window.history.replaceState(clickFilter, 'data-filter', `${location.pathname}`);
@@ -56,7 +59,7 @@ function changeStateFilters(evt) {
   }
 }
 
-function setFilter(clickFilter, upd = true) {
+function setFilter(clickFilter) {
   let visibleItems = projectItems.filter(item => item.getAttribute('data-category').split('||').includes(clickFilter)); // Элементы, которые надо показать (другие скрыть)
 
   // Добавление порядка для сортировки
@@ -74,6 +77,7 @@ function setFilter(clickFilter, upd = true) {
     sortProject(projectItems);
 
     gsap.to(projectList, { opacity: 1, duration: 0.5});
+    pictureLoad.calc();
   }});
 
   stateVisibleProject(true);

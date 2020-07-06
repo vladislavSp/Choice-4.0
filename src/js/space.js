@@ -1,5 +1,3 @@
-
-
 // 
 // --- INDISSOLUBLE SPACE
 // 
@@ -13,9 +11,9 @@ class StringSpace{
         // ===
         this._ru = ['а', 'без', 'безо', 'в', 'во', 'вне', 'да', 'для', 'до', 'ее', 'еще', 'и', 'или', 'из', 'изо', 'или', 'их', 'за', 'к', 'как', 'ко', 'меж', 'на', 'над', 'не', 'ни', 'но', 'о', 'об', 'обо', 'от', 'ото', 'по', 'под', 'при', 'про', 'с', 'со', 'то', 'там', 'у', 'уж', 'что', 'я'];
         // ===
-        this._en = ['and', 'at', 'by', 'for', 'from', 'in', 'on', 'past', 'since', 'till', 'down', 'from', 'into', 'off', 'onto', 'of', 'over', 'past', 'under', 'up', 'close', 'over', 'past', 'above', 'at', 'below', 'by', 'near', 'under', 'at', 'in',];
+        this._en = ['and', 'at', 'by', 'for', 'from', 'in', 'on', 'past', 'since', 'till', 'down', 'from', 'into', 'off', 'onto', 'of', 'over', 'past', 'under', 'up', 'close', 'over', 'past', 'above', 'at', 'also', 'below', 'the', 'a', 'by', 'near', 'under', 'at', 'in',];
         // ===
-        this._elem = document.querySelectorAll('H2, H1, H3, H4, H5, H6, a, p');
+        this._elem = [...document.querySelectorAll('H2, H1, H3, H4, H5, H6, p')];
     }
 
     /**
@@ -23,11 +21,7 @@ class StringSpace{
     */ 
    init(){
         // p dom element
-        this._p.map(obj => {
-            this.translate(obj);
-        });
-        // a dom element
-        this._a.map(obj => {
+        this._elem.map(obj => {
             this.translate(obj);
         });
     }
@@ -37,9 +31,14 @@ class StringSpace{
     */ 
     translate(obj){
         // ru lang
-        this._elem.map(dat => {
+        this._ru.map(dat => {
             let string = new RegExp(' ' + dat + ' ','ig');
-            obj.innerHTML = obj.textContent.replace( string, ` ${dat}&nbsp;` );
+            obj.innerHTML = obj.innerHTML.replace( string, ` ${dat}&nbsp;` );
+        });
+        // en lang
+        this._en.map(dat => {
+            let string = new RegExp(' ' + dat + ' ','ig');
+            obj.innerHTML = obj.innerHTML.replace( string, ` ${dat}&nbsp;` );
         });
     }
 }
