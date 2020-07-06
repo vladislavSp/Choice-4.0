@@ -125,5 +125,3 @@ class ProjectGrid {
 }
 
 export default ProjectGrid;
-// let pload = new ProjectGrid;
-// pload.calc();
