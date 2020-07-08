@@ -20,7 +20,7 @@ function randomInteger(min, max) {  // случайное число от min д
 if (window.matchMedia("(max-width: 767px)").matches) {
   let imagesSpace = [...document.querySelectorAll('.space__image-wrap')];
 
-  if (imagesSpace) {
+  if (imagesSpace.length) {
     let randNum = randomInteger(0, imagesSpace.length - 1);
 
     imagesSpace.forEach(el => el.style.display = 'none');

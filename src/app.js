@@ -19,6 +19,7 @@ import './scss/hover.scss';
 // animation
 
 // JS
+import './js/lang.js';
 import './js/filters.js';
 import './js/stickers.js';
 import './js/accordion.js';
@@ -32,3 +33,4 @@ import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
 import './js/randomColor.js';
 import './js/space.js';
+import './js/spa.js';

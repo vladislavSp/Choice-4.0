@@ -32,6 +32,11 @@ if (filters.length > 0) {
 
 function viewBlockHandler() {
   stateVisibleProject(true);
+  // let array = [];
+  // projectItems.forEach((el, index) => {
+  //   if (index < 8) array.push(el);
+  //   else 
+  // });
 }
 
 function changeStateFilters(evt) {

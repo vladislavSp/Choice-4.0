@@ -1,11 +1,11 @@
 
 
-class Lang{
+class Lang {
     
     /**
      * Init param
     */
-    constructor(){
+    constructor() {
         // language
         this.cont = ['ru', 'uk', 'be'];
         // language brouser
@@ -15,7 +15,7 @@ class Lang{
     /**
      * Select language
     */
-    select(){
+    select() {
         // result
         let result = 0;
         // calc result
@@ -25,7 +25,7 @@ class Lang{
             }
         });
         // change
-        if(result == 0){
+        if (result == 0) {
             this.change();
         }
     }

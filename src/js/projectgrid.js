@@ -5,19 +5,23 @@ class ProjectGrid {
     */
     calc(){
         // obj
-        this.obj = [...document.querySelectorAll('.project__item')];
-        // matrix
-        this.matrix = {
-            desktop: {
-                one: ['data-one-src', 'data-three-src'],
-                two: ['data-two-src', 'data-two-src', 'data-three-src', 'data-three-src', 'data-three-src', 'data-three-src']
-            },
-            mobile: ['data-two-src', 'data-three-src']
+        this.projList = document.querySelector('*[data-proj-list="all"]');
+        // if exist element
+        if (this.projList) {
+            this.obj = [...document.querySelector('*[data-proj-list="all"]').querySelectorAll('.project__item')];
+            // matrix
+            this.matrix = {
+                desktop: {
+                    one: ['data-one-src', 'data-three-src'],
+                    two: ['data-two-src', 'data-two-src', 'data-three-src', 'data-three-src', 'data-three-src', 'data-three-src']
+                },
+                mobile: ['data-two-src', 'data-three-src']
+            }
+            // data
+            this.data = [];
+            // init
+            this.init();
         }
-        // data
-        this.data = [];
-        // init
-        this.init();
     }
     
     /**
@@ -26,6 +30,9 @@ class ProjectGrid {
     init(){
         this.search();
         this.change();
+        this.lazyLoad = new LazyLoad({
+            'elements_selector': '*[data-lazy="lazy"]',
+        });
     }
 
     /**
@@ -94,28 +101,30 @@ class ProjectGrid {
             // photo
             if( ell.querySelector('.projects__image') != undefined ){
                 // apply
-                ell.querySelector('.projects__image').setAttribute('src', srcimg);
+                ell.querySelector('.projects__image').setAttribute('data-src', srcimg);
+                ell.querySelector('.projects__image').setAttribute('data-lazy', 'lazy');
             }
             // video
             if( ell.querySelector('.project__video') != undefined ){
                 // select elem
-                let source = `<source data-src="" data-wf-ignore="true" src="${srcimg}">`,
+                let source = `<source data-src="${srcimg}">`,
                     obj = ell.querySelector('.project__video').querySelector('video');
+                    obj.setAttribute('data-lazy', 'lazy');
                 // apply
                 obj.innerHTML = source;
             }
         }
         // mobile content
-        if(type == 'mobile'){
+        if (type == 'mobile') {
             // photo
             if( ell.querySelector('.projects__image-mob') != undefined ){
                 // apply
-                ell.querySelector('.projects__image-mob').setAttribute('src', srcimg);
+                ell.querySelector('.projects__image-mob').setAttribute('data-src', srcimg);
             }
             // video
             if( ell.querySelector('.project__video-mob') != undefined ){
                 // select elem
-                let source = `<source src="${srcimg}">`,
+                let source = `<source data-src="${srcimg}">`,
                     obj = ell.querySelector('.project__video-mob').querySelector('video');
                 // apply
                 obj.innerHTML = source;
@@ -124,4 +133,6 @@ class ProjectGrid {
     }
 }
 
+// let obj = new ProjectGrid;
+// obj.calc();
 export default ProjectGrid;
