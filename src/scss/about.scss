@@ -55,3 +55,7 @@
 .video-pointer {
   cursor: pointer;
 }
+
+.clients__your-company::selection {
+  color: white;
+}

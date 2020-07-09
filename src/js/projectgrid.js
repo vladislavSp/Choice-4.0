@@ -102,14 +102,12 @@ class ProjectGrid {
             if( ell.querySelector('.projects__image') != undefined ){
                 // apply
                 ell.querySelector('.projects__image').setAttribute('data-src', srcimg);
-                ell.querySelector('.projects__image').setAttribute('data-lazy', 'lazy');
             }
             // video
             if( ell.querySelector('.project__video') != undefined ){
                 // select elem
                 let source = `<source data-src="${srcimg}">`,
                     obj = ell.querySelector('.project__video').querySelector('video');
-                    obj.setAttribute('data-lazy', 'lazy');
                 // apply
                 obj.innerHTML = source;
             }

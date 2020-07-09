@@ -33,4 +33,4 @@ import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
 import './js/randomColor.js';
 import './js/space.js';
-import './js/spa.js';
+// import './js/spa.js';

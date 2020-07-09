@@ -1,22 +1,38 @@
 let headerLinks = [...document.querySelectorAll(`*[data-href]`)];
-
-document.body.style.opacity = 1;
+let body = document.body;
 
 headerLinks.forEach(el => el.addEventListener(`click`, redirectEffect));
+window.addEventListener(`pageshow`, pageShowHandler, false);
+
+// body.classList.add('body--opacity');
+// body.classList.remove('body--opacityFalse');
+
+function pageShowHandler(evt) {
+  evt.persisted = false;
+  body.style.opacity = 1;
+}
+
 
 function redirectEffect(evt) {
   evt.preventDefault();
   let target = this.getAttribute(`data-href`);
 
-  document.body.style.opacity = 0;
-  document.body.addEventListener(`transitionend`, redirectFunc);
+  body.style.opacity = 0;
+  // body.classList.remove('body--opacity');
+  // body.classList.add('body--opacityFalse');
 
-  function redirectFunc() {
+  body.addEventListener('transitionend', () => {
     window.location = target;
-  }
+  });
 }
 
+
+// let body = document.querySelector('.body');
+
 // document.addEventListener('DOMContentLoaded', () => {
-//     let body = document.querySelector('.body');
-//     body.style.opacity = 1;
+//   setTimeout(bodyChange, 1000);
 // });
+
+// function bodyChange() {
+//   body.style.opacity = 1;
+// }

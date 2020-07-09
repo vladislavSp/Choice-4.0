@@ -35,8 +35,7 @@ function viewBlockHandler() {
   // let array = [];
   // projectItems.forEach((el, index) => {
   //   if (index < 8) array.push(el);
-  //   else 
-  // });
+  //   else });
 }
 
 function changeStateFilters(evt) {
