@@ -4,8 +4,6 @@ let body = document.body;
 headerLinks.forEach(el => el.addEventListener(`click`, redirectEffect));
 window.addEventListener(`pageshow`, pageShowHandler, false);
 
-// body.classList.add('body--opacity');
-// body.classList.remove('body--opacityFalse');
 
 function pageShowHandler(evt) {
   evt.persisted = false;
@@ -18,8 +16,6 @@ function redirectEffect(evt) {
   let target = this.getAttribute(`data-href`);
 
   body.style.opacity = 0;
-  // body.classList.remove('body--opacity');
-  // body.classList.add('body--opacityFalse');
 
   body.addEventListener('transitionend', () => {
     window.location = target;

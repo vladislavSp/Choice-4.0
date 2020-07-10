@@ -1,4 +1,4 @@
-.brif__field[data-state="invalid"], .contact__field[data-state="invalid"], .express__field[data-state="invalid"] {
+.brif__field[data-state="invalid"], .contact__field[data-state="invalid"], .express__field[data-state="invalid"], .brig-page__field[data-state="invalid"] {
   border-color: red;
 
   &::placeholder {
@@ -13,22 +13,6 @@
   }
 }
 
-.brif__item--contact {
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-@media (min-width: 768px) {
-  .brif__item--contact[data-state="enable"] {
-    color: white;
-    background-color: black;
-  }
-}
-@media (max-width: 767px) {
-  .brif__item--contact[data-state="enable"] {
-    color: white;
-    background-color: black;
-  }
-}
-
 .brif__textarea {
   overflow: hidden;
 }
@@ -39,4 +23,20 @@
 
 .express-brif .file-label--pick {
   color: white;
+}
+
+.brif__item--contact, .brif-page__item--contact{
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
+    color: white;
+    background-color: black;
+  }
+}
+@media (max-width: 767px) {
+  .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
+    color: white;
+    background-color: black;
+  }
 }

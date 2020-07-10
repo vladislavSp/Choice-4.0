@@ -81,7 +81,6 @@
 .careers__item {
   &:hover {
     & .careers__emb {
-      transform: translateX(0);
       opacity: 1;
     }
   }
@@ -267,14 +266,6 @@
   }
 }
 
-.tech__btn {
-  &:hover {
-    .tech__btn-text {
-      border-color: white;
-    }
-  }
-}
-
 .clients__your-company {
   &:hover {
     color: #666;
@@ -312,15 +303,22 @@
         display: block;
       }
 
-      & .tech__btn {
-        border-color: #FFFFFF;
+      & .tech__btn-text {
+        border-color: white;
       }
+      // & .tech__btn {
+      //   border-color: #FFFFFF;
+      // }
     }
   }
 }
 
-.tech__btn {
-  transition: border-color 0.2s ease;
+.tech__btn-text, .tech__plus, .tech__minus {
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+  
+// .tech__btn {
+//   transition: border-color 0.2s ease;
+//   padding-bottom: 0.5rem;
+//   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+// }

@@ -15,7 +15,7 @@ class ProjectGrid {
                     one: ['data-one-src', 'data-three-src'],
                     two: ['data-two-src', 'data-two-src', 'data-three-src', 'data-three-src', 'data-three-src', 'data-three-src']
                 },
-                mobile: ['data-two-src', 'data-three-src']
+                mobile: ['data-three-src', 'data-two-src']
             }
             // data
             this.data = [];

@@ -25,7 +25,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) { // раскладка на планшетной версии
   .body--home, .body--projects {
     & .project__item:first-child {
       -ms-grid-column: span 3;

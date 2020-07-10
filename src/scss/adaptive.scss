@@ -111,6 +111,10 @@
 
 // Адаптив элементов
 @media (max-width: 1600px) and (min-width: 992px) {
+  .contact__forw-wrap {
+    width: 40rem;
+  }
+
   .navigation {
     padding-bottom: 6.25rem;
   }
@@ -129,9 +133,23 @@
   .project__image-wrap {
     height: 470px;
   }
+  .brif-page-form, .brif-page__list {
+    width: 100%;
+
+  }
 }
 
 @media (max-width: 1440px) and (min-width: 992px) {
+  .brig-page__desc {
+    margin-bottom: 4.25rem;
+  }
+  .brif-page__textarea {
+    margin-top: 1.25rem;
+    margin-bottom: 4.25rem;
+  }
+  .brig-page__desc {
+    font-size: 1.5rem;
+  }
   .service__image {
     width: 15.5rem;
   }
@@ -153,8 +171,8 @@
     font-size: 1rem;
   }
   .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   .header__svg {
     width: 5.375rem;
@@ -167,7 +185,7 @@
   .projects__title, .eprojects__title {
     font-size: 1.125rem;
     line-height: 1.91818;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.35rem;
   }
   .project__title-wrap {
     margin-top: 1rem;
@@ -220,16 +238,14 @@
     margin-right: 2rem;
   }
 
-  .publish__text {
+  .publish__text, .publish__emb {
     font-size: 2.25rem;
     line-height: 1.333333;
   }
   .publish__text-group {
     max-width: 57rem;
   }
-  .publish__emb {
-    vertical-align: bottom;
-  }
+
   .publish__link {
     margin-top: 0.5rem;
     font-size: 0.875rem;
@@ -422,15 +438,7 @@
     line-height: 1.2;
   }
 
-  .brif__btn-wrap {
-    margin-top: 3rem;
-  }
-
-  .brif__subtitle {
-    margin-bottom: 3rem;
-  }
-
-  .brif__item--contact {
+  .brif__item--contact, .brif-page__item--contact {
     min-height: 3rem;
     padding: 0 1rem;
     font-size: 1.5rem;
@@ -517,7 +525,7 @@
   }
 
   .careers__emb {
-    width: 2.5rem;
+    font-size: 2rem;
   }
 
   .get {
@@ -626,6 +634,16 @@
   .footer__link-social {
     margin-right: 1.5rem;
   }
+  .contact__forw-wrap {
+    width: 60%;
+  }
+  .brif__sec-group {
+    order: -1;
+    margin-left: 0;
+  }
+  .brif__list {
+    width: 60%;
+  }
 }
 
 @media (max-width: 1280px) and (min-width: 992px) {
@@ -648,9 +666,6 @@
 
   .contacts {
     padding-top: 8.5rem;
-  }
-  .contact__forw-wrap {
-    width: 60%;
   }
 
   .brif__form-wrap {
@@ -693,7 +708,7 @@
     font-size: 1.75rem;
   }
 
-  .publish__text {
+  .publish__text, .publish__emb {
     font-size: 2rem;
   }
   .publish__text-group {
@@ -751,9 +766,6 @@
 @media (max-width: 991px) {
   .footer__link-social:last-child {
     margin-right: 0;
-  }
-  .publish__emb {
-    vertical-align: top;
   }
   .preview {
     height: 19rem;
