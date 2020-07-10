@@ -30,6 +30,10 @@
   }
 }
 
+.tech__item:first-child {
+  padding-top: 0;
+}
+
 .tech__item:last-child {
   border-color: transparent;
 
