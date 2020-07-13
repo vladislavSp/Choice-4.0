@@ -52,7 +52,7 @@ function moveStickerHandler(evt) {
         stopBottomValue = bodyScrollHeight - topRelativeBlock - stickerHeight;
 
     if (type === 'touchstart') {
-      let stickerHalfWidth = stickerWidth/2;
+      let stickerHalfWidth = stickerWidth / 2;
       leftStopValue = bodyWidth - stickerHalfWidth;
       top = event.touches[0].pageY - topRelativeBlock - (event.touches[0].target.clientHeight/2);
 

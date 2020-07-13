@@ -52,18 +52,6 @@
   }
 }
 
-.projects__list[data-visible-list="false"] {
-  & .project__item:nth-child(n + 9) {
-    display: none;
-  }
-}
-
-.projects__list[data-proj-list="express"][data-visible-list="false"] {
-  & .project__item:nth-child(n + 5) {
-    display: none;
-  }
-}
-
 .project__wrap[data-grid="2"] {
   -ms-grid-column: span 2;
   grid-column-start: span 2;

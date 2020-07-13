@@ -11,7 +11,7 @@
   transition: transform 0.5s ease;
 }
 
-.univercity__image, .picture__sticker-group {
+.univercity__image, .picture__sticker-image, .picture__sticker--mobile {
   pointer-events: none;
 }
 
@@ -19,7 +19,7 @@
   cursor: grab;
 }
 
-.univercity__sticker .univercity__image, .picture__sticker .picture__sticker-group {
+.univercity__sticker .univercity__image, .picture__sticker .picture__sticker--mobile, .picture__sticker .picture__sticker-image  {
   transition: transform 0.5s ease;
   will-change: transform;
 }
@@ -32,7 +32,7 @@
     transform: scale(0.95);
   }
 
-  & .picture__sticker-group {
+  & .picture__sticker-image, .picture__sticker--mobile {
     transform: scale(0.95);
   }
 }

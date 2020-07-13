@@ -192,10 +192,6 @@
     font-size: 1rem;
     line-height: 1.5;
   }
-  .projects__btn-text {
-    font-size: 1.25rem;
-    line-height: 1.2;
-  }
   .project__text-group {
     margin-top: 5.5rem;
     margin-bottom: 5rem;
@@ -254,7 +250,7 @@
     padding-top: 8.75rem;
   }
 
-  .projects, .navigation {
+  .navigation {
     padding-bottom: 5.5rem;
   }
 
@@ -356,9 +352,6 @@
   .publish__title {
     font-size: 1.25rem;
     line-height: 1.2;
-  }
-  .publish__list {
-    margin-top: 3.75rem;
   }
 
   // DESC
@@ -617,9 +610,6 @@
     font-size: 1.625rem;
     line-height: 1.231;
   }
-  .footer__group-one {
-    margin-bottom: 3.75rem;
-  }
   .footer__link, .footer__link-social {
     font-size: 1.125rem;
     line-height: 1.22222;
@@ -746,12 +736,13 @@
   .vacancy__portfolio {
     margin-left: auto;
   }
+  .picture__sticker {
+    width: 12rem;
+    top: -16rem;
+  }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
-  .footer__link-social:last-child {
-    margin-top: 1rem;
-  }
   .project__image-wrap {
     height: 205px;
   }

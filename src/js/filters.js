@@ -1,8 +1,12 @@
 import ProjectGrid from './ProjectGrid';
 
-let filters = [...document.querySelectorAll('*[data-filter]')], filter,
+let filters = [...document.querySelectorAll('*[data-filter]')],
+    filter,
+    initialLength = 0, initNum = 4,
     projectList = document.querySelector('[data-proj-list]'),
     viewBtn = document.querySelector('[data-project-btn="add"]'),
+    viewBtnExpress = document.querySelector('[data-express-btn="add"]'),
+    expressCases = [...document.querySelectorAll('.project__item')],
     projectItems = [...document.querySelectorAll('[data-category]')];
 
 let pictureLoad = new ProjectGrid;
@@ -11,10 +15,47 @@ pictureLoad.calc();
 let initialProjectArray = [...projectItems];
 initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
 
-// ПОКАЗ БЛОКОВ
+
+
+// Обработчик показа блоков
 if (viewBtn) {
+  initialVisibleArr();
   viewBtn.addEventListener('click', viewBlockHandler);
-  if (projectList.getAttribute('data-proj-list') === 'express' && projectList.children.length <= 4) viewBtn.style.display = 'none';
+} else if (viewBtnExpress) {
+  initStateExpress(expressCases);
+  viewBtnExpress.addEventListener('click', viewExpressCases);
+}
+
+function viewExpressCases() {
+  let count = initNum + 4;
+
+  if (count >= expressCases.length) {
+    count = expressCases.length;
+    viewBtnExpress.style.display = 'none';
+  }
+
+  for (initNum; initNum < count; initNum++) {
+    expressCases[initNum].style.display = '';
+  }
+}
+
+function initStateExpress(blocks) {
+  blocks.forEach((el, i) => {
+    if (i > 3) el.style.display = 'none';
+  })
+}
+
+function initialVisibleArr() {
+  const initArr = sortElem();
+  const defaultProjects = [...document.querySelectorAll('[data-visible="true"]')];
+
+  defaultProjects.forEach(el => el.style.display = '');
+
+  initArr.forEach((obj, i) => {
+    if (i > 0) obj.forEach(el => el.style.display = 'none');
+  });
+
+  if (initArr.length === 1) viewBtn.style.display = 'none';
 }
 
 if (filters.length > 0) {
@@ -30,18 +71,24 @@ if (filters.length > 0) {
   }
 }
 
+
 function viewBlockHandler() {
-  stateVisibleProject(true);
-  // let array = [];
-  // projectItems.forEach((el, index) => {
-  //   if (index < 8) array.push(el);
-  //   else });
+  const initArr = sortElem(); // массив разделенный на секции
+  let length = initArr.length - 1; // количество итераций открытия
+
+  if (initialLength < length) {
+    initialLength += 1;
+    initArr[initialLength].forEach(el => el.style.display = '');
+    if (initialLength === length) viewBtn.style.display = 'none';
+  }
 }
 
 function changeStateFilters(evt) {
   evt.preventDefault();
   let clickFilter =  this.getAttribute('data-filter');
 
+  initialLength = 0;
+  viewBtn.style.display = '';
   filters.forEach(el => el.setAttribute('data-state', 'disable'));
   this.setAttribute('data-state', 'enable');
 
@@ -53,10 +100,10 @@ function changeStateFilters(evt) {
 
       gsap.to(projectList, { opacity: 1, duration: 0.5});
       pictureLoad.calc();
+      initialVisibleArr();
     }});
 
     window.history.replaceState(clickFilter, 'data-filter', `${location.pathname}`);
-    stateVisibleProject(false);
   } else {
     window.history.replaceState(clickFilter, 'filter', `${location.pathname}?filter=${clickFilter}`);
     setFilter(clickFilter);
@@ -82,9 +129,8 @@ function setFilter(clickFilter) {
 
     gsap.to(projectList, { opacity: 1, duration: 0.5});
     pictureLoad.calc();
+    initialVisibleArr();
   }});
-
-  stateVisibleProject(true);
 }
 
 function setDefaultMassive(arr) {
@@ -115,10 +161,38 @@ function sortProject(items, filter) {
   });
 }
 
-function stateVisibleProject(f) {
-  projectList.setAttribute('data-visible-list', `${f}`);
-  viewBtn.style.display = f ? `none` : ``;
-}
-
-
 ///////////////
+function sortElem() {
+    // init variable
+    let itm = [...document.querySelectorAll('[data-visible="true"]')],
+        elem = [];
+    // body function
+    first();
+    next();
+    // first section
+    function first() {
+        // add element
+        elem[0] = [];
+        for(let i = 0; i <= 7; i++){
+            elem[0].push(itm[i]);
+        }
+    }
+    // next section
+    function next() {
+        // calc number cycle
+        let nextnum = (itm.length - 8) / 6;
+        // transform number
+        nextnum = Math.ceil(nextnum);
+        // add element
+        for(let i = 1; i <= nextnum; i++) {
+            elem[i] = [];
+            for(let n = i * 6 + 2; n <= i * 6 + 7; n++){
+                if(itm[n] !== undefined){
+                    elem[i].push(itm[n]);
+                }
+            }
+        }
+    }
+
+    return elem;
+}
