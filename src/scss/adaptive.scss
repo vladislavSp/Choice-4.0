@@ -428,7 +428,9 @@
     font-size: 1.5rem;
     line-height: 1.2;
   }
-
+  .brif__btn-wrap {
+    margin-top: 2.25rem;
+  }
   .brif__item--contact, .brif-page__item--contact {
     min-height: 3rem;
     padding: 0 1rem;
@@ -451,7 +453,6 @@
   }
   .tech__title {
     max-width: 60rem;
-    margin-bottom: 4rem;
   }
   .tech__text {
     font-size: 1.5rem;

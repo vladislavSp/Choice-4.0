@@ -6,6 +6,11 @@ if (playBtn) {
   video.volume = 0;
 }
 
+if (video && window.matchMedia("(max-width: 767px)").matches) {
+  video.autoplay = true;
+  video.loop = true;
+}
+
 function playVideo(evt) {
   if (play) {
     video.currentTime = 0;
@@ -19,6 +24,7 @@ function stateVideo(param) {
   param ? video.play() : video.pause();
   video[param ? 'removeAttribute' : 'setAttribute']('muted', '');
   video.muted = !param;
+  video.loop = param ? true : false;
   video.volume = param ? 1 : 0;
   playBtn.style.display = param ? 'none' : '';
   video.classList[param ? 'add' : 'remove']('video-pointer');

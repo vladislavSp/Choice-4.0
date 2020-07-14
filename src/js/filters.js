@@ -68,6 +68,10 @@ if (filters.length > 0) {
       if (el.getAttribute('data-filter') === filter) el.setAttribute('data-state', 'enable');
       else el.setAttribute('data-state', 'disable');
     });
+  } else {
+    filters.forEach(el => {
+      if (el.getAttribute('data-filter') === `all`) el.setAttribute('data-state', 'enable');
+    })
   }
 }
 
@@ -82,6 +86,7 @@ function viewBlockHandler() {
     if (initialLength === length) viewBtn.style.display = 'none';
   }
 }
+
 
 function changeStateFilters(evt) {
   evt.preventDefault();
@@ -106,12 +111,15 @@ function changeStateFilters(evt) {
     window.history.replaceState(clickFilter, 'data-filter', `${location.pathname}`);
   } else {
     window.history.replaceState(clickFilter, 'filter', `${location.pathname}?filter=${clickFilter}`);
-    setFilter(clickFilter);
+    setFilter(clickFilter, evt);
   }
 }
 
-function setFilter(clickFilter) {
+function setFilter(clickFilter, evt = undefined) {
   let visibleItems = projectItems.filter(item => item.getAttribute('data-category').split('||').includes(clickFilter)); // Элементы, которые надо показать (другие скрыть)
+  let customDuration = 0;
+
+  if (evt) customDuration = 0.5;
 
   // Добавление порядка для сортировки
   projectItems.forEach(el => el.setAttribute('data-sort', 2));
@@ -121,7 +129,7 @@ function setFilter(clickFilter) {
     else el.setAttribute('data-sort', 1);
   });
 
-  gsap.to(projectList, { opacity: 0, duration: 0.5, onComplete: () => {
+  gsap.to(projectList, { opacity: 0, duration: customDuration, onComplete: () => {
     projectItems.forEach(el => el.setAttribute('data-visible', 'false'));
     visibleItems.forEach(el => el.setAttribute('data-visible', 'true'));
 

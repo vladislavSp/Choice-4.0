@@ -7,7 +7,7 @@ if (expressContainer) {
     slideClass: 'view__slide',
     slidesPerView: 'auto',
     effect: 'fade',
-    speed: 600,
+    speed: 200,
     spaceBetween: 0,
     allowTouchMove: false,
 
