@@ -1,30 +1,35 @@
 let expressBlock = document.querySelector('[data-story="express"]');
 
-if (expressBlock) {
-  let imageCursor = document.querySelector('[data-image="express-arrow"]');
-  expressBlock.addEventListener('mousemove', cursorChange);
+if (expressBlock && window.matchMedia("(min-width: 992px)")) {
+  let imageCursor = document.querySelector('[data-image="express-arrow"]'),
+      wrapperStories = document.querySelector('.view__wrapper--story'),
+      widthHalfImage = imageCursor.getBoundingClientRect().width / 2,
+      heightHalfImage = imageCursor.getBoundingClientRect().height / 2,
+      expressBlockWidth = 0;
 
-  console.log(imageCursor);
+  if (wrapperStories) expressBlockWidth = expressBlock.getBoundingClientRect().width / 2; // дополнительная поправка для обертки Story 
+
+  const leftCursor = `assets/images/express-arrow-left.svg`, rightCursor = `assets/images/express-arrow-right.svg`; 
+
+  expressBlock.addEventListener('mousemove', cursorChange); 
+  expressBlock.addEventListener('mouseleave', cursorReset); 
 
   function cursorChange(evt) {
+    evt.preventDefault();
     let target = evt.target;
-    imageCursor.style.display = '';
 
-    imageCursor.style.top = `${evt.offsetY}px`;
-    imageCursor.style.left = `${evt.offsetX}px`;
+    imageCursor.style.display = 'block';
 
-    // imageCursor.style.top = `${evt.offsetY}px`;
-    // imageCursor.style.left = `${evt.offsetX}px`;
+    imageCursor.style.top = `${evt.layerY - heightHalfImage}px`;
+    imageCursor.style.left = `${evt.layerX - widthHalfImage + expressBlockWidth}px`; //+ this.getBoundingClientRect().width
 
-    // if (target.classList.contains('view__image-right')) console.log(`RIGHT`);
-    // if (target.classList.contains('view__image-left')) console.log(`LEFT`);
-
-    expressBlock.addEventListener('mouseleave', cursorReset);
+    if (target.classList.contains('view__image-right')) imageCursor.src = rightCursor;
+    if (target.classList.contains('view__image-left')) imageCursor.src = leftCursor;
   }
 
   function cursorReset() {
-    console.log('RESET');
     imageCursor.style.display = 'none';
+    imageCursor.src = '';
   }
 }
 
