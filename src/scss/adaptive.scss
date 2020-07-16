@@ -756,6 +756,9 @@
   .preview {
     height: 19rem;
   }
+  .view__image-left, .view__image-right {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 767px) {

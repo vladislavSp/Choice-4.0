@@ -83,6 +83,7 @@ function viewBlockHandler() {
   if (initialLength < length) {
     initialLength += 1;
     initArr[initialLength].forEach(el => el.style.display = '');
+    pictureLoad.lazy();
     if (initialLength === length) viewBtn.style.display = 'none';
   }
 }
@@ -168,6 +169,8 @@ function sortProject(items, filter) {
     parent.appendChild(node)
   });
 }
+
+
 
 ///////////////
 function sortElem() {

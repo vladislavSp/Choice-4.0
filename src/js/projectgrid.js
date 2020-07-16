@@ -1,4 +1,21 @@
 class ProjectGrid {
+    /**
+     * Constructor
+    */
+    constructor(){
+        this.lazyobj = {
+            'wrapper': [...document.querySelectorAll('.project__item')],
+            'element': '*[data-lazy="lazy"]'
+        }
+        // matrix
+        this.matrix = {
+            desktop: {
+                one: ['data-one-src', 'data-three-src'],
+                two: ['data-two-src', 'data-two-src', 'data-three-src', 'data-three-src', 'data-three-src', 'data-three-src']
+            },
+            mobile: ['data-three-src', 'data-two-src']
+        }
+    }
 
     /**
      * Calc
@@ -8,15 +25,8 @@ class ProjectGrid {
         this.projList = document.querySelector('*[data-proj-list="all"]');
         // if exist element
         if (this.projList) {
+            // select element
             this.obj = [...document.querySelector('*[data-proj-list="all"]').querySelectorAll('.project__item')];
-            // matrix
-            this.matrix = {
-                desktop: {
-                    one: ['data-one-src', 'data-three-src'],
-                    two: ['data-two-src', 'data-two-src', 'data-three-src', 'data-three-src', 'data-three-src', 'data-three-src']
-                },
-                mobile: ['data-three-src', 'data-two-src']
-            }
             // data
             this.data = [];
             // init
@@ -30,9 +40,7 @@ class ProjectGrid {
     init(){
         this.search();
         this.change();
-        this.lazyLoad = new LazyLoad({
-            'elements_selector': '*[data-lazy="lazy"]',
-        });
+        this.lazy();
     }
 
     /**
@@ -90,47 +98,105 @@ class ProjectGrid {
             });
         });
     }
+
+    /**
+     * Type element
+    */
+    type(name){
+        if( name.match(/(jpg|jpeg|png|svg|gif)$/ig) != null ){
+            return 'images';
+        }
+        if( name.match(/(mp4)$/ig) != null ){
+            return 'video';
+        }
+    }
     
     /**
      * Cont stap
     */
     cont(ell, data, type){
-        let srcimg = ell.getAttribute(data);
+        // data param
+        let srcimg = ell.getAttribute(data),
+            typecont = this.type(srcimg);
         // desktop content
         if(type == 'desktop'){
             // photo
-            if( ell.querySelector('.projects__image') != undefined ){
-                // apply
-                ell.querySelector('.projects__image').setAttribute('data-src', srcimg);
+            if( typecont == 'images' ){
+                this.apply({
+                    'wrap': ell,
+                    'url': srcimg,
+                    'element': '.projects__image',
+                    'enable': '.projects__image',
+                    'disable': '.project__video'
+                });
             }
             // video
-            if( ell.querySelector('.project__video') != undefined ){
-                // select elem
-                let source = `<source data-src="${srcimg}">`,
-                    obj = ell.querySelector('.project__video').querySelector('video');
-                // apply
-                obj.innerHTML = source;
+            if( typecont == 'video' ){
+                this.apply({
+                    'wrap': ell,
+                    'url': srcimg,
+                    'element': '.project__video video',
+                    'enable': '.project__video',
+                    'disable': '.projects__image' 
+                });
             }
         }
         // mobile content
         if (type == 'mobile') {
             // photo
-            if( ell.querySelector('.projects__image-mob') != undefined ){
-                // apply
-                ell.querySelector('.projects__image-mob').setAttribute('data-src', srcimg);
+            if( typecont == 'images' ){
+                this.apply({
+                    'wrap': ell,
+                    'url': srcimg,
+                    'element': '.projects__image-mob',
+                    'enable': '.projects__image-mob',
+                    'disable': '.project__video-mob' 
+                });
             }
             // video
-            if( ell.querySelector('.project__video-mob') != undefined ){
-                // select elem
-                let source = `<source data-src="${srcimg}">`,
-                    obj = ell.querySelector('.project__video-mob').querySelector('video');
-                // apply
-                obj.innerHTML = source;
+            if( typecont == 'video' ){
+                this.apply({
+                    'wrap': ell,
+                    'url': srcimg,
+                    'element': '.project__video-mob video',
+                    'enable': '.project__video-mob',
+                    'disable': '.projects__image-mob' 
+                });
             }
         }
     }
+
+    /**
+     * Data active
+    */
+    apply(obj){
+        // src
+        obj.wrap.querySelector(obj.element).setAttribute('data-src', obj.url);
+        // enable
+        obj.wrap.querySelector(obj.enable).setAttribute('data-view', 'enable');
+        // disable
+        obj.wrap.querySelector(obj.disable).setAttribute('data-view', 'disable');
+    }
+
+    /**
+     * Lazy
+    */
+    lazy(){
+        // check element
+        this.lazyobj.wrapper.map(obj => {
+            // element display block
+            if( obj.getBoundingClientRect().width > 0 ){
+                [...obj.querySelectorAll(this.lazyobj.element)].map( el => {
+                    if( el.getAttribute('data-src') != null ){
+                        // set attribute
+                        el.setAttribute('src', el.getAttribute('data-src'));
+                        // remove attribute
+                        el.removeAttribute("data-src");
+                    }
+                });
+            };
+        });
+    }
 }
 
-// let obj = new ProjectGrid;
-// obj.calc();
 export default ProjectGrid;

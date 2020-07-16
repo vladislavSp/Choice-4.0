@@ -165,8 +165,12 @@
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.projects__image, .project__video, .projects__img-cont, .express__arrow, .express__arrow-back {
+.express__arrow, .express__arrow-back {
   transition: transform 0.2s ease;
+}
+
+.projects__image, .project__video, .projects__img-cont {
+  transition: transform 0.3s cubic-bezier(0, 0, 0.23, 0.71);
 }
 
 .project__link-wrap {
@@ -180,7 +184,7 @@
     }
 
     & .projects__image, & .project__video, & .projects__img-cont {
-      transform: scale(1.025);
+      transform: scale(1.1);
     }
   }
 }

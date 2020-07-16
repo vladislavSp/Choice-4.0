@@ -20,7 +20,7 @@ import './scss/hover.scss';
 
 // JS
 import './js/lang.js';
-import './js/filters.js';
+import './js/filters.js'; // projectGrid
 import './js/stickers.js';
 import './js/accordion.js';
 import './js/hoverImage.js';
