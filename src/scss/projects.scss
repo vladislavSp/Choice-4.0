@@ -41,15 +41,6 @@
 }
 
 @media (min-width: 992px) {
-  .project__video, .projects__image {
-    &[data-view="enable"] {
-      display: block;
-    }
-    &[data-view="disable"] {
-      display: none;
-    }
-  }
-
   .body--home, .body--projects {
     & .project__item:first-child {
       -ms-grid-column: span 3;
@@ -72,6 +63,17 @@
       grid-row-start: span 1;
       -ms-grid-row-span: 1;
       grid-row-end: span 1;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .project__video, .projects__image {
+    &[data-view="enable"] {
+      display: block;
+    }
+    &[data-view="disable"] {
+      display: none;
     }
   }
 }

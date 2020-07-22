@@ -1,4 +1,4 @@
-import ProjectGrid from './ProjectGrid';
+// import ProjectGrid from './ProjectGrid';
 
 let filters = [...document.querySelectorAll('*[data-filter]')],
     filter,
