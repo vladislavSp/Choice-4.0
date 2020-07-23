@@ -19,7 +19,6 @@ import './scss/hover.scss';
 // animation
 
 // JS
-// import './js/lang.js'; // Удален 22/07
 import './js/filters.js'; // projectGrid
 import './js/stickers.js';
 import './js/accordion.js';
@@ -32,5 +31,4 @@ import './js/randomCircleImage.js';
 import './js/hideMenuOnScroll.js';
 import './js/playVideo.js';
 import './js/randomColor.js';
-import './js/space.js';
 import './js/cursor-express.js';
