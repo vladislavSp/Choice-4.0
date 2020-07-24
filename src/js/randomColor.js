@@ -1,6 +1,9 @@
 const colorArr = [`#F2C94C`, `#27AE60`, `#EB5757`, `#2F80ED`];
 const btn = document.querySelector(`.contact__link`);
 const hoverCompany = document.querySelector('.clients__your-company');
+const videoControls = document.querySelector('.plyr__progress input[type=range]');
+const volumeVideo = document.querySelector('.plyr__volume input[type=range]');
+
 
 createElement();
 randomColorGenerate();
@@ -24,7 +27,11 @@ function randomColorGenerate() {
   if (btn) btn.style.backgroundColor = `${randColor}`;
   if (hoverCompany) hoverCompany.style.color = `${randColor}`;
 //  document.body.style.selection = `color: ${randColor}`;
-
+  if (videoControls || volumeVideo) {
+    videoControls.style.color = randColor;
+    volumeVideo.style.color = randColor;
+  }
+  
   const style = `<style>*::user-select{backround-color:${randColor}}*::selection {background-color: ${randColor}}*::-moz-selection{background-color: ${randColor}}</style>`;
   divElem.innerHTML = `${style}`;
 }

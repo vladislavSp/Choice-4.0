@@ -1,49 +1,70 @@
 let playBtn = document.querySelector('[data-videobtn="play"]'), play = 1,
     video = document.querySelector('.video-content');
 
-if (playBtn) {
-  playBtn.addEventListener('click', playVideo);
-  video.volume = 0;
-}
+// if (video && window.matchMedia("(max-width: 767px)").matches) {
+//   video.autoplay = true;
+//   video.loop = true;
+// }
 
-if (video && window.matchMedia("(max-width: 767px)").matches) {
-  video.autoplay = true;
-  video.loop = true;
-}
+// function playVideo(evt) {
+//   if (play) {
+//     video.currentTime = 0;
+//     play = 0;
+//   }
+//   video.addEventListener('pause', playVideoHandler);
+//   stateVideo(true);
+// }
 
-function playVideo(evt) {
-  if (play) {
-    video.currentTime = 0;
-    play = 0;
-  }
-  video.addEventListener('pause', playVideoHandler);
-  stateVideo(true);
-}
 
-function stateVideo(param) {
-  param ? video.play() : video.pause();
-  video[param ? 'removeAttribute' : 'setAttribute']('muted', '');
-  video.muted = !param;
-  video.loop = param ? true : false;
-  video.volume = param ? 1 : 0;
-  playBtn.style.display = param ? 'none' : '';
-  video.classList[param ? 'add' : 'remove']('video-pointer');
-  video[param ? 'addEventListener' : 'removeEventListener']('click', stopVideo);
-}
-
-function stopVideo() {
-  stateVideo(false);
-}
-
-// Обработчики событий play/pause (для воспроизведения с браузера, а не при клике)
+// // Обработчики событий play/pause (для воспроизведения с браузера, а не при клике)
 function playVideoHandler() {
   video.removeEventListener('pause', playVideoHandler);
   video.addEventListener('play', pauseVideoHandler);
+  video.removeEventListener('touchstart', playVideoHandler);
   stateVideo(false);
 }
 
 function pauseVideoHandler() {
   video.addEventListener('pause', playVideoHandler);
   video.removeEventListener('play', pauseVideoHandler);
+  video.addEventListener('touchstart', playVideoHandler);
   stateVideo(true);
+}
+
+const playerSettings = {
+  controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+  // hideControls: false,
+};
+
+const player = new Plyr('.video-content', playerSettings);
+let controls = document.querySelector('.plyr__controls');
+if (controls) controls.style.display = 'none';
+
+
+
+// INIT
+if (playBtn) {
+  playBtn.addEventListener('click', playVideo);
+  video.addEventListener('play', pauseVideoHandler);
+}
+
+function playVideo(evt) {
+  stateVideo(true);
+}
+
+function stopVideo() {
+  stateVideo(false);
+}
+
+function stateVideo(param) {
+  param ? player.play() : player.pause();
+  controls.style.display = param ? '' : 'none';
+  // video[param ? 'removeAttribute' : 'setAttribute']('muted', '');
+  // video.muted = !param;
+  // video.loop = param ? true : false;
+  // video.volume = param ? 1 : 0;
+  playBtn.style.display = param ? 'none' : '';
+
+  video[param ? 'addEventListener' : 'removeEventListener']('click', stopVideo);
+  video[param ? 'addEventListener' : 'removeEventListener']('touchstart', stopVideo);
 }
