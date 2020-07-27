@@ -718,13 +718,15 @@
   }
 
   .express__group-field {
-    width: 20rem;
-
     &.express__group-field--sec {
       width: auto;
       margin-left: 2rem;
       flex-grow: 1;
     }
+  }
+
+  .express__title--vacancy {
+    margin-bottom: 2rem;
   }
 
   .qa__title {
