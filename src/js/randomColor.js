@@ -31,8 +31,8 @@ function randomColorGenerate() {
     videoControls.style.color = randColor;
     volumeVideo.style.color = randColor;
   }
-  
-  const style = `<style>*::user-select{backround-color:${randColor}}*::selection {background-color: ${randColor}}*::-moz-selection{background-color: ${randColor}}</style>`;
+
+  const style = `<style>*::user-select{backround-color:${randColor}}*::selection {background-color: ${randColor}}*::-moz-selection{background-color: ${randColor}} .plyr--video .plyr__control:hover{background:${randColor}}</style>`;
   divElem.innerHTML = `${style}`;
 }
 
