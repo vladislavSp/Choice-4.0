@@ -25,9 +25,13 @@
   color: white;
 }
 
-.brif__item--contact, .brif-page__item--contact{
-  transition: color 0.3s ease, background-color 0.3s ease;
+@media (min-width: 992px) {
+  .brif__item--contact, .brif-page__item--contact{
+    transition: color 0.3s linear, background-color 0.3s linear;
+  }
 }
+
+
 @media (min-width: 768px) {
   .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
     color: white;
@@ -36,6 +40,7 @@
 }
 @media (max-width: 767px) {
   .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
+    user-select: none;
     color: white;
     background-color: black;
   }

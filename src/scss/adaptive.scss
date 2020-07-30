@@ -150,6 +150,9 @@
   .brig-page__desc {
     font-size: 1.5rem;
   }
+  .brif-page__list {
+    max-width: 55rem;
+  }
   .service__image {
     width: 15.5rem;
   }
@@ -741,6 +744,7 @@
   }
   .picture__sticker {
     width: 12rem;
+    height: 12rem;
     top: -16rem;
   }
 }
@@ -748,6 +752,14 @@
 @media (max-width: 991px) and (min-width: 768px) {
   .project__image-wrap {
     height: 205px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  @media (orientation: landscape) {
+    .wrapper--contact {
+      display: none;
+    }
   }
 }
 
@@ -771,9 +783,12 @@
   .view__paginations {
     overflow-x: hidden;
   }
+
   .body--home, .body--projects {
     & .project__item:first-of-type {
-      height: 29.375rem;
+      & .project__image-wrap {
+        height: 29.375rem;
+      }
     }
   }
 

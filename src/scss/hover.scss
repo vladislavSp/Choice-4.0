@@ -1,75 +1,267 @@
 // hover всех ссылок на сайте
-.footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__address, .footer__mail, .contacts__text, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title, .vacancy__mail-link {
-  transition: color 0.2s ease;
-}
-
-.clients__your-company {
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.contacts__title, .vacancy__mail-link {
-  &:hover {
-    color: #666;
+@media (min-width: 992px) {
+  .footer__link, .footer__link-social, .links__item, .projects__btn-text, .eprojects__btn-text, .brif__send-btn, .express__send-btn, .club__link, .footer__tel, .footer__address, .footer__mail, .contacts__text, .brif__blue-text, .creators__back, .vacancy__back, .hello__link, .contacts__title, .vacancy__mail-link {
+    transition: color 0.2s ease;
   }
-}
-
-.publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
-  transition: border-color 0.2s ease;
-}
-
-.hello-vacancy, .contact__link {
-  transition: background-color 0.2s ease;
-}
-
-.hello__emb, .univercity__emb, .creators__emb, .vacancy__emb, .brif__arrow, .brif__arrow--back {
-  transition: transform 0.2s ease;
-}
-
-.careers__emb {
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.publish__emb {
-  transition: opacity 0.2s ease;
-}
-
-.hello-vacancy {
-  &:hover {
-    background-color: white;
-
-    & .hello__link {
+  
+  .clients__your-company {
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .contacts__title, .vacancy__mail-link {
+    &:hover {
       color: #666;
-
+    }
+  }
+  
+  .publish__text, .tech__btn-text, .brif__send-btn--express, .projects__title, .eprojects__title, .contacts__text, .club__link {
+    transition: border-color 0.2s ease;
+  }
+  
+  .hello-vacancy, .contact__link {
+    transition: background-color 0.2s ease;
+  }
+  
+  .hello__emb, .univercity__emb, .creators__emb, .vacancy__emb, .brif__arrow, .brif__arrow--back {
+    transition: transform 0.2s ease;
+  }
+  
+  .careers__emb {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .publish__emb {
+    transition: opacity 0.2s ease;
+  }
+  
+  .hello-vacancy {
+    &:hover {
+      background-color: white;
+  
+      & .hello__link {
+        color: #666;
+  
+        & .hello__emb {
+          transform: translateX(4px);
+        }
+  
+        & svg path {
+          stroke: currentColor;
+        }
+      }
+    }
+  }
+  
+  .hello__link {
+    &:hover {
+      color: #666;
+  
       & .hello__emb {
         transform: translateX(4px);
       }
-
+  
       & svg path {
         stroke: currentColor;
       }
     }
   }
-}
 
-.hello__link {
-  &:hover {
+  .brif__blue-text:hover {
     color: #666;
+  }
 
-    & .hello__emb {
-      transform: translateX(4px);
+  .contacts__text-wrap {
+    &:hover .contacts__text {
+      color: black;
+    }
+  }
+
+  .footer__tel, .footer__mail, .footer__address {
+    &:hover {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .footer__link, .footer__link-social, .contact__link, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .club__link {
+    & svg path {
+      transition: fill 0.2s ease;
+    }
+  }
+
+  .club__link {
+    &:hover {
+      color: rgb(0, 0, 0);
+
+      & svg path {
+        fill: rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .footer__link, .footer__link-social {
+    &:hover {
+      color: white;
+
+      & svg path {
+        fill: white;
+      }
+    }
+  }
+
+  // COLOR LINK
+  .links__item {
+    &:hover, &:active {
+      color: #000;
+    }
+  }
+
+  .projects__btn-text {
+    &:hover, &:active {
+      color: #666;
+    }
+  }
+
+  .arrow svg path {
+    transition: fill 0.2s ease;
+  }
+
+  .links__item:hover {
+    & .arrow svg path {
+      fill: black;
+    }
+  }
+
+  .express__arrow, .express__arrow-back {
+    transition: transform 0.2s ease;
+  }
+
+  .projects__image, .project__video, .projects__img-cont {
+    transition: transform 0.3s cubic-bezier(0, 0, 0.23, 0.71);
+  }
+
+  .project__link-wrap {
+    &:hover {
+      & .projects__title {
+        border-color: black;
+      }
+
+      & .eprojects__title {
+        border-color: white;
+      }
+
+      & .projects__image, & .project__video, & .projects__img-cont {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  .eprojects__btn-text {
+    &:hover, &:active {
+      color: white;
+    }
+  }
+
+  .univercity__btn {
+    &:hover {
+      & .univercity__emb {
+        transform: translateX(4px);
+      }
     }
 
-    & svg path {
-      stroke: currentColor;
+    &:active {
+      & .univercity__emb {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .publish__item {
+    &:hover .publish__text {
+      border-color: black;
+    }
+  }
+
+  .creators__back {
+    &:hover {
+      color: #666;
+
+      & svg path {
+        stroke: currentColor;
+      }
+
+      & .creators__emb {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  .vacancy__back {
+    &:hover {
+      color: #666;
+      & svg path {
+        stroke: currentColor;
+      }
+
+      & .vacancy__emb {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  .brif__send-btn {
+    &:hover {
+      color: #666;
+
+      & .brif__arrow {
+        transform: translateX(4px);
+      }
+
+      & .brif__arrow--back {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  .express__send-btn, .brif__send-btn--express {
+    &:hover {
+      color: rgba(255, 255, 255, 0.7);
+
+      & .express__arrow {
+        transform: translateX(4px);
+      }
+
+      & .express__arrow-back {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  .clients__your-company {
+    &:hover {
+      color: #666;
+      border-color: currentColor;
+    }
+  }
+  .tech__item {
+    &:hover {
+      & .tech__image {
+        display: block;
+      }
+
+      & .tech__btn-text {
+        border-color: white;
+      }
     }
   }
 }
+
 
 .hello-vacancy--npoint {
   cursor: default;
   background-color: white;
 }
 
+// Arrow links
 .publish__item {
   &:hover {
     & .publish__emb {
@@ -86,195 +278,9 @@
   }
 }
 
-.brif__blue-text:hover {
-  color: #666;
-}
-
-.contacts__text-wrap {
-  &:hover .contacts__text {
-    color: black;
-  }
-}
-
-.footer__tel, .footer__mail, .footer__address {
-  &:hover {
-    color: rgba(255, 255, 255, 0.6);
-  }
-}
-
-.footer__link, .footer__link-social, .contact__link, .brif__send-btn, .brif__send-btn--express, .express__send-btn, .club__link {
-  & svg path {
-    transition: fill 0.2s ease;
-  }
-}
-
-.club__link {
-  &:hover {
-    color: rgb(0, 0, 0);
-    // border-color: currentColor;
-
-    & svg path {
-      fill: rgb(0, 0, 0);
-    }
-  }
-}
-
-.footer__link, .footer__link-social {
-  &:hover {
-    color: white;
-
-    & svg path {
-      fill: white;
-    }
-  }
-}
-
-// .contact__link {
-//   &:hover {
-//     color: #666666;
-//   }
-
-//   &:active {
-//     color: #000000;
-//   }
-// }
-
-// COLOR LINK
-.links__item {
-  &:hover, &:active {
-    color: #000;
-  }
-}
-.projects__btn-text {
-  &:hover, &:active {
-    color: #666;
-  }
-}
-.arrow svg path {
-  transition: fill 0.2s ease;
-}
-
-.links__item:hover {
-  & .arrow svg path {
-    fill: black;
-  }
-}
-
 .project__image-wrap {
   pointer-events: none;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
-}
-
-.express__arrow, .express__arrow-back {
-  transition: transform 0.2s ease;
-}
-
-.projects__image, .project__video, .projects__img-cont {
-  transition: transform 0.3s cubic-bezier(0, 0, 0.23, 0.71);
-}
-
-.project__link-wrap {
-  &:hover {
-    & .projects__title {
-      border-color: black;
-    }
-
-    & .eprojects__title {
-      border-color: white;
-    }
-
-    & .projects__image, & .project__video, & .projects__img-cont {
-      transform: scale(1.06);
-    }
-  }
-}
-
-.eprojects__btn-text {
-  &:hover, &:active {
-    color: white;
-  }
-}
-
-.univercity__btn {
-  &:hover {
-    & .univercity__emb {
-      transform: translateX(4px);
-    }
-  }
-
-  &:active {
-    & .univercity__emb {
-      transform: translateX(0);
-    }
-  }
-}
-
-.publish__item {
-  &:hover .publish__text {
-    border-color: black;
-  }
-}
-
-.creators__back {
-  &:hover {
-    color: #666;
-
-    & svg path {
-      stroke: currentColor;
-    }
-
-    & .creators__emb {
-      transform: translateX(-4px);
-    }
-  }
-}
-
-.vacancy__back {
-  &:hover {
-    color: #666;
-    & svg path {
-      stroke: currentColor;
-    }
-
-    & .vacancy__emb {
-      transform: translateX(-4px);
-    }
-  }
-}
-
-.brif__send-btn {
-  &:hover {
-    color: #666;
-
-    & .brif__arrow {
-      transform: translateX(4px);
-    }
-
-    & .brif__arrow--back {
-      transform: translateX(-4px);
-    }
-  }
-}
-
-.express__send-btn, .brif__send-btn--express {
-  &:hover {
-    color: rgba(255, 255, 255, 0.7);
-
-    & .express__arrow {
-      transform: translateX(4px);
-    }
-
-    & .express__arrow-back {
-      transform: translateX(-4px);
-    }
-  }
-}
-
-.clients__your-company {
-  &:hover {
-    color: #666;
-    border-color: currentColor;
-  }
 }
 
 .get__item {
@@ -300,29 +306,6 @@
   }
 }
 
-@media (min-width: 992px) {
-  .tech__item {
-    &:hover {
-      & .tech__image {
-        display: block;
-      }
-
-      & .tech__btn-text {
-        border-color: white;
-      }
-      // & .tech__btn {
-      //   border-color: #FFFFFF;
-      // }
-    }
-  }
-}
-
 .tech__btn-text, .tech__plus, .tech__minus {
   padding-bottom: 0.5rem;
 }
-  
-// .tech__btn {
-//   transition: border-color 0.2s ease;
-//   padding-bottom: 0.5rem;
-//   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-// }

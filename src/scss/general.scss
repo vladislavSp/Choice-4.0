@@ -100,3 +100,11 @@ input[type="radio"].visually-hidden {
 .service__image {
   will-change: top, left;
 }
+
+// PLYR
+
+.plyr--video,
+.plyr__poster,
+.plyr__video-wrapper {
+    background: rgba(0, 0, 0, 0);
+}

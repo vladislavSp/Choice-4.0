@@ -9,7 +9,7 @@ function hideMenuHandler(evt) {
 
   if (pageYOffset < heightHeader/2) dif = -1; // вначале страницы
 
-  if (dif > 2) {
+  if (dif > 30) {
     positionInit = pageYOffset; // увел-е начальной позиции в соответствии с прокруткой
     header.classList.add('header--hid');
   } else if (dif < 0) {

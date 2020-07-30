@@ -32,7 +32,7 @@ function randomColorGenerate() {
     volumeVideo.style.color = randColor;
   }
 
-  const style = `<style>*::user-select{backround-color:${randColor}}*::selection {background-color: ${randColor}}*::-moz-selection{background-color: ${randColor}} .plyr--video .plyr__control:hover{background:${randColor}}</style>`;
+  const style = `<style>*::user-select{backround-color:${randColor}}*::selection {background-color: ${randColor}}*::-moz-selection{background-color: ${randColor}} .plyr--video .plyr__control:hover{background:${randColor}}.plyr__control--overlaid{background:${randColor}}</style>`;
   divElem.innerHTML = `${style}`;
 }
 
