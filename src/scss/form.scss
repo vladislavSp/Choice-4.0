@@ -40,6 +40,7 @@
 }
 @media (max-width: 767px) {
   .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
+    -webkit-user-select: none;
     user-select: none;
     color: white;
     background-color: black;
