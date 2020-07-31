@@ -36,11 +36,13 @@
   .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
     color: white;
     background-color: black;
+    -webkit-tap-highlight-color:transparent;
   }
 }
 @media (max-width: 767px) {
   .brif__item--contact[data-state="enable"], .brif-page__item--contact[data-state="enable"] {
     -webkit-user-select: none;
+    -webkit-tap-highlight-color:transparent;
     user-select: none;
     color: white;
     background-color: black;
