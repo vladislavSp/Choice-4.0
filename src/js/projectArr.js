@@ -18,7 +18,7 @@ let projectJSON = {
   "korolev": "korolev",
   "koya": "koya",
   "kustendorf": "kustendorf",
-  "life": "life",
+  "life": "life_site",
   "life-branding": "life_brand",
   "majestic": "majestic",
   "Mation": "mation",
