@@ -105,6 +105,10 @@
   .project__image-wrap {
     height: 270px;
   }
+
+  .brig-page__field {
+    width: 280px;
+  }
 }
 
 
@@ -753,6 +757,9 @@
   .project__image-wrap {
     height: 205px;
   }
+  .brig-page__field {
+    width: 215px;
+  }
 }
 
 @media (max-width: 767px) and (min-width: 480px) {
@@ -795,13 +802,8 @@
   .header__menu {
     padding-top: 0.25rem;
   }
-}
 
-// @media (max-width: 479px) {
-//   .footer__link-social:nth-child(n + 2) {
-//     margin-bottom: 1rem;
-//   }
-//   .footer__link-social:last-child {
-//     margin-bottom: 0;
-//   }
-// }
+  .brig-page__field {
+    width: 100%;
+  }
+}
