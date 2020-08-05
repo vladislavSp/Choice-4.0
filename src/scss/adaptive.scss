@@ -36,6 +36,10 @@
   position: relative;
 }
 
+.brif-footer {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .brif__group-field:nth-of-type(2) {
     width: 37rem;
@@ -759,6 +763,12 @@
   }
   .brig-page__field {
     width: 215px;
+  }
+  .brif-footer {
+    display: block;
+    width: 100%;
+    padding-bottom: 1rem;
+    background-color: black;
   }
 }
 
