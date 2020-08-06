@@ -10,7 +10,7 @@ let filters = [...document.querySelectorAll('*[data-filter]')],
     projectItems = [...document.querySelectorAll('[data-category]')];
 
 let pictureLoad = new ProjectGrid;
-pictureLoad.calc();
+if (location.pathname === '/') pictureLoad.calc(); // pictureLoad.calc();
 
 let initialProjectArray = [...projectItems];
 initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
@@ -70,7 +70,10 @@ if (filters.length > 0) {
     });
   } else {
     filters.forEach(el => {
-      if (el.getAttribute('data-filter') === `all`) el.setAttribute('data-state', 'enable');
+      if (el.getAttribute('data-filter') === `all`) {
+        el.setAttribute('data-state', 'enable');
+        pictureLoad.calc();
+      }
     })
   }
 }
@@ -105,8 +108,8 @@ function changeStateFilters(evt) {
       setDefaultMassive(initialProjectArray); // начальная сортировка
 
       gsap.to(projectList, { opacity: 1, duration: 0.5});
-      pictureLoad.calc();
       initialVisibleArr();
+      pictureLoad.calc();
     }});
 
     window.history.replaceState(clickFilter, 'data-filter', `${location.pathname}`);
@@ -137,8 +140,8 @@ function setFilter(clickFilter, evt = undefined) {
     sortProject(projectItems);
 
     gsap.to(projectList, { opacity: 1, duration: 0.5});
-    pictureLoad.calc();
     initialVisibleArr();
+    pictureLoad.calc();
   }});
 }
 
