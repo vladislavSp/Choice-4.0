@@ -65,8 +65,6 @@ if (expressContainer) {
     }
     // Если холд - удалить таймер, и возобновить при удалении холда
     newTimer = setTimeout(nextSlide, 1000);
-
-    // if (expressSlider.progress === 1) clearTimeout(newTimer);
   }
 
   function holdStoriesHandler(e) {
@@ -101,8 +99,6 @@ if (expressContainer) {
 
   function changeSlideHandler() { // progressbar
     time.initSeconds = 1; // сброс значения для таймера newTimer на 1
-
-
 
     // Функция для зацикливания слайдов
     if (expressSlider.progress === 1) {

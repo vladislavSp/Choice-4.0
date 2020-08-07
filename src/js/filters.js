@@ -1,5 +1,3 @@
-// import ProjectGrid from './ProjectGrid';
-
 let filters = [...document.querySelectorAll('*[data-filter]')],
     filter,
     initialLength = 0, initNum = 4,
@@ -10,7 +8,7 @@ let filters = [...document.querySelectorAll('*[data-filter]')],
     projectItems = [...document.querySelectorAll('[data-category]')];
 
 let pictureLoad = new ProjectGrid;
-if (location.pathname === '/') pictureLoad.calc(); // pictureLoad.calc();
+if (location.pathname === '/') pictureLoad.calc();
 
 let initialProjectArray = [...projectItems];
 initialProjectArray.forEach((el, i) => el.setAttribute('data-sort', i));
