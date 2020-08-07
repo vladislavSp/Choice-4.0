@@ -42,7 +42,13 @@ if (expressContainer) {
   let wrapperStories = document.querySelector('[data-story="express"]');
   let paginations = [...document.querySelectorAll('.view__point')];
 
-  let initTime = 9000, rangeTime = 9, initSeconds = 0, newTimer; //
+  const time = {
+    initTime: 9000,
+    rangeTime: 9,
+    initSeconds: 0,
+  };
+
+  let newTimer;
 
   wrapperStories.addEventListener('mousedown', holdStoriesHandler);
   wrapperStories.addEventListener('touchstart', holdStoriesHandler);
@@ -51,10 +57,10 @@ if (expressContainer) {
   let timerFunction = setTimeout(nextSlide, 0); // счетчик секунд
 
   function nextSlide() {
-    initSeconds += 1;
+    time.initSeconds += 1;
 
-    if (initSeconds > rangeTime) {
-      initSeconds = 1; // переключить слайд, когда счётчик достигнет 10
+    if (time.initSeconds > time.rangeTime) {
+      time.initSeconds = 1; // переключить слайд, когда счётчик достигнет 10
       expressSlider.slideNext();
     }
     // Если холд - удалить таймер, и возобновить при удалении холда
@@ -94,13 +100,13 @@ if (expressContainer) {
   let endTimer;
 
   function changeSlideHandler() { // progressbar
-    initSeconds = 1; // сброс значения для таймера newTimer на 1
+    time.initSeconds = 1; // сброс значения для таймера newTimer на 1
 
 
 
     // Функция для зацикливания слайдов
     if (expressSlider.progress === 1) {
-      endTimer = setTimeout(nextSlideForEnding, initTime);
+      endTimer = setTimeout(nextSlideForEnding, time.initTime);
     } else if (expressSlider.progress !== 1) {
       if (endTimer) clearTimeout(endTimer);
     } 
@@ -132,7 +138,7 @@ if (expressContainer) {
 
   function nextSlideForEnding() {
     expressSlider.slideTo(0);
-    initSeconds = 0; // компенсация таймеров для начального слайда
+    time.initSeconds = 0; // компенсация таймеров для начального слайда
     // nextSlide();
   }
 
