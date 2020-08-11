@@ -1,4 +1,4 @@
-const colorArr = [`#F2C94C`, `#27AE60`, `#EB5757`, `#2F80ED`];
+const colorArr = [`#39B549`, `#FF2B00`, `#FFC900`, `#0077FF`];
 const btn = document.querySelector(`.contact__link`);
 const hoverCompany = document.querySelector('.clients__your-company');
 
