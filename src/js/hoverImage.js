@@ -16,7 +16,6 @@ function imageHoverHandler(evt) {
 function positioningImage(x, y, obj) {
   image = obj.querySelector('.service__image');
   let video = image.querySelector('video');
-  // let source = image.querySelector('source');
   let src = video.getAttribute('data-src');
   
   if (!video.getAttribute('src')) {
